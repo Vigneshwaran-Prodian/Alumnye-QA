@@ -1,0 +1,1152 @@
+{
+  "summary": {
+    "run_id": "run-20261004-200934",
+    "product": "alumnye",
+    "platform": "android",
+    "module": "groups",
+    "total": 14,
+    "passed": 10,
+    "passed_zero_ai": 8,
+    "passed_after_self_heal": 2,
+    "passed_after_qwen": 0,
+    "failed": 3,
+    "error": 1,
+    "blocked": 0,
+    "skipped": 0,
+    "ai_calls": 2,
+    "stopped_reason": "Stopped by user (Ctrl+C)."
+  },
+  "results": [
+    {
+      "id": "GRP-001",
+      "title": "Anchor creates a group and lands on its Group Details",
+      "type": "Positive",
+      "script": "source/mobile/alumnye/specs/groups/GRP_001_create_group.py",
+      "status": "PASSED",
+      "category": "",
+      "message": "",
+      "seconds": 37.9,
+      "ai_mode": "self-heal",
+      "ai_calls": 0,
+      "adaptations": [
+        {
+          "tier": "heal",
+          "key": "group_details_marker",
+          "strategy": "text:MEMBER",
+          "reason": "label 'MEMBER' ~ ['Add Event', 'Add Member'] (score 0.81)"
+        }
+      ],
+      "entry_path": [
+        "dialog 'Success / Group created successfully!' -> OK"
+      ],
+      "notes": [
+        "self-heal for 'group_details_marker' used text:MEMBER for this run only (not saved: it also describes 'role_member')"
+      ],
+      "last_taps": [
+        "role_anchor -> ViewGroup at x857,y186 173x58",
+        "new_group_button -> ViewGroup at x696,y447 321x99",
+        "save_group_button -> ViewGroup at x63,y1446 954x116"
+      ],
+      "messages": [
+        {
+          "trigger": "a pop-up appeared",
+          "text": "Success / Group created successfully!",
+          "where": "dialog"
+        }
+      ],
+      "discovered": [
+        {
+          "where": "Anchor Home is shown",
+          "label": "\uf382, Home",
+          "device": "",
+          "scenario": "GRP-001",
+          "safe": false,
+          "result": ""
+        },
+        {
+          "where": "group form is shown",
+          "label": "Cancel",
+          "device": "",
+          "scenario": "GRP-001",
+          "safe": false,
+          "result": ""
+        },
+        {
+          "where": "group form is shown",
+          "label": "\uf383, Home",
+          "device": "",
+          "scenario": "GRP-001",
+          "safe": false,
+          "result": ""
+        },
+        {
+          "where": "Group Details opens after saving",
+          "label": "\uf382, Home",
+          "device": "",
+          "scenario": "GRP-001",
+          "safe": false,
+          "result": ""
+        }
+      ],
+      "timing": {
+        "find_elements": [
+          81,
+          18.2
+        ],
+        "adb": [
+          12,
+          2.3
+        ],
+        "page_source": [
+          16,
+          2.8
+        ]
+      },
+      "keys": {
+        "anchor_home_marker": [
+          "btn:New Group",
+          "textc:You don't have any groups"
+        ],
+        "group_description_field": [
+          "xpath://android.widget.EditText[contains(@hint,'escription')]",
+          "xpath:(//android.widget.EditText)[2]"
+        ],
+        "group_details_marker": [
+          "btn:Add Event",
+          "btn:Add Member"
+        ],
+        "group_name_field": [
+          "xpath://android.widget.EditText[contains(@hint,'roup name')]",
+          "xpath:(//android.widget.EditText)[1]"
+        ],
+        "group_name_title": [
+          "textc:QA Group"
+        ],
+        "nav_profile": [
+          "btnx:My Account",
+          "btn:My Account"
+        ],
+        "new_group_button": [
+          "btn:New Group"
+        ],
+        "role_anchor": [
+          "btnx:ANCHOR"
+        ],
+        "save_group_button": [
+          "btnx:Save",
+          "btnx:Create Group",
+          "btnx:Create",
+          "btn:Save"
+        ]
+      },
+      "evidence": "reports/results/alumnye/run-20261004-200934/GRP-001_PASSED.png"
+    },
+    {
+      "id": "GRP-002",
+      "title": "Anchor Home offers + New Group and shows the right state (welcome message or the group list)",
+      "type": "Positive",
+      "script": "source/mobile/alumnye/specs/groups/GRP_002_anchor_home_state.py",
+      "status": "PASSED",
+      "category": "",
+      "message": "",
+      "seconds": 4.9,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [],
+      "notes": [
+        "user already has groups: group list shown (the empty state applies only to a user with no groups)"
+      ],
+      "last_taps": [
+        "role_anchor -> ViewGroup at x857,y186 173x58"
+      ],
+      "messages": [],
+      "discovered": [],
+      "timing": {
+        "find_elements": [
+          16,
+          2.6
+        ],
+        "adb": [
+          1,
+          0.1
+        ],
+        "page_source": [
+          2,
+          0.2
+        ]
+      },
+      "keys": {
+        "anchor_home_marker": [
+          "btn:New Group",
+          "textc:You don't have any groups"
+        ],
+        "empty_state_text": [
+          "textc:don't have any groups",
+          "textc:no active groups"
+        ],
+        "nav_profile": [
+          "btnx:My Account",
+          "btn:My Account"
+        ],
+        "new_group_button": [
+          "btn:New Group"
+        ],
+        "role_anchor": [
+          "btnx:ANCHOR"
+        ]
+      },
+      "evidence": "reports/results/alumnye/run-20261004-200934/GRP-002_PASSED.png"
+    },
+    {
+      "id": "GRP-003",
+      "title": "Group Details shows the group, Add Member / Add Event, the Members count tab, Events tab and Notice Board",
+      "type": "Positive",
+      "script": "source/mobile/alumnye/specs/groups/GRP_003_group_details_content.py",
+      "status": "PASSED",
+      "category": "",
+      "message": "",
+      "seconds": 7.1,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [],
+      "notes": [
+        "Members tab: 'Members, 1' (count 1); the docs' 'About' section does not exist in v1.4.0"
+      ],
+      "last_taps": [
+        "role_anchor -> ViewGroup at x857,y186 173x58"
+      ],
+      "messages": [],
+      "discovered": [
+        {
+          "where": "Group Details is shown",
+          "label": "\uf382, Home",
+          "device": "",
+          "scenario": "GRP-003",
+          "safe": false,
+          "result": ""
+        }
+      ],
+      "timing": {
+        "find_elements": [
+          18,
+          3.7
+        ],
+        "adb": [
+          1,
+          0.1
+        ],
+        "page_source": [
+          8,
+          1.0
+        ]
+      },
+      "keys": {
+        "add_event_button": [
+          "btn:Add Event"
+        ],
+        "add_member_entry": [
+          "btn:Add Member"
+        ],
+        "anchor_home_marker": [
+          "btn:New Group",
+          "textc:You don't have any groups"
+        ],
+        "edit_group_button": [
+          "btnx:Edit"
+        ],
+        "events_tab": [
+          "btnx:Events"
+        ],
+        "group_details_marker": [
+          "btn:Add Event",
+          "btn:Add Member"
+        ],
+        "nav_profile": [
+          "btnx:My Account",
+          "btn:My Account"
+        ],
+        "old_new_event_button": [
+          "btnx:New Event"
+        ],
+        "role_anchor": [
+          "btnx:ANCHOR"
+        ]
+      },
+      "evidence": "reports/results/alumnye/run-20261004-200934/GRP-003_PASSED.png"
+    },
+    {
+      "id": "GRP-004",
+      "title": "Add Members shows the four invitation tabs and the Invite form (email OR mobile, Send Invitation)",
+      "type": "Positive",
+      "script": "source/mobile/alumnye/specs/groups/GRP_004_add_members_options.py",
+      "status": "PASSED",
+      "category": "",
+      "message": "",
+      "seconds": 11.2,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [],
+      "notes": [
+        "tabs seen: Invite | Upload | Add Members | 'Add Contact' (singular; the release note says 'Add Contacts')"
+      ],
+      "last_taps": [
+        "role_anchor -> ViewGroup at x857,y186 173x58",
+        "add_member_entry -> ViewGroup at x53,y648 479x97",
+        "tab_invite -> ViewGroup at x0,y474 270x111"
+      ],
+      "messages": [],
+      "discovered": [
+        {
+          "where": "Add Members screen",
+          "label": "\uf382, Home",
+          "device": "",
+          "scenario": "GRP-004",
+          "safe": false,
+          "result": ""
+        }
+      ],
+      "timing": {
+        "find_elements": [
+          21,
+          5.3
+        ],
+        "adb": [
+          3,
+          0.2
+        ],
+        "page_source": [
+          5,
+          0.8
+        ]
+      },
+      "keys": {
+        "add_member_entry": [
+          "btn:Add Member"
+        ],
+        "anchor_home_marker": [
+          "btn:New Group",
+          "textc:You don't have any groups"
+        ],
+        "group_details_marker": [
+          "btn:Add Event",
+          "btn:Add Member"
+        ],
+        "invite_mobile_field": [
+          "xpath://android.widget.EditText[contains(@hint,'mobile')]"
+        ],
+        "nav_profile": [
+          "btnx:My Account",
+          "btn:My Account"
+        ],
+        "role_anchor": [
+          "btnx:ANCHOR"
+        ],
+        "send_invite_button": [
+          "btn:Send Invitation",
+          "btn:Send Invite"
+        ],
+        "tab_add_contacts": [
+          "btnx:Add Contact",
+          "btnx:Add Contacts",
+          "btnx:Contacts"
+        ],
+        "tab_add_members": [
+          "btnx:Add Members"
+        ],
+        "tab_invite": [
+          "btnx:Invite"
+        ],
+        "tab_upload": [
+          "btnx:Upload"
+        ]
+      },
+      "evidence": "reports/results/alumnye/run-20261004-200934/GRP-004_PASSED.png"
+    },
+    {
+      "id": "GRP-005",
+      "title": "Anchor invites a member by email and gets a success confirmation",
+      "type": "Positive",
+      "script": "source/mobile/alumnye/specs/groups/GRP_005_invite_member_by_email.py",
+      "status": "PASSED",
+      "category": "",
+      "message": "",
+      "seconds": 18.2,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [],
+      "notes": [
+        "invited meera.nair.1004201045@yopmail.com; pending invites before: "
+      ],
+      "last_taps": [
+        "role_anchor -> ViewGroup at x857,y186 173x58",
+        "add_member_entry -> ViewGroup at x53,y648 479x97",
+        "tab_invite -> ViewGroup at x0,y474 270x111",
+        "send_invite_button -> ViewGroup at x97,y1483 886x115"
+      ],
+      "messages": [
+        {
+          "trigger": "sent invitation to 'meera.nair.1004201045@yopmail.com'",
+          "text": "Enter email address...",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "sent invitation to 'meera.nair.1004201045@yopmail.com'",
+          "text": "Invite sent successfully!",
+          "where": "on-screen"
+        }
+      ],
+      "discovered": [],
+      "timing": {
+        "find_elements": [
+          19,
+          4.7
+        ],
+        "adb": [
+          8,
+          1.9
+        ],
+        "page_source": [
+          9,
+          2.5
+        ]
+      },
+      "keys": {
+        "add_member_entry": [
+          "btn:Add Member"
+        ],
+        "anchor_home_marker": [
+          "btn:New Group",
+          "textc:You don't have any groups"
+        ],
+        "group_details_marker": [
+          "btn:Add Event",
+          "btn:Add Member"
+        ],
+        "invite_email_field": [
+          "xpath://android.widget.EditText[contains(@hint,'mail')]",
+          "xpath:(//android.widget.EditText)[1]"
+        ],
+        "nav_profile": [
+          "btnx:My Account",
+          "btn:My Account"
+        ],
+        "role_anchor": [
+          "btnx:ANCHOR"
+        ],
+        "send_invite_button": [
+          "btn:Send Invitation",
+          "btn:Send Invite"
+        ],
+        "tab_invite": [
+          "btnx:Invite"
+        ]
+      },
+      "evidence": "reports/results/alumnye/run-20261004-200934/GRP-005_PASSED.png"
+    },
+    {
+      "id": "GRP-006",
+      "title": "Invite rejects an invalid email format with 'Please enter a valid email format'",
+      "type": "Negative",
+      "script": "source/mobile/alumnye/specs/groups/GRP_006_invite_invalid_email.py",
+      "status": "PASSED",
+      "category": "",
+      "message": "",
+      "seconds": 51.7,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [],
+      "notes": [],
+      "last_taps": [
+        "tab_invite -> ViewGroup at x0,y474 270x111",
+        "send_invite_button -> ViewGroup at x97,y1483 886x115",
+        "tab_invite -> ViewGroup at x0,y474 270x111",
+        "send_invite_button -> ViewGroup at x97,y1483 886x115"
+      ],
+      "messages": [
+        {
+          "trigger": "sent invitation to 'abc@'",
+          "text": "Please enter a valid email format",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "sent invitation to 'plainaddress'",
+          "text": "Please enter a valid email format",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "sent invitation to 'no spaces@yopmail.com'",
+          "text": "Please enter a valid email format",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "sent invitation to 'a@b'",
+          "text": "Please enter a valid email format",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "sent invitation to '@yopmail.com'",
+          "text": "Please enter a valid email format",
+          "where": "on-screen"
+        }
+      ],
+      "discovered": [],
+      "timing": {
+        "find_elements": [
+          34,
+          8.9
+        ],
+        "adb": [
+          32,
+          5.6
+        ],
+        "page_source": [
+          32,
+          10.6
+        ]
+      },
+      "keys": {
+        "add_member_entry": [
+          "btn:Add Member"
+        ],
+        "anchor_home_marker": [
+          "btn:New Group",
+          "textc:You don't have any groups"
+        ],
+        "group_details_marker": [
+          "btn:Add Event",
+          "btn:Add Member"
+        ],
+        "invite_email_field": [
+          "xpath://android.widget.EditText[contains(@hint,'mail')]",
+          "xpath:(//android.widget.EditText)[1]"
+        ],
+        "nav_profile": [
+          "btnx:My Account",
+          "btn:My Account"
+        ],
+        "role_anchor": [
+          "btnx:ANCHOR"
+        ],
+        "send_invite_button": [
+          "btn:Send Invitation",
+          "btn:Send Invite"
+        ],
+        "tab_invite": [
+          "btnx:Invite"
+        ]
+      },
+      "evidence": "reports/results/alumnye/run-20261004-200934/GRP-006_PASSED.png"
+    },
+    {
+      "id": "GRP-007",
+      "title": "Anchor cannot invite their own email address",
+      "type": "Negative",
+      "script": "source/mobile/alumnye/specs/groups/GRP_007_invite_self_blocked.py",
+      "status": "PASSED",
+      "category": "",
+      "message": "",
+      "seconds": 21.4,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [],
+      "notes": [
+        "signed-in user: vivek.reddy.1004001541@yopmail.com"
+      ],
+      "last_taps": [
+        "role_anchor -> ViewGroup at x857,y186 173x58",
+        "add_member_entry -> ViewGroup at x53,y648 479x97",
+        "tab_invite -> ViewGroup at x0,y474 270x111",
+        "send_invite_button -> ViewGroup at x97,y1483 886x115"
+      ],
+      "messages": [
+        {
+          "trigger": "sent invitation to 'vivek.reddy.1004001541@yopmail.com'",
+          "text": "You are already an anchor",
+          "where": "on-screen"
+        }
+      ],
+      "discovered": [],
+      "timing": {
+        "find_elements": [
+          21,
+          6.1
+        ],
+        "adb": [
+          9,
+          1.1
+        ],
+        "page_source": [
+          8,
+          3.2
+        ]
+      },
+      "keys": {
+        "add_member_entry": [
+          "btn:Add Member"
+        ],
+        "anchor_home_marker": [
+          "btn:New Group",
+          "textc:You don't have any groups"
+        ],
+        "group_details_marker": [
+          "btn:Add Event",
+          "btn:Add Member"
+        ],
+        "invite_email_field": [
+          "xpath://android.widget.EditText[contains(@hint,'mail')]",
+          "xpath:(//android.widget.EditText)[1]"
+        ],
+        "nav_profile": [
+          "btnx:My Account",
+          "btn:My Account"
+        ],
+        "role_anchor": [
+          "btnx:ANCHOR"
+        ],
+        "send_invite_button": [
+          "btn:Send Invitation",
+          "btn:Send Invite"
+        ],
+        "tab_invite": [
+          "btnx:Invite"
+        ]
+      },
+      "evidence": "reports/results/alumnye/run-20261004-200934/GRP-007_PASSED.png"
+    },
+    {
+      "id": "GRP-008",
+      "title": "Inviting the same email twice is blocked",
+      "type": "Negative",
+      "script": "source/mobile/alumnye/specs/groups/GRP_008_invite_duplicate_blocked.py",
+      "status": "PASSED",
+      "category": "",
+      "message": "",
+      "seconds": 28.3,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [],
+      "notes": [],
+      "last_taps": [
+        "tab_invite -> ViewGroup at x0,y474 270x111",
+        "send_invite_button -> ViewGroup at x97,y1483 886x115",
+        "tab_invite -> ViewGroup at x0,y474 270x111",
+        "send_invite_button -> ViewGroup at x97,y1483 886x115"
+      ],
+      "messages": [
+        {
+          "trigger": "sent invitation to 'divya.kapoor.1004201216@yopmail.com'",
+          "text": "Enter email address...",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "sent invitation to 'divya.kapoor.1004201216@yopmail.com'",
+          "text": "Invite sent successfully!",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "sent invitation to 'divya.kapoor.1004201216@yopmail.com'",
+          "text": "0.0",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "sent invitation to 'divya.kapoor.1004201216@yopmail.com'",
+          "text": "User already invited to this group",
+          "where": "on-screen"
+        }
+      ],
+      "discovered": [],
+      "timing": {
+        "find_elements": [
+          21,
+          6.5
+        ],
+        "adb": [
+          14,
+          1.9
+        ],
+        "page_source": [
+          14,
+          5.1
+        ]
+      },
+      "keys": {
+        "add_member_entry": [
+          "btn:Add Member"
+        ],
+        "anchor_home_marker": [
+          "btn:New Group",
+          "textc:You don't have any groups"
+        ],
+        "group_details_marker": [
+          "btn:Add Event",
+          "btn:Add Member"
+        ],
+        "invite_email_field": [
+          "xpath://android.widget.EditText[contains(@hint,'mail')]",
+          "xpath:(//android.widget.EditText)[1]"
+        ],
+        "nav_profile": [
+          "btnx:My Account",
+          "btn:My Account"
+        ],
+        "role_anchor": [
+          "btnx:ANCHOR"
+        ],
+        "send_invite_button": [
+          "btn:Send Invitation",
+          "btn:Send Invite"
+        ],
+        "tab_invite": [
+          "btnx:Invite"
+        ]
+      },
+      "evidence": "reports/results/alumnye/run-20261004-200934/GRP-008_PASSED.png"
+    },
+    {
+      "id": "GRP-009",
+      "title": "Create Group is blocked when the name is empty",
+      "type": "Negative",
+      "script": "source/mobile/alumnye/specs/groups/GRP_009_create_group_empty_name.py",
+      "status": "PASSED",
+      "category": "",
+      "message": "",
+      "seconds": 18.0,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [],
+      "notes": [],
+      "last_taps": [
+        "role_anchor -> ViewGroup at x857,y186 173x58",
+        "new_group_button -> ViewGroup at x696,y447 321x99"
+      ],
+      "messages": [
+        {
+          "trigger": "tried to save a group with an empty name",
+          "text": "(button stays disabled)",
+          "where": "state"
+        },
+        {
+          "trigger": "tried to save a group with a spaces-only name",
+          "text": "(button stays disabled)",
+          "where": "state"
+        }
+      ],
+      "discovered": [],
+      "timing": {
+        "find_elements": [
+          43,
+          7.0
+        ],
+        "adb": [
+          7,
+          2.6
+        ],
+        "page_source": [
+          6,
+          0.7
+        ]
+      },
+      "keys": {
+        "anchor_home_marker": [
+          "btn:New Group",
+          "textc:You don't have any groups"
+        ],
+        "group_details_marker": [
+          "btn:Add Event",
+          "btn:Add Member"
+        ],
+        "group_name_field": [
+          "xpath://android.widget.EditText[contains(@hint,'roup name')]",
+          "xpath:(//android.widget.EditText)[1]"
+        ],
+        "nav_profile": [
+          "btnx:My Account",
+          "btn:My Account"
+        ],
+        "new_group_button": [
+          "btn:New Group"
+        ],
+        "role_anchor": [
+          "btnx:ANCHOR"
+        ]
+      },
+      "evidence": "reports/results/alumnye/run-20261004-200934/GRP-009_PASSED.png"
+    },
+    {
+      "id": "GRP-010",
+      "title": "A duplicate group name is rejected with the full message",
+      "type": "Negative",
+      "script": "source/mobile/alumnye/specs/groups/GRP_010_create_group_duplicate_name.py",
+      "status": "PASSED",
+      "category": "",
+      "message": "",
+      "seconds": 53.3,
+      "ai_mode": "self-heal",
+      "ai_calls": 0,
+      "adaptations": [
+        {
+          "tier": "heal",
+          "key": "group_details_marker",
+          "strategy": "text:MEMBER",
+          "reason": "label 'MEMBER' ~ ['Add Event', 'Add Member'] (score 0.81)"
+        }
+      ],
+      "entry_path": [
+        "dialog 'Success / Group created successfully!' -> OK"
+      ],
+      "notes": [
+        "self-heal for 'group_details_marker' used text:MEMBER for this run only (not saved: it also describes 'role_member')"
+      ],
+      "last_taps": [
+        "save_group_button -> ViewGroup at x63,y1446 954x116",
+        "role_anchor -> ViewGroup at x857,y186 173x58",
+        "new_group_button -> ViewGroup at x696,y447 321x99",
+        "save_group_button -> ViewGroup at x63,y1446 954x116"
+      ],
+      "messages": [
+        {
+          "trigger": "a pop-up appeared",
+          "text": "Success / Group created successfully!",
+          "where": "dialog"
+        },
+        {
+          "trigger": "tried to create a second group with an existing name",
+          "text": "A group with this name already exists. Please choose a different name.",
+          "where": "on-screen"
+        }
+      ],
+      "discovered": [],
+      "timing": {
+        "find_elements": [
+          121,
+          21.8
+        ],
+        "adb": [
+          19,
+          5.2
+        ],
+        "page_source": [
+          18,
+          4.2
+        ]
+      },
+      "keys": {
+        "anchor_home_marker": [
+          "btn:New Group",
+          "textc:You don't have any groups"
+        ],
+        "group_description_field": [
+          "xpath://android.widget.EditText[contains(@hint,'escription')]",
+          "xpath:(//android.widget.EditText)[2]"
+        ],
+        "group_details_marker": [
+          "btn:Add Event",
+          "btn:Add Member"
+        ],
+        "group_name_field": [
+          "xpath://android.widget.EditText[contains(@hint,'roup name')]",
+          "xpath:(//android.widget.EditText)[1]"
+        ],
+        "nav_profile": [
+          "btnx:My Account",
+          "btn:My Account"
+        ],
+        "new_group_button": [
+          "btn:New Group"
+        ],
+        "role_anchor": [
+          "btnx:ANCHOR"
+        ],
+        "save_group_button": [
+          "btnx:Save",
+          "btnx:Create Group",
+          "btnx:Create",
+          "btn:Save"
+        ]
+      },
+      "evidence": "reports/results/alumnye/run-20261004-200934/GRP-010_PASSED.png"
+    },
+    {
+      "id": "GRP-011",
+      "title": "Group description is limited to 200 characters with a live counter",
+      "type": "Edge",
+      "script": "source/mobile/alumnye/specs/groups/GRP_011_group_description_limit.py",
+      "status": "ERROR",
+      "category": "driver",
+      "message": "Message: Cached elements 'By.xpath: //*[@clickable='true'][contains(translate(normalize-space(@content-desc),'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),'new group') or .//*[contains(translate(normalize-space(@text),'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),'new group')] or contains(translate(normalize-space(@text),'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),'new group')]' do not exist in DOM anymore; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#staleelementreferenceexception",
+      "seconds": 6.8,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [],
+      "notes": [],
+      "last_taps": [
+        "role_anchor -> ViewGroup at x857,y186 173x58"
+      ],
+      "messages": [],
+      "discovered": [],
+      "timing": {
+        "find_elements": [
+          11,
+          3.1
+        ],
+        "adb": [
+          2,
+          0.2
+        ],
+        "page_source": [
+          1,
+          0.2
+        ]
+      },
+      "keys": {
+        "anchor_home_marker": [
+          "btn:New Group",
+          "textc:You don't have any groups"
+        ],
+        "nav_profile": [
+          "btnx:My Account",
+          "btn:My Account"
+        ],
+        "new_group_button": [
+          "btn:New Group"
+        ],
+        "role_anchor": [
+          "btnx:ANCHOR"
+        ]
+      },
+      "evidence": "reports/results/alumnye/run-20261004-200934/GRP-011_ERROR.png"
+    },
+    {
+      "id": "GRP-012",
+      "title": "Download the template, upload the 200-member sheet, Bulk Preview, import",
+      "type": "Positive",
+      "script": "source/mobile/alumnye/specs/groups/GRP_012_bulk_upload_valid_file.py",
+      "status": "FAILED",
+      "category": "likely-bug",
+      "message": "'confirm_import' (Bulk Preview: confirm import (not the 'Add Members' tab)) is missing from the screen \u2014 likely functionality break. AI: No visible element contains 'Confirm' or 'Import' labels; the confirm_import button is absent from this screen.",
+      "seconds": 127.8,
+      "ai_mode": "self-heal",
+      "ai_calls": 1,
+      "adaptations": [
+        {
+          "tier": "heal",
+          "key": "choose_file_button",
+          "strategy": "btnx:Upload",
+          "reason": "label 'Upload' ~ ['Choose File', 'Select File', 'Upload File', 'Browse'] (score 0.79)"
+        }
+      ],
+      "entry_path": [],
+      "notes": [
+        "the app was left for 'com.android.chrome' (after 'Download template'); the runner brought Alumnye back to the front",
+        "template download: no new file seen (the app was left and recovered)",
+        "sample sheet for upload: C:\\Projects\\Alumnye QA\\source\\mobile\\alumnye\\data\\members_200.xlsx (200 members, qa.member001..200@yopmail.com)",
+        "self-heal for 'choose_file_button' used btnx:Upload for this run only (not saved: it also describes 'tab_upload')",
+        "the app was left for 'com.android.chrome' (looking for 'confirm_import'); the runner brought Alumnye back to the front"
+      ],
+      "last_taps": [
+        "add_member_entry -> ViewGroup at x53,y648 479x97",
+        "tab_upload -> ViewGroup at x270,y474 270x111",
+        "download_template -> ViewGroup at x97,y766 886x172",
+        "choose_file_button -> ViewGroup at x270,y474 270x111"
+      ],
+      "messages": [],
+      "discovered": [],
+      "timing": {
+        "find_elements": [
+          325,
+          41.6
+        ],
+        "adb": [
+          33,
+          7.1
+        ],
+        "page_source": [
+          22,
+          1.3
+        ]
+      },
+      "keys": {
+        "add_member_entry": [
+          "btn:Add Member"
+        ],
+        "anchor_home_marker": [
+          "btn:New Group",
+          "textc:You don't have any groups"
+        ],
+        "bulk_preview_marker": [
+          "textc:Preview",
+          "textc:Bulk"
+        ],
+        "choose_file_button": [
+          "btn:Choose File",
+          "btn:Select File",
+          "btn:Upload File",
+          "btn:Browse"
+        ],
+        "confirm_import": [
+          "btn:Confirm",
+          "btn:Import"
+        ],
+        "download_template": [
+          "btn:Download Template",
+          "btn:Template",
+          "btn:Download"
+        ],
+        "group_details_marker": [
+          "btn:Add Event",
+          "btn:Add Member"
+        ],
+        "nav_profile": [
+          "btnx:My Account",
+          "btn:My Account"
+        ],
+        "role_anchor": [
+          "btnx:ANCHOR"
+        ],
+        "tab_upload": [
+          "btnx:Upload"
+        ]
+      },
+      "evidence": "reports/results/alumnye/run-20261004-200934/GRP-012_FAILED.png"
+    },
+    {
+      "id": "GRP-013",
+      "title": "Bulk upload flags invalid rows with validation errors",
+      "type": "Negative",
+      "script": "source/mobile/alumnye/specs/groups/GRP_013_bulk_upload_invalid_rows.py",
+      "status": "FAILED",
+      "category": "assertion",
+      "message": "could not select 'members_invalid.csv' in the device file picker | invalid rows must be reported with a validation error",
+      "seconds": 67.1,
+      "ai_mode": "self-heal",
+      "ai_calls": 0,
+      "adaptations": [
+        {
+          "tier": "heal",
+          "key": "choose_file_button",
+          "strategy": "btnx:Upload",
+          "reason": "label 'Upload' ~ ['Choose File', 'Select File', 'Upload File', 'Browse'] (score 0.79)"
+        }
+      ],
+      "entry_path": [],
+      "notes": [
+        "self-heal for 'choose_file_button' used btnx:Upload for this run only (not saved: it also describes 'tab_upload')"
+      ],
+      "last_taps": [
+        "role_anchor -> ViewGroup at x857,y186 173x58",
+        "add_member_entry -> ViewGroup at x53,y648 479x97",
+        "tab_upload -> ViewGroup at x270,y474 270x111",
+        "choose_file_button -> ViewGroup at x270,y474 270x111"
+      ],
+      "messages": [],
+      "discovered": [],
+      "timing": {
+        "find_elements": [
+          141,
+          32.0
+        ],
+        "adb": [
+          12,
+          2.9
+        ],
+        "page_source": [
+          38,
+          1.8
+        ]
+      },
+      "keys": {
+        "add_member_entry": [
+          "btn:Add Member"
+        ],
+        "anchor_home_marker": [
+          "btn:New Group",
+          "textc:You don't have any groups"
+        ],
+        "choose_file_button": [
+          "btn:Choose File",
+          "btn:Select File",
+          "btn:Upload File",
+          "btn:Browse"
+        ],
+        "group_details_marker": [
+          "btn:Add Event",
+          "btn:Add Member"
+        ],
+        "nav_profile": [
+          "btnx:My Account",
+          "btn:My Account"
+        ],
+        "role_anchor": [
+          "btnx:ANCHOR"
+        ],
+        "tab_upload": [
+          "btnx:Upload"
+        ]
+      },
+      "evidence": "reports/results/alumnye/run-20261004-200934/GRP-013_FAILED.png"
+    },
+    {
+      "id": "GRP-014",
+      "title": "Member count opens the cohort members list showing the Anchor with their member code",
+      "type": "Positive",
+      "script": "source/mobile/alumnye/specs/groups/GRP_014_cohort_members_list.py",
+      "status": "FAILED",
+      "category": "likely-bug",
+      "message": "'landing_sign_in' (Landing screen: 'Sign in' (existing user)) is missing from the screen \u2014 likely functionality break. AI: The expected 'Sign in' button for a landing screen is absent; the visible screen shows a logged-in group management interface (QA Group, Invite, Upload, Add Members actions) rather than the expected landing/login screen with Sign in, Google, and Create account options.",
+      "seconds": 86.8,
+      "ai_mode": "none",
+      "ai_calls": 1,
+      "adaptations": [],
+      "entry_path": [],
+      "notes": [
+        "the app was left for 'com.android.chrome' (looking for 'landing_sign_in'); the runner brought Alumnye back to the front"
+      ],
+      "last_taps": [],
+      "messages": [],
+      "discovered": [],
+      "timing": {
+        "find_elements": [
+          293,
+          17.8
+        ],
+        "page_source": [
+          40,
+          1.3
+        ],
+        "adb": [
+          3,
+          0.7
+        ]
+      },
+      "keys": {
+        "complete_profile_marker": [
+          "text:Complete Your Profile",
+          "text:3 of 3"
+        ],
+        "home_marker": [
+          "textc:Welcome,",
+          "textc:Welcome to Alumnye",
+          "btnx:My Account",
+          "textc:My Group"
+        ],
+        "landing_sign_in": [
+          "btnx:Sign in"
+        ],
+        "nav_profile": [
+          "btnx:My Account",
+          "btn:My Account"
+        ]
+      },
+      "evidence": "reports/results/alumnye/run-20261004-200934/GRP-014_FAILED.png"
+    }
+  ]
+}

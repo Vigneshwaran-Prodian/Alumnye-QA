@@ -1,0 +1,381 @@
+{
+  "summary": {
+    "run_id": "run-20261004-195942",
+    "product": "alumnye",
+    "platform": "android",
+    "module": "groups",
+    "total": 7,
+    "passed": 5,
+    "passed_zero_ai": 5,
+    "passed_after_self_heal": 0,
+    "passed_after_qwen": 0,
+    "failed": 1,
+    "error": 1,
+    "blocked": 0,
+    "skipped": 0,
+    "ai_calls": 3,
+    "stopped_reason": "Stopped by user (Ctrl+C)."
+  },
+  "results": [
+    {
+      "id": "GRP-001",
+      "title": "Anchor creates a group and lands on its Group Details",
+      "type": "Positive",
+      "script": "source/mobile/alumnye/specs/groups/GRP_001_create_group.py",
+      "status": "PASSED",
+      "category": "",
+      "message": "",
+      "seconds": 54.8,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [
+        "dialog 'Success / Group created successfully!' -> OK"
+      ],
+      "notes": [],
+      "last_taps": [
+        "role_anchor -> ViewGroup at x857,y186 173x58",
+        "new_group_button -> ViewGroup at x696,y447 321x99",
+        "save_group_button -> ViewGroup at x63,y1446 954x116"
+      ],
+      "messages": [
+        {
+          "trigger": "a pop-up appeared",
+          "text": "Success / Group created successfully!",
+          "where": "dialog"
+        }
+      ],
+      "discovered": [
+        {
+          "where": "Anchor Home is shown",
+          "label": "\uf382, Home",
+          "device": "",
+          "scenario": "GRP-001",
+          "safe": false,
+          "result": ""
+        },
+        {
+          "where": "group form is shown",
+          "label": "Cancel",
+          "device": "",
+          "scenario": "GRP-001",
+          "safe": false,
+          "result": ""
+        },
+        {
+          "where": "group form is shown",
+          "label": "\uf383, Home",
+          "device": "",
+          "scenario": "GRP-001",
+          "safe": false,
+          "result": ""
+        },
+        {
+          "where": "Group Details opens after saving",
+          "label": "\uf382, Home",
+          "device": "",
+          "scenario": "GRP-001",
+          "safe": false,
+          "result": ""
+        }
+      ],
+      "timing": {
+        "find_elements": [
+          109,
+          28.9
+        ],
+        "adb": [
+          12,
+          4.9
+        ],
+        "page_source": [
+          7,
+          2.8
+        ]
+      },
+      "evidence": "reports/results/alumnye/run-20261004-195942/GRP-001_PASSED.png"
+    },
+    {
+      "id": "GRP-002",
+      "title": "Anchor Home offers + New Group and shows the right state (welcome message or the group list)",
+      "type": "Positive",
+      "script": "source/mobile/alumnye/specs/groups/GRP_002_anchor_home_state.py",
+      "status": "PASSED",
+      "category": "",
+      "message": "",
+      "seconds": 9.5,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [],
+      "notes": [
+        "user already has groups: group list shown (the empty state applies only to a user with no groups)"
+      ],
+      "last_taps": [
+        "role_anchor -> ViewGroup at x857,y186 173x58"
+      ],
+      "messages": [],
+      "discovered": [],
+      "timing": {
+        "find_elements": [
+          12,
+          4.8
+        ],
+        "adb": [
+          1,
+          0.2
+        ],
+        "page_source": [
+          2,
+          1.2
+        ]
+      },
+      "evidence": "reports/results/alumnye/run-20261004-195942/GRP-002_PASSED.png"
+    },
+    {
+      "id": "GRP-003",
+      "title": "Group Details shows the group, Add Member / Add Event, the Members count tab, Events tab and Notice Board",
+      "type": "Positive",
+      "script": "source/mobile/alumnye/specs/groups/GRP_003_group_details_content.py",
+      "status": "PASSED",
+      "category": "",
+      "message": "",
+      "seconds": 11.9,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [],
+      "notes": [
+        "Members tab: 'Members, 1' (count 1); the docs' 'About' section does not exist in v1.4.0"
+      ],
+      "last_taps": [
+        "role_anchor -> ViewGroup at x857,y186 173x58"
+      ],
+      "messages": [],
+      "discovered": [
+        {
+          "where": "Group Details is shown",
+          "label": "\uf382, Home",
+          "device": "",
+          "scenario": "GRP-003",
+          "safe": false,
+          "result": ""
+        }
+      ],
+      "timing": {
+        "find_elements": [
+          14,
+          6.0
+        ],
+        "adb": [
+          1,
+          0.1
+        ],
+        "page_source": [
+          7,
+          3.3
+        ]
+      },
+      "evidence": "reports/results/alumnye/run-20261004-195942/GRP-003_PASSED.png"
+    },
+    {
+      "id": "GRP-004",
+      "title": "Add Members shows the four invitation tabs and the Invite form (email OR mobile, Send Invitation)",
+      "type": "Positive",
+      "script": "source/mobile/alumnye/specs/groups/GRP_004_add_members_options.py",
+      "status": "PASSED",
+      "category": "",
+      "message": "",
+      "seconds": 17.8,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [],
+      "notes": [
+        "tabs seen: Invite | Upload | Add Members | 'Add Contact' (singular; the release note says 'Add Contacts')"
+      ],
+      "last_taps": [
+        "role_anchor -> ViewGroup at x857,y186 173x58",
+        "add_member_entry -> ViewGroup at x53,y648 479x97",
+        "tab_invite -> ViewGroup at x0,y474 270x111"
+      ],
+      "messages": [],
+      "discovered": [
+        {
+          "where": "Add Members screen",
+          "label": "\uf382, Home",
+          "device": "",
+          "scenario": "GRP-004",
+          "safe": false,
+          "result": ""
+        }
+      ],
+      "timing": {
+        "find_elements": [
+          18,
+          9.8
+        ],
+        "adb": [
+          3,
+          0.4
+        ],
+        "page_source": [
+          5,
+          1.2
+        ]
+      },
+      "evidence": "reports/results/alumnye/run-20261004-195942/GRP-004_PASSED.png"
+    },
+    {
+      "id": "GRP-005",
+      "title": "Anchor invites a member by email and gets a success confirmation",
+      "type": "Positive",
+      "script": "source/mobile/alumnye/specs/groups/GRP_005_invite_member_by_email.py",
+      "status": "FAILED",
+      "category": "likely-bug",
+      "message": "'invite_email_field' (Invite: email entry) is missing from the screen \u2014 likely functionality break. AI: No email input field is visible on the screen; all listed elements are ViewGroups, TextViews, or Buttons with no input field matching 'invite_email_field'.",
+      "seconds": 120.3,
+      "ai_mode": "qwen",
+      "ai_calls": 3,
+      "adaptations": [
+        {
+          "tier": "qwen",
+          "key": "something (a dialog, pop-up or overlay) may be covering the screen; clear it so that 'Invite: email entry' becomes reachable",
+          "strategy": "back",
+          "reason": "Close potential modal dialog covering the Invite email entry field."
+        },
+        {
+          "tier": "qwen",
+          "key": "something (a dialog, pop-up or overlay) may be covering the screen; clear it so that 'Invite: email entry' becomes reachable",
+          "strategy": "tap 25",
+          "reason": "Switch from MEMBER to ANCHOR tab; invite likely accessible there."
+        }
+      ],
+      "entry_path": [],
+      "notes": [],
+      "last_taps": [
+        "role_anchor -> ViewGroup at x857,y186 173x58",
+        "add_member_entry -> ViewGroup at x540,y800 540x130"
+      ],
+      "messages": [],
+      "discovered": [],
+      "timing": {
+        "find_elements": [
+          46,
+          17.5
+        ],
+        "adb": [
+          5,
+          0.8
+        ],
+        "page_source": [
+          7,
+          2.4
+        ]
+      },
+      "evidence": "reports/results/alumnye/run-20261004-195942/GRP-005_FAILED.png"
+    },
+    {
+      "id": "GRP-006",
+      "title": "Invite rejects an invalid email format with 'Please enter a valid email format'",
+      "type": "Negative",
+      "script": "source/mobile/alumnye/specs/groups/GRP_006_invite_invalid_email.py",
+      "status": "PASSED",
+      "category": "",
+      "message": "",
+      "seconds": 70.4,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [],
+      "notes": [],
+      "last_taps": [
+        "tab_invite -> ViewGroup at x0,y474 270x111",
+        "send_invite_button -> ViewGroup at x97,y1483 886x115",
+        "tab_invite -> ViewGroup at x0,y474 270x111",
+        "send_invite_button -> ViewGroup at x97,y1483 886x115"
+      ],
+      "messages": [
+        {
+          "trigger": "sent invitation to 'abc@'",
+          "text": "Please enter a valid email format",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "sent invitation to 'plainaddress'",
+          "text": "Please enter a valid email format",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "sent invitation to 'no spaces@yopmail.com'",
+          "text": "Please enter a valid email format",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "sent invitation to 'a@b'",
+          "text": "Please enter a valid email format",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "sent invitation to '@yopmail.com'",
+          "text": "Please enter a valid email format",
+          "where": "on-screen"
+        }
+      ],
+      "discovered": [],
+      "timing": {
+        "find_elements": [
+          28,
+          12.5
+        ],
+        "adb": [
+          32,
+          8.2
+        ],
+        "page_source": [
+          29,
+          14.7
+        ]
+      },
+      "evidence": "reports/results/alumnye/run-20261004-195942/GRP-006_PASSED.png"
+    },
+    {
+      "id": "GRP-007",
+      "title": "Anchor cannot invite their own email address",
+      "type": "Negative",
+      "script": "source/mobile/alumnye/specs/groups/GRP_007_invite_self_blocked.py",
+      "status": "ERROR",
+      "category": "driver",
+      "message": "Message: Cached elements 'By.xpath: //*[contains(translate(normalize-space(@text),'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),'qa group 1004195958') or contains(translate(normalize-space(@content-desc),'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),'qa group 1004195958')]' do not exist in DOM anymore; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#staleelementreferenceexception",
+      "seconds": 10.7,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [],
+      "notes": [
+        "signed-in user: vivek.reddy.1004001541@yopmail.com"
+      ],
+      "last_taps": [
+        "nav_profile -> Button at x720,y2189 360x149",
+        "role_anchor -> ViewGroup at x857,y186 173x58"
+      ],
+      "messages": [],
+      "discovered": [],
+      "timing": {
+        "find_elements": [
+          11,
+          4.9
+        ],
+        "adb": [
+          2,
+          0.4
+        ],
+        "page_source": [
+          2,
+          0.7
+        ]
+      },
+      "evidence": "reports/results/alumnye/run-20261004-195942/GRP-007_ERROR.png"
+    }
+  ]
+}

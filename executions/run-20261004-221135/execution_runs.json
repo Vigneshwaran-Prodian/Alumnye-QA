@@ -1,0 +1,339 @@
+{
+  "summary": {
+    "run_id": "run-20261004-221135",
+    "product": "alumnye",
+    "platform": "android",
+    "module": "groups",
+    "total": 2,
+    "passed": 0,
+    "passed_zero_ai": 0,
+    "passed_after_self_heal": 0,
+    "passed_after_qwen": 0,
+    "failed": 2,
+    "error": 0,
+    "blocked": 0,
+    "skipped": 0,
+    "ai_calls": 0,
+    "stopped_reason": null
+  },
+  "results": [
+    {
+      "id": "GRP-012",
+      "title": "Bulk upload: valid .xlsx and .csv files (new data each run, picked from local storage) reach the preview, are confirmed and imported",
+      "type": "Positive",
+      "script": "source/mobile/alumnye/specs/groups/GRP_012_bulk_upload_valid_file.py",
+      "status": "FAILED",
+      "category": "assertion",
+      "message": "'Member Template Download' must save a template file to the device Downloads folder | valid_200_members_1004221225.xlsx: the app must confirm the import (shown: nothing)",
+      "seconds": 113.3,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [],
+      "notes": [
+        "the app was left for 'com.android.chrome' (after 'Member Template Download'); the runner brought Alumnye back to the front",
+        "template download: no fresh file (the app was left for the browser and recovered)",
+        "valid_200_members_1004221225.xlsx (template format (.xlsx), 200 valid members): preview=True errors=none",
+        "valid_5_members_1004221225.csv (.csv format, 5 valid members): preview=True errors=none",
+        "valid_email_or_phone_only_1004221225.csv (one row with only an e-mail and one with only a phone (either is enough)): preview=True errors=none"
+      ],
+      "last_taps": [
+        "choose_file_button -> ViewGroup at x97,y1117 886x420",
+        "confirm_import -> ViewGroup at x475,y1733 491x126",
+        "choose_file_button -> ViewGroup at x97,y1117 886x420",
+        "confirm_import -> ViewGroup at x475,y1475 491x126"
+      ],
+      "messages": [
+        {
+          "trigger": "confirmed the import of valid_5_members_1004221225.csv",
+          "text": "0 members uploaded successfully!, 5 members already in the group.",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "confirmed the import of valid_5_members_1004221225.csv",
+          "text": "0 members uploaded successfully!",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "confirmed the import of valid_email_or_phone_only_1004221225.csv",
+          "text": "2 members uploaded successfully!",
+          "where": "on-screen"
+        }
+      ],
+      "discovered": [
+        {
+          "where": "Anchor Home is shown",
+          "label": "\uf382, Home",
+          "device": "",
+          "scenario": "GRP-012",
+          "safe": false,
+          "result": ""
+        },
+        {
+          "where": "Group Details is shown",
+          "label": "\uf382, Home",
+          "device": "",
+          "scenario": "GRP-012",
+          "safe": false,
+          "result": ""
+        }
+      ],
+      "timing": {
+        "find_elements": [
+          125,
+          46.4
+        ],
+        "adb": [
+          53,
+          7.0
+        ],
+        "page_source": [
+          19,
+          8.9
+        ]
+      },
+      "keys": {
+        "add_member_entry": [
+          "btn:Add Member"
+        ],
+        "anchor_home_marker": [
+          "btn:New Group",
+          "textc:You don't have any groups"
+        ],
+        "choose_file_button": [
+          "btn:.xlsx, .csv",
+          "btn:.csv",
+          "btn:Choose File",
+          "btn:Select File"
+        ],
+        "confirm_import": [
+          "btn:Confirm Import",
+          "btn:Import"
+        ],
+        "download_template": [
+          "btn:Member Template Download",
+          "btn:Template Download",
+          "btn:Download Template"
+        ],
+        "group_details_marker": [
+          "btn:Add Event",
+          "btn:Add Member"
+        ],
+        "home_marker": [
+          "textc:Welcome,",
+          "textc:Welcome to Alumnye",
+          "btnx:My Account",
+          "textc:My Group"
+        ],
+        "home_welcome": [
+          "textc:Welcome,",
+          "textc:Welcome to Alumnye"
+        ],
+        "nav_profile": [
+          "btnx:My Account",
+          "btn:My Account"
+        ],
+        "role_anchor": [
+          "btnx:ANCHOR"
+        ],
+        "tab_upload": [
+          "btnx:Upload"
+        ],
+        "upload_cancel": [
+          "btnx:Cancel"
+        ]
+      },
+      "evidence": "reports/results/alumnye/run-20261004-221135/GRP-012_FAILED.png"
+    },
+    {
+      "id": "GRP-013",
+      "title": "Bulk upload flags invalid files and rows (new data each run): bad e-mail, missing data, duplicates, wrong columns, empty, wrong format",
+      "type": "Negative",
+      "script": "source/mobile/alumnye/specs/groups/GRP_013_bulk_upload_invalid_rows.py",
+      "status": "FAILED",
+      "category": "assertion",
+      "message": "missing_first_name_1004221352.csv (a row without a first name) must be flagged with a validation message in the preview or at the top of the app (shown: (nothing flagged)) | duplicate_emails_1004221352.csv (the same e-mail twice in one file) must be flagged with a validation message in the preview or at the top of the app (shown: (nothing flagged))",
+      "seconds": 128.5,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [],
+      "notes": [
+        "invalid_email_format_1004221352.xlsx (rows with malformed e-mail addresses): preview=True confirmed=True flagged: Validation Errors (2): / Invalid email format \"not-an-email\" / Invalid email format \"abc@\"",
+        "missing_first_name_1004221352.csv (a row without a first name): preview=True confirmed=True flagged: (nothing flagged)",
+        "missing_email_and_phone_1004221352.csv (a row with neither e-mail nor phone (the app requires at least one)): preview=True confirmed=True flagged: Validation Errors (1): / At least one of Email or Phone is required",
+        "bad_phone_number_1004221352.csv (a row with a malformed phone number): preview=True confirmed=True flagged: Validation Errors (1): / Invalid phone number \"12ab\"",
+        "duplicate_emails_1004221352.csv (the same e-mail twice in one file): preview=True confirmed=True flagged: (nothing flagged)",
+        "wrong_columns_1004221352.csv (columns that do not match the template): preview=True confirmed=False flagged: Validation Errors (1): / At least one of Email or Phone is required",
+        "headers_only_empty_1004221352.csv (a file with headers and no members): preview=False confirmed=False flagged: No records found in spreadsheet.",
+        "the app was left for 'com.google.android.documentsui' (closing the file picker); the runner brought Alumnye back to the front",
+        "'unsupported_format_1004221352.txt' could not be chosen in the file picker (the picker does not offer it)",
+        "unsupported_format_1004221352.txt (a .txt file (only .xlsx / .csv are allowed)): the picker does not accept it - rejected at the picker (correct)"
+      ],
+      "last_taps": [
+        "choose_file_button -> ViewGroup at x97,y1117 886x420",
+        "upload_cancel -> ViewGroup at x116,y1356 327x126",
+        "choose_file_button -> ViewGroup at x97,y1117 886x420",
+        "choose_file_button -> ViewGroup at x97,y1117 886x420"
+      ],
+      "messages": [
+        {
+          "trigger": "uploaded invalid_email_format_1004221352.xlsx",
+          "text": "Validation Errors (2):",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "uploaded invalid_email_format_1004221352.xlsx",
+          "text": "Invalid email format \"not-an-email\"",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "uploaded invalid_email_format_1004221352.xlsx",
+          "text": "Invalid email format \"abc@\"",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "confirmed the import of invalid_email_format_1004221352.xlsx",
+          "text": "Validation Errors (2):",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "confirmed the import of invalid_email_format_1004221352.xlsx",
+          "text": "2 members uploaded successfully!",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "confirmed the import of missing_first_name_1004221352.csv",
+          "text": "1 member uploaded successfully!, 2 members already in the group.",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "confirmed the import of missing_first_name_1004221352.csv",
+          "text": "1 member uploaded successfully!",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "uploaded missing_email_and_phone_1004221352.csv",
+          "text": "Validation Errors (1):",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "uploaded missing_email_and_phone_1004221352.csv",
+          "text": "At least one of Email or Phone is required",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "confirmed the import of missing_email_and_phone_1004221352.csv",
+          "text": "0 members uploaded successfully!, 2 members already in the group.",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "confirmed the import of missing_email_and_phone_1004221352.csv",
+          "text": "0 members uploaded successfully!",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "uploaded bad_phone_number_1004221352.csv",
+          "text": "Validation Errors (1):",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "uploaded bad_phone_number_1004221352.csv",
+          "text": "Invalid phone number \"12ab\"",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "confirmed the import of bad_phone_number_1004221352.csv",
+          "text": "0 members uploaded successfully!, 2 members already in the group.",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "confirmed the import of bad_phone_number_1004221352.csv",
+          "text": "0 members uploaded successfully!",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "confirmed the import of duplicate_emails_1004221352.csv",
+          "text": "1 member uploaded successfully!, 3 members already in the group.",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "confirmed the import of duplicate_emails_1004221352.csv",
+          "text": "1 member uploaded successfully!",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "uploaded wrong_columns_1004221352.csv",
+          "text": "Validation Errors (1):",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "uploaded wrong_columns_1004221352.csv",
+          "text": "At least one of Email or Phone is required",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "uploaded headers_only_empty_1004221352.csv",
+          "text": "No records found in spreadsheet.",
+          "where": "on-screen"
+        }
+      ],
+      "discovered": [],
+      "timing": {
+        "find_elements": [
+          200,
+          52.2
+        ],
+        "adb": [
+          66,
+          9.9
+        ],
+        "page_source": [
+          39,
+          13.7
+        ]
+      },
+      "keys": {
+        "add_member_entry": [
+          "btn:Add Member"
+        ],
+        "anchor_home_marker": [
+          "btn:New Group",
+          "textc:You don't have any groups"
+        ],
+        "choose_file_button": [
+          "btn:.xlsx, .csv",
+          "btn:.csv",
+          "btn:Choose File",
+          "btn:Select File"
+        ],
+        "confirm_import": [
+          "btn:Confirm Import",
+          "btn:Import"
+        ],
+        "group_details_marker": [
+          "btn:Add Event",
+          "btn:Add Member"
+        ],
+        "home_welcome": [
+          "textc:Welcome,",
+          "textc:Welcome to Alumnye"
+        ],
+        "nav_profile": [
+          "btnx:My Account",
+          "btn:My Account"
+        ],
+        "role_anchor": [
+          "btnx:ANCHOR"
+        ],
+        "tab_upload": [
+          "btnx:Upload"
+        ],
+        "upload_cancel": [
+          "btnx:Cancel"
+        ]
+      },
+      "evidence": "reports/results/alumnye/run-20261004-221135/GRP-013_FAILED.png"
+    }
+  ]
+}

@@ -1,0 +1,686 @@
+{
+  "summary": {
+    "run_id": "run-20261003-232257",
+    "product": "alumnye",
+    "platform": "android",
+    "module": "auth",
+    "total": 16,
+    "passed": 10,
+    "passed_zero_ai": 10,
+    "passed_after_self_heal": 0,
+    "passed_after_qwen": 0,
+    "failed": 3,
+    "error": 2,
+    "blocked": 0,
+    "skipped": 1,
+    "ai_calls": 3,
+    "stopped_reason": null
+  },
+  "results": [
+    {
+      "id": "AUTH-001",
+      "title": "Fresh launch routes from Splash to the landing screen (Sign in / Google / Create account)",
+      "type": "Positive",
+      "script": "source/mobile/alumnye/specs/auth/AUTH_001_splash_routes_to_sign_in.py",
+      "status": "PASSED",
+      "category": "",
+      "message": "",
+      "seconds": 15.4,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [
+        "Skip"
+      ],
+      "notes": [],
+      "last_taps": [],
+      "messages": [],
+      "evidence": "reports/results/alumnye/run-20261003-232257/AUTH-001_PASSED.png"
+    },
+    {
+      "id": "AUTH-002",
+      "title": "Landing layout: Sign in above Google, divider reads 'or' (v1.3.2)",
+      "type": "Positive",
+      "script": "source/mobile/alumnye/specs/auth/AUTH_002_sign_in_screen_layout_v132.py",
+      "status": "PASSED",
+      "category": "",
+      "message": "",
+      "seconds": 19.3,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [
+        "Skip"
+      ],
+      "notes": [],
+      "last_taps": [],
+      "messages": [],
+      "evidence": "reports/results/alumnye/run-20261003-232257/AUTH-002_PASSED.png"
+    },
+    {
+      "id": "AUTH-003",
+      "title": "New user registers with mobile number + SMS OTP",
+      "type": "Positive",
+      "script": "source/mobile/alumnye/specs/auth/AUTH_003_register_with_mobile_otp.py",
+      "status": "SKIPPED",
+      "category": "out-of-scope",
+      "message": "Mobile-number scenarios are out of scope for now (owner decision 2026-10-03); email scenarios only",
+      "seconds": 0.3,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [],
+      "notes": [],
+      "last_taps": [],
+      "messages": [],
+      "evidence": "reports/results/alumnye/run-20261003-232257/AUTH-003_SKIPPED.png"
+    },
+    {
+      "id": "AUTH-004",
+      "title": "New user registers with yopmail email + OTP",
+      "type": "Positive",
+      "script": "source/mobile/alumnye/specs/auth/AUTH_004_register_with_email_otp.py",
+      "status": "PASSED",
+      "category": "",
+      "message": "",
+      "seconds": 51.2,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [
+        "Skip",
+        "Create account",
+        "Email tab",
+        "Terms checkbox: ticked"
+      ],
+      "notes": [
+        "Profile form filled automatically: screen 1: Enter your first name = Vivek; screen 1: Enter your last name = Reddy; screen 1: Enter your mobile number = 9330917835; screen 1: tapped 'Continue'"
+      ],
+      "last_taps": [
+        "primary_button -> ViewGroup at x53,y771 975x127",
+        "terms_checkbox -> ViewGroup at x105,y907 53x54",
+        "verify_button -> ViewGroup at x53,y1266 975x139",
+        "'Continue' -> ViewGroup at x53,y1660"
+      ],
+      "messages": [
+        {
+          "trigger": "profile screen 1: tapped 'Continue'",
+          "text": "MEMBER",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "profile screen 1: tapped 'Continue'",
+          "text": "ANCHOR",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "profile screen 1: tapped 'Continue'",
+          "text": "Welcome, Vivek",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "profile screen 1: tapped 'Continue'",
+          "text": "Welcome to Alumnye!",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "profile screen 1: tapped 'Continue'",
+          "text": "You don't have any events yet. When you're invited to a group, events will appear here so you can stay connected with your community.",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "profile screen 1: tapped 'Continue'",
+          "text": "\uf382, Home",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "profile screen 1: tapped 'Continue'",
+          "text": "Home",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "profile screen 1: tapped 'Continue'",
+          "text": "\uf356, My Group",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "profile screen 1: tapped 'Continue'",
+          "text": "My Group",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "profile screen 1: tapped 'Continue'",
+          "text": "\uf4ac, My Account",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "profile screen 1: tapped 'Continue'",
+          "text": "My Account",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "profile screen 1: tapped 'Continue'",
+          "text": "SET DEFAULT PREFERENCES, Just now, Complete Your Profile Defaults, Fill your default food, room and travel choices to auto-fill event RSVPs.",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "profile screen 1: tapped 'Continue'",
+          "text": "SET DEFAULT PREFERENCES",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "profile screen 1: tapped 'Continue'",
+          "text": "Just now",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "profile screen 1: tapped 'Continue'",
+          "text": "Complete Your Profile Defaults",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "profile screen 1: tapped 'Continue'",
+          "text": "Fill your default food, room and travel choices to auto-fill event RSVPs.",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "profile screen 1: tapped 'Continue'",
+          "text": "Set Preferences \u2192",
+          "where": "on-screen"
+        }
+      ],
+      "evidence": "reports/results/alumnye/run-20261003-232257/AUTH-004_PASSED.png"
+    },
+    {
+      "id": "AUTH-005",
+      "title": "Sign in with Google using the account already on the device",
+      "type": "Positive",
+      "script": "source/mobile/alumnye/specs/auth/AUTH_005_google_sign_in.py",
+      "status": "FAILED",
+      "category": "product-defect",
+      "message": "Google sign-in is blocked by Google: 'Access blocked: Authorization Error'. Page text: Web View; Close tab; Minimize tab; Connection is secure; accounts.google.com; Share. The OAuth client is misconfigured (wrong client type / redirect URI) - product/config defect, not a script issue.",
+      "seconds": 20.4,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [
+        "Skip",
+        "Sign in with Google"
+      ],
+      "notes": [],
+      "last_taps": [
+        "google_button -> ViewGroup at x53,y1867 975x119"
+      ],
+      "messages": [
+        {
+          "trigger": "tapped Sign in with Google and chose the device account",
+          "text": "Web View",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "tapped Sign in with Google and chose the device account",
+          "text": "Close tab",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "tapped Sign in with Google and chose the device account",
+          "text": "Minimize tab",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "tapped Sign in with Google and chose the device account",
+          "text": "Connection is secure",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "tapped Sign in with Google and chose the device account",
+          "text": "accounts.google.com",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "tapped Sign in with Google and chose the device account",
+          "text": "Share",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "tapped Sign in with Google and chose the device account",
+          "text": "Customize and control Google Chrome",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "tapped Sign in with Google and chose the device account",
+          "text": "Access blocked: Authorization Error",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "tapped Sign in with Google and chose the device account",
+          "text": "vignesh94.prodian@gmail.com",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "tapped Sign in with Google and chose the device account",
+          "text": "Custom scheme URIs are not allowed for 'WEB' client type.",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "tapped Sign in with Google and chose the device account",
+          "text": "If you are a developer of alumnye, see",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "tapped Sign in with Google and chose the device account",
+          "text": "error details",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "tapped Sign in with Google and chose the device account",
+          "text": "Error 400: invalid_request",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "tapped Sign in with Google and chose the device account",
+          "text": "Open Google Account Help Center (external, opens in a new window)",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "tapped Sign in with Google and chose the device account",
+          "text": "Privacy Policy (external, opens in a new window)",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "tapped Sign in with Google and chose the device account",
+          "text": "Google Terms of Service (external, opens in a new window)",
+          "where": "on-screen"
+        }
+      ],
+      "evidence": "reports/results/alumnye/run-20261003-232257/AUTH-005_FAILED.png"
+    },
+    {
+      "id": "AUTH-006",
+      "title": "Returning user signs in with OTP and skips Complete Profile",
+      "type": "Positive",
+      "script": "source/mobile/alumnye/specs/auth/AUTH_006_returning_user_sign_in.py",
+      "status": "FAILED",
+      "category": "assertion",
+      "message": "Expected 'complete_profile_marker' to be absent: returning user must not see Complete Profile again",
+      "seconds": 41.8,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [
+        "Skip",
+        "Sign in",
+        "Email tab",
+        "Terms checkbox: ticked"
+      ],
+      "notes": [],
+      "last_taps": [
+        "email_tab -> ViewGroup at x64,y318 477x100",
+        "primary_button -> ViewGroup at x53,y771 975x127",
+        "terms_checkbox -> ViewGroup at x105,y896 53x54",
+        "verify_button -> ViewGroup at x53,y1255 975x139"
+      ],
+      "messages": [],
+      "evidence": "reports/results/alumnye/run-20261003-232257/AUTH-006_FAILED.png"
+    },
+    {
+      "id": "AUTH-007",
+      "title": "Logged-in session survives an app restart (Splash -> Home)",
+      "type": "Positive",
+      "script": "source/mobile/alumnye/specs/auth/AUTH_007_session_persists_after_restart.py",
+      "status": "PASSED",
+      "category": "",
+      "message": "",
+      "seconds": 10.5,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [],
+      "notes": [],
+      "last_taps": [],
+      "messages": [],
+      "evidence": "reports/results/alumnye/run-20261003-232257/AUTH-007_PASSED.png"
+    },
+    {
+      "id": "AUTH-008",
+      "title": "Sign out returns to Sign In and ends the session",
+      "type": "Positive",
+      "script": "source/mobile/alumnye/specs/auth/AUTH_008_sign_out_returns_to_sign_in.py",
+      "status": "FAILED",
+      "category": "assertion",
+      "message": "Expected 'home_marker' to be absent: no Home after sign-out + restart",
+      "seconds": 181.6,
+      "ai_mode": "qwen",
+      "ai_calls": 3,
+      "adaptations": [
+        {
+          "tier": "qwen",
+          "key": "sign_out",
+          "strategy": "btnx:\uf4a5, My Account",
+          "reason": "The 'My Account' button with index 67 matches the expected 'Sign Out' intent as it's the only button with a clear label and context for profile screen."
+        },
+        {
+          "tier": "qwen",
+          "key": "landing_sign_in",
+          "strategy": "btnx:Sign Out",
+          "reason": "The 'Sign Out' button is present at index 12 with label 'Sign Out' and tap capability."
+        },
+        {
+          "tier": "qwen",
+          "key": "landing_sign_in",
+          "strategy": "btnx:\uf382, Home",
+          "reason": "The 'Sign in' button is represented by the 'Home' button with label '\uf382' at index 49, which is the closest match for the landing screen sign-in action."
+        }
+      ],
+      "entry_path": [],
+      "notes": [],
+      "last_taps": [
+        "nav_profile -> ViewGroup at x111,y541 849x273",
+        "sign_out -> Button at x720,y2189 360x149",
+        "confirm_sign_out -> ViewGroup at x830,y175 208x79"
+      ],
+      "messages": [],
+      "evidence": "reports/results/alumnye/run-20261003-232257/AUTH-008_FAILED.png"
+    },
+    {
+      "id": "AUTH-009",
+      "title": "Complete Profile shows live member-code preview (<FirstInitial><LastInitial><n>)",
+      "type": "Positive",
+      "script": "source/mobile/alumnye/specs/auth/AUTH_009_member_code_live_preview.py",
+      "status": "ERROR",
+      "category": "driver",
+      "message": "Message: A session is either terminated or not started; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception",
+      "seconds": 1140.8,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [
+        "Skip",
+        "Create account",
+        "Email tab"
+      ],
+      "notes": [],
+      "last_taps": [
+        "landing_create_account -> ViewGroup at x53,y2113 975x114",
+        "email_tab -> ViewGroup at x64,y318 477x100",
+        "primary_button -> ViewGroup at x53,y771 975x127"
+      ],
+      "messages": [],
+      "evidence": "reports/results/alumnye/run-20261003-232257/AUTH-009_ERROR.png"
+    },
+    {
+      "id": "AUTH-010",
+      "title": "Invalid email / mobile format is rejected on Sign In",
+      "type": "Negative",
+      "script": "source/mobile/alumnye/specs/auth/AUTH_010_invalid_identifier_rejected.py",
+      "status": "PASSED",
+      "category": "",
+      "message": "",
+      "seconds": 35.2,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [
+        "Skip",
+        "Sign in",
+        "Email tab"
+      ],
+      "notes": [],
+      "last_taps": [
+        "landing_sign_in -> ViewGroup at x53,y1732 975x114",
+        "email_tab -> ViewGroup at x64,y318 477x100"
+      ],
+      "messages": [
+        {
+          "trigger": "entered invalid identifier 'abc@'",
+          "text": "(Continue button stays disabled)",
+          "where": "state"
+        },
+        {
+          "trigger": "entered invalid identifier '12345'",
+          "text": "(Continue button stays disabled)",
+          "where": "state"
+        },
+        {
+          "trigger": "entered invalid identifier 'no spaces@yopmail.com'",
+          "text": "(Continue button stays disabled)",
+          "where": "state"
+        }
+      ],
+      "evidence": "reports/results/alumnye/run-20261003-232257/AUTH-010_PASSED.png"
+    },
+    {
+      "id": "AUTH-011",
+      "title": "Incorrect OTP shows an error and does not sign in",
+      "type": "Negative",
+      "script": "source/mobile/alumnye/specs/auth/AUTH_011_wrong_otp_rejected.py",
+      "status": "PASSED",
+      "category": "",
+      "message": "",
+      "seconds": 40.0,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [
+        "Skip",
+        "Create account",
+        "Email tab",
+        "Terms checkbox: ticked"
+      ],
+      "notes": [],
+      "last_taps": [
+        "email_tab -> ViewGroup at x64,y318 477x100",
+        "primary_button -> ViewGroup at x53,y771 975x127",
+        "terms_checkbox -> ViewGroup at x105,y907 53x54",
+        "verify_button -> ViewGroup at x53,y1266 975x139"
+      ],
+      "messages": [
+        {
+          "trigger": "entered wrong OTP 000000 and tapped Verify",
+          "text": "Invalid OTP",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "entered wrong OTP 000000 and tapped Verify",
+          "text": "Resend code (1:50)",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "entered wrong OTP 000000 and tapped Verify",
+          "text": "Resend code (1:49)",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "entered wrong OTP 000000 and tapped Verify",
+          "text": "Resend code (1:48)",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "entered wrong OTP 000000 and tapped Verify",
+          "text": "Resend code (1:47)",
+          "where": "on-screen"
+        }
+      ],
+      "evidence": "reports/results/alumnye/run-20261003-232257/AUTH-011_PASSED.png"
+    },
+    {
+      "id": "AUTH-012",
+      "title": "Verify is blocked until Terms & Conditions are accepted",
+      "type": "Negative",
+      "script": "source/mobile/alumnye/specs/auth/AUTH_012_terms_not_accepted_blocks_verify.py",
+      "status": "PASSED",
+      "category": "",
+      "message": "",
+      "seconds": 51.2,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [
+        "Skip",
+        "Create account",
+        "Email tab"
+      ],
+      "notes": [],
+      "last_taps": [
+        "landing_create_account -> ViewGroup at x53,y2113 975x114",
+        "email_tab -> ViewGroup at x64,y318 477x100",
+        "primary_button -> ViewGroup at x53,y771 975x127"
+      ],
+      "messages": [
+        {
+          "trigger": "entered a valid OTP but did not tick the Terms checkbox",
+          "text": "(Verify & join Alumnye stays disabled)",
+          "where": "state"
+        }
+      ],
+      "evidence": "reports/results/alumnye/run-20261003-232257/AUTH-012_PASSED.png"
+    },
+    {
+      "id": "AUTH-013",
+      "title": "Complete Profile blocks empty / spaces-only names",
+      "type": "Negative",
+      "script": "source/mobile/alumnye/specs/auth/AUTH_013_blank_name_blocked.py",
+      "status": "ERROR",
+      "category": "driver",
+      "message": "Message: Cannot set the element to '   '. Did you interact with the correct element?",
+      "seconds": 65.3,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [
+        "Skip",
+        "Create account",
+        "Email tab",
+        "Terms checkbox: ticked"
+      ],
+      "notes": [],
+      "last_taps": [
+        "email_tab -> ViewGroup at x64,y318 477x100",
+        "primary_button -> ViewGroup at x53,y771 975x127",
+        "terms_checkbox -> ViewGroup at x105,y907 53x54",
+        "verify_button -> ViewGroup at x53,y1266 975x139"
+      ],
+      "messages": [
+        {
+          "trigger": "empty first/last name",
+          "text": "(Continue button stays disabled)",
+          "where": "state"
+        }
+      ],
+      "evidence": "reports/results/alumnye/run-20261003-232257/AUTH-013_ERROR.png"
+    },
+    {
+      "id": "AUTH-014",
+      "title": "'Wrong email? Go back' returns to the identifier step without creating an account",
+      "type": "Edge",
+      "script": "source/mobile/alumnye/specs/auth/AUTH_014_wrong_number_go_back.py",
+      "status": "PASSED",
+      "category": "",
+      "message": "",
+      "seconds": 30.5,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [
+        "Skip",
+        "Create account",
+        "Email tab"
+      ],
+      "notes": [],
+      "last_taps": [
+        "landing_create_account -> ViewGroup at x53,y2113 975x114",
+        "email_tab -> ViewGroup at x64,y318 477x100",
+        "primary_button -> ViewGroup at x53,y771 975x127",
+        "wrong_number_link -> ViewGroup at x343,y1669 394x49"
+      ],
+      "messages": [],
+      "evidence": "reports/results/alumnye/run-20261003-232257/AUTH-014_PASSED.png"
+    },
+    {
+      "id": "AUTH-015",
+      "title": "Resend is disabled during the countdown and works after it ends",
+      "type": "Edge",
+      "script": "source/mobile/alumnye/specs/auth/AUTH_015_otp_resend_after_expiry.py",
+      "status": "PASSED",
+      "category": "",
+      "message": "",
+      "seconds": 146.4,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [
+        "Skip",
+        "Create account",
+        "Email tab"
+      ],
+      "notes": [],
+      "last_taps": [
+        "landing_create_account -> ViewGroup at x53,y2113 975x114",
+        "email_tab -> ViewGroup at x64,y318 477x100",
+        "primary_button -> ViewGroup at x53,y771 975x127",
+        "resend_link -> ViewGroup at x53,y1447 975x138"
+      ],
+      "messages": [
+        {
+          "trigger": "arrived on the Verify identity screen",
+          "text": "Resend code (2:00)",
+          "where": "state"
+        },
+        {
+          "trigger": "tapped Resend code after the countdown ended",
+          "text": "Resend code (2:00)",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "tapped Resend code after the countdown ended",
+          "text": "Success, A new code has been sent",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "tapped Resend code after the countdown ended",
+          "text": "Success",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "tapped Resend code after the countdown ended",
+          "text": "A new code has been sent",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "tapped Resend code after the countdown ended",
+          "text": "Resend code (1:59)",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "tapped Resend code after the countdown ended",
+          "text": "Resend code (1:58)",
+          "where": "on-screen"
+        }
+      ],
+      "evidence": "reports/results/alumnye/run-20261003-232257/AUTH-015_PASSED.png"
+    },
+    {
+      "id": "AUTH-017",
+      "title": "Welcome / Create account screens have no Google/Apple options (v1.3.2)",
+      "type": "Positive",
+      "script": "source/mobile/alumnye/specs/auth/AUTH_017_welcome_and_create_account_have_no_social_buttons.py",
+      "status": "PASSED",
+      "category": "",
+      "message": "",
+      "seconds": 17.7,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [
+        "Skip",
+        "Create account"
+      ],
+      "notes": [],
+      "last_taps": [
+        "landing_create_account -> ViewGroup at x53,y2113 975x114"
+      ],
+      "messages": [],
+      "evidence": "reports/results/alumnye/run-20261003-232257/AUTH-017_PASSED.png"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "summary": {
+    "run_id": "run-20261003-185504",
+    "product": "alumnye",
+    "platform": "android",
+    "module": "auth",
+    "total": 1,
+    "passed": 0,
+    "passed_zero_ai": 0,
+    "passed_after_self_heal": 0,
+    "passed_after_qwen": 0,
+    "failed": 1,
+    "error": 0,
+    "blocked": 0,
+    "skipped": 0,
+    "ai_calls": 0,
+    "stopped_reason": null
+  },
+  "results": [
+    {
+      "id": "AUTH-004",
+      "title": "New user registers with yopmail email + OTP",
+      "type": "Positive",
+      "script": "source/mobile/alumnye/specs/auth/AUTH_004_register_with_email_otp.py",
+      "status": "FAILED",
+      "category": "element-not-found",
+      "message": "button 'Create account' not found",
+      "seconds": 62.2,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [
+        "Skip",
+        "Create account",
+        "Email tab",
+        "Terms checkbox: ticked"
+      ],
+      "notes": [],
+      "last_taps": [
+        "email_tab -> ViewGroup at x64,y318 477x100",
+        "primary_button -> ViewGroup at x53,y771 975x127",
+        "terms_checkbox -> ViewGroup at x105,y907 53x54",
+        "verify_button -> ViewGroup at x53,y1266 975x139"
+      ],
+      "messages": [],
+      "evidence": "reports/results/alumnye/run-20261003-185504/AUTH-004_FAILED.png"
+    }
+  ]
+}

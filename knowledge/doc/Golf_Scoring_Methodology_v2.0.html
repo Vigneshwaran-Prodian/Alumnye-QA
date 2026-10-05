@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Golf Activity Module — Scoring Methodology</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --fairway-deep:#1B4332;
+    --fairway-mid:#3E7A50;
+    --cream:#F5F1E6;
+    --card:#FFFDF8;
+    --ink:#22201B;
+    --ink-soft:#5B564C;
+    --flag-red:#A8342A;
+    --gold:#B8892B;
+    --sage:#5C7A63;
+    --player-blue:#3E5C76;
+    --line:rgba(27,67,50,0.16);
+    --font-display:'Fraunces', Georgia, serif;
+    --font-body:'Inter', system-ui, -apple-system, sans-serif;
+    --font-mono:'IBM Plex Mono', 'Courier New', monospace;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:var(--font-body);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  .masthead{
+    background:
+      radial-gradient(circle at 85% 20%, rgba(184,137,43,0.18), transparent 45%),
+      linear-gradient(160deg, var(--fairway-deep) 0%, #12291F 100%);
+    color:var(--cream);
+    padding:64px 8vw 48px;
+    position:relative;
+    overflow:hidden;
+  }
+  .masthead::after{
+    content:"";
+    position:absolute; inset:0;
+    background-image: repeating-linear-gradient(90deg, rgba(245,241,230,0.045) 0 1px, transparent 1px 34px);
+    pointer-events:none;
+  }
+  .eyebrow{
+    font-family:var(--font-mono);
+    font-size:0.72rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:#CFE0D2;
+    opacity:0.85;
+    margin-bottom:14px;
+  }
+  h1.title{
+    font-family:var(--font-display);
+    font-weight:600;
+    font-size:clamp(2.1rem, 4vw, 3.4rem);
+    margin:0 0 14px;
+    max-width:16ch;
+    letter-spacing:-0.01em;
+  }
+  .subtitle{
+    font-size:1.05rem;
+    color:#DCE7DD;
+    max-width:56ch;
+    margin:0 0 26px;
+  }
+  .chip-row{display:flex; flex-wrap:wrap; gap:10px;}
+  .chip{
+    font-family:var(--font-mono);
+    font-size:0.75rem;
+    border:1px solid rgba(245,241,230,0.35);
+    color:#EFEAD9;
+    padding:6px 12px;
+    border-radius:100px;
+    background:rgba(245,241,230,0.06);
+  }
+
+  main{max-width:1040px; margin:0 auto; padding:0 8vw 100px;}
+  .section{padding:64px 0;}
+  .section.alt-bg{
+    background:var(--card);
+    margin:0 calc(-8vw);
+    padding:64px 8vw;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .section-head{display:flex; align-items:baseline; gap:16px; margin-bottom:8px;}
+  .section-num{
+    font-family:var(--font-mono);
+    color:var(--gold);
+    font-size:0.95rem;
+    font-weight:600;
+  }
+  h2{
+    font-family:var(--font-display);
+    font-weight:600;
+    font-size:1.7rem;
+    margin:0;
+    color:var(--fairway-deep);
+  }
+  .section > p.lede{
+    font-size:1.02rem;
+    color:var(--ink-soft);
+    max-width:70ch;
+    margin:18px 0 30px;
+  }
+  h3.format-title{
+    font-family:var(--font-display);
+    font-size:1.25rem;
+    color:var(--fairway-deep);
+    margin:0 0 6px;
+  }
+  .rule-list{margin:0 0 18px; padding-left:20px; color:var(--ink-soft);}
+  .rule-list li{margin-bottom:6px;}
+
+  code, .formula{
+    font-family:var(--font-mono);
+    font-size:0.88rem;
+  }
+  .formula-block{
+    background:var(--fairway-deep);
+    color:#EFEAD9;
+    border-radius:10px;
+    padding:20px 24px;
+    font-family:var(--font-mono);
+    font-size:0.86rem;
+    line-height:1.9;
+    overflow-x:auto;
+    margin:18px 0 30px;
+  }
+  .formula-block .comment{color:#9FC3A6;}
+  .formula-block .kw{color:#E6C77A;}
+
+  table.data-table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:0.87rem;
+    margin:16px 0 28px;
+    background:var(--card);
+  }
+  table.data-table caption{
+    text-align:left;
+    font-family:var(--font-mono);
+    font-size:0.72rem;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    margin-bottom:8px;
+  }
+  table.data-table th, table.data-table td{
+    border:1px solid var(--line);
+    padding:8px 10px;
+    text-align:center;
+  }
+  table.data-table th{
+    background:rgba(27,67,50,0.06);
+    font-family:var(--font-mono);
+    font-weight:600;
+    font-size:0.76rem;
+    text-transform:uppercase;
+    letter-spacing:0.03em;
+    color:var(--fairway-deep);
+  }
+  table.data-table td.label{text-align:left; font-weight:600; color:var(--fairway-deep);}
+  .highlight-hole{background:rgba(184,137,43,0.14) !important;}
+
+  .format-card{
+    border:1px solid var(--line);
+    border-radius:12px;
+    background:var(--card);
+    padding:26px 28px;
+    margin-bottom:26px;
+  }
+  .format-card .tag{
+    display:inline-block;
+    font-family:var(--font-mono);
+    font-size:0.7rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    padding:3px 9px;
+    border-radius:5px;
+    margin-bottom:10px;
+  }
+  .tag.stroke{background:rgba(62,92,118,0.14); color:var(--player-blue);}
+  .tag.stable{background:rgba(184,137,43,0.16); color:var(--gold);}
+  .tag.match{background:rgba(168,52,42,0.13); color:var(--flag-red);}
+
+  .result-strip{
+    display:flex; gap:18px; flex-wrap:wrap;
+    margin-top:14px; padding-top:14px; border-top:1px dashed var(--line);
+  }
+  .result-pill{
+    font-family:var(--font-mono);
+    font-size:0.82rem;
+    background:rgba(27,67,50,0.05);
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:8px 14px;
+  }
+  .result-pill b{color:var(--fairway-deep);}
+
+  /* --- Diagram --- */
+  .diagram-wrap{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:20px;
+    margin-top:6px;
+  }
+  .legend{display:flex; gap:22px; flex-wrap:wrap; margin-top:16px; font-size:0.8rem; color:var(--ink-soft);}
+  .legend span{display:inline-flex; align-items:center; gap:7px;}
+  .swatch{width:12px; height:12px; border-radius:3px; display:inline-block;}
+
+  /* --- Calculator --- */
+  .calc-shell{
+    width: min-content;
+    background:var(--fairway-deep);
+    border-radius:16px;
+    padding:30px;
+    color:var(--cream);
+  }
+  .calc-controls{
+    display:flex; flex-wrap:wrap; gap:26px;
+    background:rgba(245,241,230,0.06);
+    border:1px solid rgba(245,241,230,0.14);
+    border-radius:12px;
+    padding:18px 22px;
+    margin-bottom:22px;
+  }
+  .control-group{display:flex; flex-direction:column; gap:6px; min-width:130px;}
+  .control-group label{
+    font-family:var(--font-mono);
+    font-size:0.7rem;
+    letter-spacing:0.05em;
+    text-transform:uppercase;
+    color:#B9CDBB;
+  }
+  .control-group input[type=number]{
+    width:90px;
+    padding:6px 8px;
+    border-radius:6px;
+    border:1px solid rgba(245,241,230,0.3);
+    background:rgba(245,241,230,0.94);
+    color:var(--ink);
+    font-family:var(--font-mono);
+    font-size:0.9rem;
+  }
+  .format-toggle{display:flex; gap:8px; flex-wrap:wrap;}
+  .format-toggle label{
+    font-family:var(--font-mono);
+    font-size:0.78rem;
+    display:flex; align-items:center; gap:6px;
+    background:rgba(245,241,230,0.08);
+    border:1px solid rgba(245,241,230,0.22);
+    padding:7px 12px;
+    border-radius:8px;
+    cursor:pointer;
+    text-transform:none;
+  }
+  .format-toggle input{accent-color:var(--gold);}
+
+  .scorecard-scroll{overflow-x:auto; border-radius:10px; background:var(--card);}
+  table.scorecard{
+    border-collapse:collapse;
+    width:100%;
+    min-width:920px;
+    font-size:0.8rem;
+    color:var(--ink);
+  }
+  table.scorecard th, table.scorecard td{
+    border:1px solid rgba(27,67,50,0.12);
+    padding:6px 5px;
+    text-align:center;
+  }
+  table.scorecard th{
+    background:var(--fairway-deep);
+    color:#EFEAD9;
+    font-family:var(--font-mono);
+    font-weight:500;
+    font-size:0.68rem;
+    text-transform:uppercase;
+    letter-spacing:0.03em;
+  }
+  table.scorecard thead tr.team-row th{background:#12291F;}
+  table.scorecard input.gross-input{
+    width:34px;
+    text-align:center;
+    border:1px solid rgba(27,67,50,0.25);
+    border-radius:5px;
+    font-family:var(--font-mono);
+    font-size:0.82rem;
+    padding:3px 0;
+    background:#fff;
+    color:var(--ink);
+  }
+  td.net-cell{
+    font-family:var(--font-mono);
+    font-weight:600;
+    color:var(--fairway-deep);
+  }
+  td.best-cell{
+    font-family:var(--font-mono);
+    font-weight:700;
+    background:rgba(184,137,43,0.10);
+  }
+  td.hole-result{font-family:var(--font-mono); font-size:0.75rem;}
+  .stroke-dot{
+    display:inline-block; width:6px; height:6px; border-radius:50%;
+    background:var(--flag-red); margin-left:3px; vertical-align:middle;
+  }
+
+  .summary-panel{
+    margin-top:20px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(210px, 1fr));
+    gap:14px;
+  }
+  .summary-card{
+    background:rgba(245,241,230,0.07);
+    border:1px solid rgba(245,241,230,0.18);
+    border-radius:10px;
+    padding:16px 18px;
+  }
+  .summary-card .sc-label{
+    font-family:var(--font-mono);
+    font-size:0.68rem;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:#B9CDBB;
+    margin-bottom:6px;
+  }
+  .summary-card .sc-value{
+    font-family:var(--font-display);
+    font-size:1.5rem;
+    font-weight:600;
+  }
+  .summary-card .sc-sub{font-size:0.78rem; color:#CFE0D2; margin-top:4px;}
+  .winner-A{color:#9FD3A8;}
+  .winner-B{color:#F0A38E;}
+  .live-badge{
+    font-family:var(--font-mono);
+    font-size:0.68rem;
+    background:var(--flag-red);
+    color:#fff;
+    padding:2px 8px;
+    border-radius:20px;
+    letter-spacing:0.05em;
+    animation:pulse 2.2s ease-in-out infinite;
+  }
+  @keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.55;}}
+
+  footer{
+    max-width:1040px; margin:0 auto; padding:40px 8vw 60px;
+    color:var(--ink-soft); font-size:0.85rem; border-top:1px solid var(--line);
+  }
+  footer a{color:var(--fairway-deep);}
+</style>
+</head>
+<body>
+
+<div class="masthead">
+  <div class="eyebrow">Alumnye · Golf Activity Module · Delta phase</div>
+  <h1 class="title">Scoring Methodology</h1>
+  <p class="subtitle">How a golf fixture's handicap is calculated, how each of the three formats scores a round, and how results roll up into tournament standings.</p>
+  <div class="chip-row">
+    <span class="chip">Net Stroke Play</span>
+    <span class="chip">Net Stableford</span>
+    <span class="chip">Four-Ball Match Play</span>
+    <span class="chip">Handicap locked at start</span>
+  </div>
+</div>
+
+<main>
+
+
+  <section class="section alt-bg" id="handicap">
+    <div class="section-head"><span class="section-num">01</span><h2>Handicap &amp; stroke allocation</h2></div>
+    <p class="lede">Applies identically underneath all three formats. Handicap is entered once and <strong>locked when the fixture starts</strong> — the app stores per-hole gross scores and par so a future Dynamic Handicap System can be layered on without losing history.</p>
+
+    <div class="formula-block"><span class="comment">// applied once, at Play the Fixture</span><br>
+<span class="kw">playingHandicap</span>(base, allowancePct=75, holes=18) = round( round(base × allowancePct / 100) )<br>
+<span class="comment">// 9-hole matches halve this value before rounding</span><br><br>
+<span class="comment">// applied per hole, per player</span><br>
+<span class="kw">strokesOnHole</span>(ch, strokeIndex) = floor(ch / 18) + (strokeIndex ≤ ch % 18 ? 1 : 0)<br>
+<span class="kw">net</span>(gross, ch, strokeIndex) = gross − strokesOnHole(ch, strokeIndex)</div>
+
+    <table class="data-table">
+      <caption>Worked example — four players, ¾ allowance (75%)</caption>
+      <thead><tr><th>Player</th><th>Team</th><th>Base handicap</th><th>Playing handicap</th><th>Gets a stroke on holes with SI ≤</th></tr></thead>
+      <tbody>
+        <tr><td class="label">Arjun</td><td>Team A</td><td>16</td><td>12</td><td>12</td></tr>
+        <tr><td class="label">Karthik</td><td>Team A</td><td>12</td><td>9</td><td>9</td></tr>
+        <tr><td class="label">Rohan</td><td>Team B</td><td>20</td><td>15</td><td>15</td></tr>
+        <tr><td class="label">Vivek</td><td>Team B</td><td>8</td><td>6</td><td>6</td></tr>
+      </tbody>
+    </table>
+    <p style="color:var(--ink-soft); font-size:0.92rem; max-width:70ch;">Every player in this example still gets a stroke on <strong>Hole 6 — Par 4, Stroke Index 3</strong>, since SI 3 sits under all four playing-handicap thresholds. That hole is used as the running example in every format below.</p>
+  </section>
+
+  <section class="section" id="formats">
+    <div class="section-head"><span class="section-num">02</span><h2>Three scoring formats, one hole, three outcomes</h2></div>
+    <p class="lede">All three read the same gross scores off the same hole — only the scoring engine branch differs. Par 4, Stroke Index 3, all four players receive a stroke.</p>
+
+    <div class="format-card">
+      <span class="tag stroke">Format A</span>
+      <h3 class="format-title">Net Stroke Play</h3>
+      <ul class="rule-list">
+        <li>Team total = sum of the side's net score per hole; in 2v2 the side counts only its <strong>best net ball</strong> per hole.</li>
+        <li>Lowest total net across the round wins. <strong>Win = 1 pt · tie = ½ each · loss = 0.</strong></li>
+      </ul>
+      <table class="data-table">
+        <thead><tr><th>Player</th><th>Gross</th><th>Stroke</th><th>Net</th><th>Team best net</th></tr></thead>
+        <tbody>
+          <tr><td class="label">Arjun</td><td>5</td><td>1</td><td>4</td><td rowspan="2" class="highlight-hole"><strong>3</strong> (Karthik, Team A)</td></tr>
+          <tr><td class="label">Karthik</td><td>4</td><td>1</td><td>3</td></tr>
+          <tr><td class="label">Rohan</td><td>6</td><td>1</td><td>5</td><td rowspan="2" class="highlight-hole"><strong>4</strong> (Vivek, Team B)</td></tr>
+          <tr><td class="label">Vivek</td><td>5</td><td>1</td><td>4</td></tr>
+        </tbody>
+      </table>
+      <div class="result-strip">
+        <div class="result-pill">Team A best net <b>3</b> &lt; Team B best net <b>4</b></div>
+        <div class="result-pill">Hole contributes <b>−1</b> to Team A's running total</div>
+      </div>
+    </div>
+
+    <div class="format-card">
+      <span class="tag stable">Format B</span>
+      <h3 class="format-title">Net Stableford</h3>
+      <ul class="rule-list">
+        <li>Per hole, per player: net eagle = 4 · net birdie = 3 · net par = 2 · net bogey = 1 · net double-bogey-or-worse (or pickup) = 0.</li>
+        <li>Pairing score per hole = <strong>sum</strong> of both players' points (1v1: the individual's points alone).</li>
+        <li>Match margin = pair A total − pair B total. The <strong>signed margin</strong> is added to / subtracted from the team leaderboard.</li>
+      </ul>
+      <table class="data-table">
+        <thead><tr><th>Player</th><th>Net</th><th>vs Par 4</th><th>Points</th><th>Side total</th></tr></thead>
+        <tbody>
+          <tr><td class="label">Arjun</td><td>4</td><td>Par</td><td>2</td><td rowspan="2" class="highlight-hole"><strong>5</strong> (Team A)</td></tr>
+          <tr><td class="label">Karthik</td><td>3</td><td>Birdie</td><td>3</td></tr>
+          <tr><td class="label">Rohan</td><td>5</td><td>Bogey</td><td>1</td><td rowspan="2" class="highlight-hole"><strong>3</strong> (Team B)</td></tr>
+          <tr><td class="label">Vivek</td><td>4</td><td>Par</td><td>2</td></tr>
+        </tbody>
+      </table>
+      <div class="result-strip">
+        <div class="result-pill">Margin = 5 − 3 = <b>+2</b></div>
+        <div class="result-pill">Team A leaderboard <b>+2</b> · Team B leaderboard <b>−2</b></div>
+      </div>
+    </div>
+
+    <div class="format-card">
+      <span class="tag match">Format C</span>
+      <h3 class="format-title">Four-Ball Match Play</h3>
+      <ul class="rule-list">
+        <li>2v2 only. Per hole, best net ball of each pair is compared → hole is won or halved.</li>
+        <li>Match decided on holes won across the round. <strong>Win = 2 pts · draw = 1 each · loss = 0.</strong></li>
+        <li>A hole a side doesn't complete is marked <strong>X</strong>; the anchor then posts the manual result in the MVP (a dedicated X flow is Phase 2).</li>
+      </ul>
+
+      <table class="data-table">
+        <caption>Hole 6 — Par 4, SI 3</caption>
+        <thead><tr><th>Team</th><th>Best net</th><th>Hole outcome</th></tr></thead>
+        <tbody>
+          <tr><td class="label">Team A</td><td class="highlight-hole"><strong>3</strong> (Karthik)</td><td rowspan="2"><strong>A</strong></td></tr>
+          <tr><td class="label">Team B</td><td>4 (Vivek)</td></tr>
+        </tbody>
+      </table>
+
+      <table class="data-table" style="margin-top:14px;">
+        <caption>Hole 1 — Par 4, SI 5 (tied)</caption>
+        <thead><tr><th>Team</th><th>Best net</th><th>Hole outcome</th></tr></thead>
+        <tbody>
+          <tr><td class="label">Team A</td><td class="highlight-hole"><strong>4</strong> (Arjun / Karthik)</td><td rowspan="2"><strong>H</strong></td></tr>
+          <tr><td class="label">Team B</td><td>4 (Rohan / Vivek)</td></tr>
+        </tbody>
+      </table>
+      <p style="color:var(--ink-soft); font-size:0.82rem; margin-top:8px;"><strong>A</strong> = Team A wins the hole · <strong>B</strong> = Team B wins the hole · <strong>H</strong> = hole halved (tied best net).</p>
+
+      <div class="result-strip">
+        <div class="result-pill">Team A leads <b>1 hole to 0</b> · 17 holes halved (H) across the round</div>
+        <div class="result-pill">Leaderboard points — <b>Win = 2 pts · draw = 1 each · loss = 0</b></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="scoresheet">
+    <div class="section-head"><span class="section-num">03</span><h2>Sample score sheet — one full fixture</h2></div>
+    <p class="lede">All 18 holes for the same fixture (Arjun &amp; Karthik vs. Rohan &amp; Vivek). Each cell reads gross / net. Team best-net columns are what Net Stroke Play and Four-Ball Match Play compare per hole.</p>
+    <div style="overflow-x:auto;">
+    <table class="data-table" style="font-size:0.78rem;">
+      <thead><tr>
+        <th>Hole</th><th>Par</th><th>SI</th>
+        <th>Arjun</th><th>Karthik</th><th>Rohan</th><th>Vivek</th>
+        <th>Team A best net</th><th>Team B best net</th>
+      </tr></thead>
+      <tbody>
+        <tr><td class="label">1</td><td>4</td><td>5</td><td>5/4</td><td>5/4</td><td>5/4</td><td>5/4</td><td>4</td><td>4</td></tr>
+        <tr><td class="label">2</td><td>5</td><td>11</td><td>6/5</td><td>5/5</td><td>6/5</td><td>5/5</td><td>5</td><td>5</td></tr>
+        <tr><td class="label">3</td><td>3</td><td>17</td><td>3/3</td><td>3/3</td><td>3/3</td><td>3/3</td><td>3</td><td>3</td></tr>
+        <tr><td class="label">4</td><td>4</td><td>1</td><td>5/4</td><td>5/4</td><td>5/4</td><td>5/4</td><td>4</td><td>4</td></tr>
+        <tr><td class="label">5</td><td>4</td><td>7</td><td>5/4</td><td>5/4</td><td>5/4</td><td>4/4</td><td>4</td><td>4</td></tr>
+        <tr class="highlight-hole"><td class="label">6</td><td>4</td><td>3</td><td>5/4</td><td>4/3</td><td>6/5</td><td>5/4</td><td><strong>3</strong></td><td>4</td></tr>
+        <tr><td class="label">7</td><td>3</td><td>15</td><td>3/3</td><td>3/3</td><td>4/3</td><td>3/3</td><td>3</td><td>3</td></tr>
+        <tr><td class="label">8</td><td>5</td><td>9</td><td>6/5</td><td>6/5</td><td>6/5</td><td>5/5</td><td>5</td><td>5</td></tr>
+        <tr><td class="label">9</td><td>4</td><td>13</td><td>4/4</td><td>4/4</td><td>5/5</td><td>4/4</td><td>4</td><td>4</td></tr>
+        <tr><td class="label">10</td><td>4</td><td>6</td><td>5/4</td><td>5/4</td><td>5/4</td><td>5/4</td><td>4</td><td>4</td></tr>
+        <tr><td class="label">11</td><td>4</td><td>2</td><td>5/4</td><td>5/4</td><td>5/4</td><td>5/4</td><td>4</td><td>4</td></tr>
+        <tr><td class="label">12</td><td>3</td><td>16</td><td>3/3</td><td>3/3</td><td>3/3</td><td>3/3</td><td>3</td><td>3</td></tr>
+        <tr><td class="label">13</td><td>5</td><td>8</td><td>6/5</td><td>6/5</td><td>6/5</td><td>5/5</td><td>5</td><td>5</td></tr>
+        <tr><td class="label">14</td><td>4</td><td>4</td><td>5/4</td><td>5/4</td><td>5/4</td><td>5/4</td><td>4</td><td>4</td></tr>
+        <tr><td class="label">15</td><td>4</td><td>12</td><td>5/4</td><td>4/4</td><td>5/4</td><td>4/4</td><td>4</td><td>4</td></tr>
+        <tr><td class="label">16</td><td>3</td><td>18</td><td>3/3</td><td>3/3</td><td>3/3</td><td>3/3</td><td>3</td><td>3</td></tr>
+        <tr><td class="label">17</td><td>5</td><td>10</td><td>6/5</td><td>5/5</td><td>6/5</td><td>5/5</td><td>5</td><td>5</td></tr>
+        <tr><td class="label">18</td><td>4</td><td>14</td><td>4/4</td><td>4/4</td><td>5/5</td><td>4/4</td><td>4</td><td>4</td></tr>
+        <tr style="font-weight:600; border-top:2px solid var(--fairway-deep);"><td class="label">Total</td><td>72</td><td>—</td><td>72</td><td>71</td><td>75</td><td>72</td><td>71</td><td>72</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p style="color:var(--ink-soft); font-size:0.82rem; margin-top:8px;">Net Stroke Play reading: Team A total net <strong>71</strong> beats Team B total net <strong>72</strong> — Team A wins by 1. Four-Ball Match Play reading: Team A wins Hole 6 only, the other 17 holes halved — Team A leads 1&nbsp;up.</p>
+  </section>
+
+
+  <section class="section alt-bg" id="standings">
+    <div class="section-head"><span class="section-num">04</span><h2>From fixture result to tournament standings</h2></div>
+    <p class="lede">Every completed fixture — regardless of which of the three formats it used — contributes to the same standings table.</p>
+    <div class="formula-block"><span class="kw">standings</span>(tournament) = Σ points_team_x over DONE fixtures<br>
+<span class="comment">// Net Stroke Play &amp; Four-Ball Match Play contribute fixed points (1/0.5/0 or 2/1/0)</span><br>
+<span class="comment">// Net Stableford contributes a signed margin instead of a fixed point</span><br>
+Highest total leads · ranking shown as Win / Tie / Loss per team</div>
+  </section>
+
+</main>
+
+<footer>
+  Source: <code>GOLF_ACTIVITY_MODULE_PLAN.md</code> (2026-07-11, branch <code>alumnye/delta_v2</code>, status IMPLEMENTED). Dynamic Handicap System, roster-compliance penalties, blind lineups, rainout handling, playoffs, and the Player-of-the-Tournament leaderboard are confirmed Phase-2 backlog — deliberately deferred, not built in Delta.
+</footer>
+
+
+</body>
+</html>

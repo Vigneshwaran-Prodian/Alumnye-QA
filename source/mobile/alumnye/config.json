@@ -1,0 +1,28 @@
+{
+  "appium_url": "http://127.0.0.1:4723",
+  "android": {
+    "udid": "",
+    "app_package": "app.alumnye.com",
+    "app_path": "",
+    "devices": {
+      "anchor": "emulator-5554",
+      "member": "emulator-5556"
+    }
+  },
+  "ios": {
+    "udid": "",
+    "bundle_id": "",
+    "platform_version": "",
+    "device_name": "",
+    "app_path": ""
+  },
+  "ai": {
+    "enabled": true,
+    "backend": "claude",
+    "claude_model": "haiku",
+    "model": "qwen3:4b",
+    "url": "http://127.0.0.1:11434"
+  },
+  "test_mobile": "",
+  "common_otp": ""
+}

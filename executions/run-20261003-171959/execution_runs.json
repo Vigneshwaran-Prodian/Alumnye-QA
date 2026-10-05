@@ -1,0 +1,160 @@
+{
+  "summary": {
+    "run_id": "run-20261003-171959",
+    "product": "alumnye",
+    "platform": "android",
+    "module": "auth",
+    "total": 8,
+    "passed": 2,
+    "passed_zero_ai": 2,
+    "passed_after_self_heal": 0,
+    "passed_after_qwen": 0,
+    "failed": 2,
+    "error": 0,
+    "blocked": 3,
+    "skipped": 1,
+    "ai_calls": 2,
+    "stopped_reason": "Stopped by user (Ctrl+C)."
+  },
+  "results": [
+    {
+      "id": "AUTH-001",
+      "title": "Fresh launch routes from Splash to the landing screen (Sign in / Google / Create account)",
+      "type": "Positive",
+      "script": "source/mobile/alumnye/specs/auth/AUTH_001_splash_routes_to_sign_in.py",
+      "status": "PASSED",
+      "category": "",
+      "message": "",
+      "seconds": 17.7,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [
+        "Skip"
+      ],
+      "messages": [],
+      "evidence": "reports/results/alumnye/run-20261003-171959/AUTH-001_PASSED.png"
+    },
+    {
+      "id": "AUTH-002",
+      "title": "Landing layout: Sign in above Google, divider reads 'or' (v1.3.2)",
+      "type": "Positive",
+      "script": "source/mobile/alumnye/specs/auth/AUTH_002_sign_in_screen_layout_v132.py",
+      "status": "PASSED",
+      "category": "",
+      "message": "",
+      "seconds": 20.7,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [
+        "Skip"
+      ],
+      "messages": [],
+      "evidence": "reports/results/alumnye/run-20261003-171959/AUTH-002_PASSED.png"
+    },
+    {
+      "id": "AUTH-003",
+      "title": "New user registers with mobile number + SMS OTP",
+      "type": "Positive",
+      "script": "source/mobile/alumnye/specs/auth/AUTH_003_register_with_mobile_otp.py",
+      "status": "SKIPPED",
+      "category": "out-of-scope",
+      "message": "Mobile-number scenarios are out of scope for now (owner decision 2026-10-03); email scenarios only",
+      "seconds": 0.4,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [],
+      "messages": [],
+      "evidence": "reports/results/alumnye/run-20261003-171959/AUTH-003_SKIPPED.png"
+    },
+    {
+      "id": "AUTH-004",
+      "title": "New user registers with yopmail email + OTP",
+      "type": "Positive",
+      "script": "source/mobile/alumnye/specs/auth/AUTH_004_register_with_email_otp.py",
+      "status": "FAILED",
+      "category": "needs-human",
+      "message": "'primary_button' (Identifier screen: submit button (screen not yet seen)) not found; Qwen could not resolve it. The 'Continue' button is visible at index 35 with label 'Continue' matching the expected label list.",
+      "seconds": 81.6,
+      "ai_mode": "none",
+      "ai_calls": 1,
+      "adaptations": [],
+      "entry_path": [
+        "Skip",
+        "Create account"
+      ],
+      "messages": [],
+      "evidence": "reports/results/alumnye/run-20261003-171959/AUTH-004_FAILED.png"
+    },
+    {
+      "id": "AUTH-005",
+      "title": "Sign in with Google using the account already on the device",
+      "type": "Positive",
+      "script": "source/mobile/alumnye/specs/auth/AUTH_005_google_sign_in.py",
+      "status": "FAILED",
+      "category": "likely-bug",
+      "message": "'home_marker' (Home reached (Anchor Home or Member Home)) is missing from the screen \u2014 likely functionality break. Qwen: The screen shows Google sign-in errors and no 'home_marker' element exists among visible elements.",
+      "seconds": 111.7,
+      "ai_mode": "none",
+      "ai_calls": 1,
+      "adaptations": [],
+      "entry_path": [
+        "Next",
+        "Skip",
+        "Sign in with Google"
+      ],
+      "messages": [],
+      "evidence": "reports/results/alumnye/run-20261003-171959/AUTH-005_FAILED.png"
+    },
+    {
+      "id": "AUTH-006",
+      "title": "Returning user signs in with OTP and skips Complete Profile",
+      "type": "Positive",
+      "script": "source/mobile/alumnye/specs/auth/AUTH_006_returning_user_sign_in.py",
+      "status": "BLOCKED",
+      "category": "prerequisite",
+      "message": "no registered test user yet - run AUTH-004 first",
+      "seconds": 10.2,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [],
+      "messages": [],
+      "evidence": "reports/results/alumnye/run-20261003-171959/AUTH-006_BLOCKED.png"
+    },
+    {
+      "id": "AUTH-007",
+      "title": "Logged-in session survives an app restart (Splash -> Home)",
+      "type": "Positive",
+      "script": "source/mobile/alumnye/specs/auth/AUTH_007_session_persists_after_restart.py",
+      "status": "BLOCKED",
+      "category": "prerequisite",
+      "message": "no registered test user yet \u2014 run AUTH-004 (email registration) first",
+      "seconds": 6.9,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [],
+      "messages": [],
+      "evidence": "reports/results/alumnye/run-20261003-171959/AUTH-007_BLOCKED.png"
+    },
+    {
+      "id": "AUTH-008",
+      "title": "Sign out returns to Sign In and ends the session",
+      "type": "Positive",
+      "script": "source/mobile/alumnye/specs/auth/AUTH_008_sign_out_returns_to_sign_in.py",
+      "status": "BLOCKED",
+      "category": "prerequisite",
+      "message": "no registered test user yet \u2014 run AUTH-004 (email registration) first",
+      "seconds": 5.2,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [],
+      "messages": [],
+      "evidence": "reports/results/alumnye/run-20261003-171959/AUTH-008_BLOCKED.png"
+    }
+  ]
+}

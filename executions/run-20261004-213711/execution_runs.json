@@ -1,0 +1,262 @@
+{
+  "summary": {
+    "run_id": "run-20261004-213711",
+    "product": "alumnye",
+    "platform": "android",
+    "module": "groups",
+    "total": 4,
+    "passed": 0,
+    "passed_zero_ai": 0,
+    "passed_after_self_heal": 0,
+    "passed_after_qwen": 0,
+    "failed": 4,
+    "error": 0,
+    "blocked": 0,
+    "skipped": 0,
+    "ai_calls": 4,
+    "stopped_reason": null
+  },
+  "results": [
+    {
+      "id": "GRP-012",
+      "title": "Bulk upload: valid .xlsx and .csv files (picked from local storage) reach the preview without errors and import",
+      "type": "Positive",
+      "script": "source/mobile/alumnye/specs/groups/GRP_012_bulk_upload_valid_file.py",
+      "status": "FAILED",
+      "category": "likely-bug",
+      "message": "'anchor_home_marker' (Anchor Home is open) is missing from the screen \u2014 likely functionality break. AI: Current screen shows an 'Exit App' confirmation dialog; expected 'Anchor Home' screen with 'New Group' or 'You don't have any groups' elements is completely absent.",
+      "seconds": 470.8,
+      "ai_mode": "self-heal",
+      "ai_calls": 1,
+      "adaptations": [
+        {
+          "tier": "heal",
+          "key": "anchor_home_marker",
+          "strategy": "text:New Group",
+          "reason": "label 'New Group' ~ ['New Group', \"You don't have any groups\"] (score 1.00)"
+        }
+      ],
+      "entry_path": [],
+      "notes": [
+        "self-heal for 'anchor_home_marker' used text:New Group for this run only (not saved: it also describes 'new_group_button')"
+      ],
+      "last_taps": [
+        "role_anchor -> ViewGroup at x857,y186 173x58",
+        "add_member_entry -> ViewGroup at x53,y648 479x97"
+      ],
+      "messages": [],
+      "discovered": [
+        {
+          "where": "Anchor Home is shown",
+          "label": "\uf382, Home",
+          "device": "",
+          "scenario": "GRP-012",
+          "safe": false,
+          "result": ""
+        },
+        {
+          "where": "Group Details is shown",
+          "label": "\uf382, Home",
+          "device": "",
+          "scenario": "GRP-012",
+          "safe": false,
+          "result": ""
+        }
+      ],
+      "timing": {
+        "find_elements": [
+          108,
+          208.7
+        ],
+        "adb": [
+          5,
+          20.5
+        ],
+        "page_source": [
+          18,
+          178.1
+        ]
+      },
+      "keys": {
+        "add_member_entry": [
+          "btn:Add Member"
+        ],
+        "anchor_home_marker": [
+          "btn:New Group",
+          "textc:You don't have any groups"
+        ],
+        "group_details_marker": [
+          "btn:Add Event",
+          "btn:Add Member"
+        ],
+        "nav_profile": [
+          "btnx:My Account",
+          "btn:My Account"
+        ],
+        "role_anchor": [
+          "btnx:ANCHOR"
+        ],
+        "tab_upload": [
+          "btnx:Upload"
+        ]
+      },
+      "evidence": "reports/results/alumnye/run-20261004-213711/GRP-012_FAILED.png"
+    },
+    {
+      "id": "GRP-013",
+      "title": "Bulk upload flags invalid files and rows (picked from local storage): bad e-mail, missing data, duplicates, wrong columns, empty, wrong format",
+      "type": "Negative",
+      "script": "source/mobile/alumnye/specs/groups/GRP_013_bulk_upload_invalid_rows.py",
+      "status": "FAILED",
+      "category": "likely-bug",
+      "message": "'landing_sign_in' (Landing screen: 'Sign in' (existing user)) is missing from the screen \u2014 likely functionality break. AI: An exit confirmation dialog is displayed instead of the landing screen; the 'Sign in' button is not present on the current screen.",
+      "seconds": 70.1,
+      "ai_mode": "none",
+      "ai_calls": 1,
+      "adaptations": [],
+      "entry_path": [],
+      "notes": [],
+      "last_taps": [],
+      "messages": [],
+      "discovered": [],
+      "timing": {
+        "find_elements": [
+          94,
+          27.9
+        ],
+        "page_source": [
+          20,
+          10.2
+        ],
+        "adb": [
+          1,
+          1.0
+        ]
+      },
+      "keys": {
+        "complete_profile_marker": [
+          "text:Complete Your Profile",
+          "text:3 of 3"
+        ],
+        "home_marker": [
+          "textc:Welcome,",
+          "textc:Welcome to Alumnye",
+          "btnx:My Account",
+          "textc:My Group"
+        ],
+        "landing_sign_in": [
+          "btnx:Sign in"
+        ],
+        "nav_profile": [
+          "btnx:My Account",
+          "btn:My Account"
+        ]
+      },
+      "evidence": "reports/results/alumnye/run-20261004-213711/GRP-013_FAILED.png"
+    },
+    {
+      "id": "GRP-014",
+      "title": "Members tab: the count equals the accepted-members name list; invitees sit under Pending Acceptance, not in the count",
+      "type": "Positive",
+      "script": "source/mobile/alumnye/specs/groups/GRP_014_cohort_members_list.py",
+      "status": "FAILED",
+      "category": "likely-bug",
+      "message": "'landing_sign_in' (Landing screen: 'Sign in' (existing user)) is missing from the screen \u2014 likely functionality break. AI: The landing screen sign-in button is absent; an exit confirmation dialog is shown instead, indicating either a navigation defect or premature dialog appearance.",
+      "seconds": 74.3,
+      "ai_mode": "none",
+      "ai_calls": 1,
+      "adaptations": [],
+      "entry_path": [],
+      "notes": [],
+      "last_taps": [],
+      "messages": [],
+      "discovered": [],
+      "timing": {
+        "find_elements": [
+          41,
+          37.8
+        ],
+        "page_source": [
+          14,
+          14.7
+        ],
+        "adb": [
+          1,
+          1.3
+        ]
+      },
+      "keys": {
+        "complete_profile_marker": [
+          "text:Complete Your Profile",
+          "text:3 of 3"
+        ],
+        "home_marker": [
+          "textc:Welcome,",
+          "textc:Welcome to Alumnye",
+          "btnx:My Account",
+          "textc:My Group"
+        ],
+        "landing_sign_in": [
+          "btnx:Sign in"
+        ],
+        "nav_profile": [
+          "btnx:My Account",
+          "btn:My Account"
+        ]
+      },
+      "evidence": "reports/results/alumnye/run-20261004-213711/GRP-014_FAILED.png"
+    },
+    {
+      "id": "GRP-015",
+      "title": "Pending Acceptance members each have a Remind button; accepted members do not",
+      "type": "Positive",
+      "script": "source/mobile/alumnye/specs/groups/GRP_015_pending_invite_remind.py",
+      "status": "FAILED",
+      "category": "likely-bug",
+      "message": "'landing_sign_in' (Landing screen: 'Sign in' (existing user)) is missing from the screen \u2014 likely functionality break. AI: Landing screen not displayed; an exit confirmation dialog is shown instead of Sign in/Google/Create account options.",
+      "seconds": 74.7,
+      "ai_mode": "none",
+      "ai_calls": 1,
+      "adaptations": [],
+      "entry_path": [],
+      "notes": [],
+      "last_taps": [],
+      "messages": [],
+      "discovered": [],
+      "timing": {
+        "find_elements": [
+          50,
+          28.8
+        ],
+        "page_source": [
+          15,
+          17.0
+        ],
+        "adb": [
+          1,
+          1.9
+        ]
+      },
+      "keys": {
+        "complete_profile_marker": [
+          "text:Complete Your Profile",
+          "text:3 of 3"
+        ],
+        "home_marker": [
+          "textc:Welcome,",
+          "textc:Welcome to Alumnye",
+          "btnx:My Account",
+          "textc:My Group"
+        ],
+        "landing_sign_in": [
+          "btnx:Sign in"
+        ],
+        "nav_profile": [
+          "btnx:My Account",
+          "btn:My Account"
+        ]
+      },
+      "evidence": "reports/results/alumnye/run-20261004-213711/GRP-015_FAILED.png"
+    }
+  ]
+}

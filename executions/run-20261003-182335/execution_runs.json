@@ -1,0 +1,40 @@
+{
+  "summary": {
+    "run_id": "run-20261003-182335",
+    "product": "alumnye",
+    "platform": "android",
+    "module": "auth",
+    "total": 1,
+    "passed": 0,
+    "passed_zero_ai": 0,
+    "passed_after_self_heal": 0,
+    "passed_after_qwen": 0,
+    "failed": 0,
+    "error": 1,
+    "blocked": 0,
+    "skipped": 0,
+    "ai_calls": 0,
+    "stopped_reason": null
+  },
+  "results": [
+    {
+      "id": "AUTH-004",
+      "title": "New user registers with yopmail email + OTP (Terms handled adaptively)",
+      "type": "Positive",
+      "script": "source/mobile/alumnye/specs/auth/AUTH_004_register_with_email_otp.py",
+      "status": "ERROR",
+      "category": "script",
+      "message": "TypeError: argument of type 'NoneType' is not iterable",
+      "seconds": 12.6,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [
+        "Skip"
+      ],
+      "notes": [],
+      "messages": [],
+      "evidence": "reports/results/alumnye/run-20261003-182335/AUTH-004_ERROR.png"
+    }
+  ]
+}

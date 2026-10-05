@@ -1,0 +1,1101 @@
+{
+  "scenarios": {
+    "GRP-001": {
+      "script": "6a5c3a0524da",
+      "locators": {
+        "anchor_home_marker": [
+          "btn:New Group",
+          "textc:You don't have any groups"
+        ],
+        "complete_profile_marker": [
+          "text:Complete Your Profile",
+          "text:3 of 3"
+        ],
+        "email_tab": [
+          "btn:Email"
+        ],
+        "group_description_field": [
+          "xpath://android.widget.EditText[contains(@hint,'escription')]",
+          "xpath:(//android.widget.EditText)[2]"
+        ],
+        "group_details_marker": [
+          "btn:Add Event",
+          "btn:Add Member"
+        ],
+        "group_name_field": [
+          "xpath://android.widget.EditText[contains(@hint,'roup name')]",
+          "xpath:(//android.widget.EditText)[1]"
+        ],
+        "group_name_title": [
+          "textc:QA Group"
+        ],
+        "home_marker": [
+          "textc:Welcome,",
+          "textc:Welcome to Alumnye",
+          "btnx:My Account",
+          "textc:My Group"
+        ],
+        "identifier_field": [
+          "xpath:(//android.widget.EditText)[1]"
+        ],
+        "landing_sign_in": [
+          "btnx:Sign in"
+        ],
+        "nav_profile": [
+          "btnx:My Account",
+          "btn:My Account"
+        ],
+        "new_group_button": [
+          "btn:New Group"
+        ],
+        "otp_input": [
+          "xpath:(//android.widget.EditText)[1]"
+        ],
+        "otp_screen_marker": [
+          "textc:Enter verification code",
+          "textc:Verify identity"
+        ],
+        "primary_button": [
+          "btnx:Continue",
+          "btn:Continue",
+          "btn:Sign in",
+          "btn:Next"
+        ],
+        "role_anchor": [
+          "btnx:ANCHOR"
+        ],
+        "save_group_button": [
+          "btnx:Save",
+          "btnx:Create Group",
+          "btnx:Create",
+          "btn:Save"
+        ],
+        "verify_button": [
+          "btn:Verify"
+        ]
+      },
+      "passed_run": "run-20261004-231812",
+      "passed_at": "2026-10-04 23:33"
+    },
+    "GRP-002": {
+      "script": "ef113a9ff15d",
+      "locators": {
+        "anchor_home_marker": [
+          "btn:New Group",
+          "textc:You don't have any groups"
+        ],
+        "empty_state_text": [
+          "textc:don't have any groups",
+          "textc:no active groups"
+        ],
+        "home_marker": [
+          "textc:Welcome,",
+          "textc:Welcome to Alumnye",
+          "btnx:My Account",
+          "textc:My Group"
+        ],
+        "nav_profile": [
+          "btnx:My Account",
+          "btn:My Account"
+        ],
+        "new_group_button": [
+          "btn:New Group"
+        ],
+        "role_anchor": [
+          "btnx:ANCHOR"
+        ]
+      },
+      "passed_run": "run-20261004-231812",
+      "passed_at": "2026-10-04 23:33"
+    },
+    "GRP-003": {
+      "script": "cc7ac8246ed9",
+      "locators": {
+        "add_event_button": [
+          "btn:Add Event"
+        ],
+        "add_member_entry": [
+          "btn:Add Member"
+        ],
+        "anchor_home_marker": [
+          "btn:New Group",
+          "textc:You don't have any groups"
+        ],
+        "edit_group_button": [
+          "btnx:Edit"
+        ],
+        "events_tab": [
+          "btnx:Events"
+        ],
+        "group_details_marker": [
+          "btn:Add Event",
+          "btn:Add Member"
+        ],
+        "home_marker": [
+          "textc:Welcome,",
+          "textc:Welcome to Alumnye",
+          "btnx:My Account",
+          "textc:My Group"
+        ],
+        "nav_profile": [
+          "btnx:My Account",
+          "btn:My Account"
+        ],
+        "old_new_event_button": [
+          "btnx:New Event"
+        ],
+        "role_anchor": [
+          "btnx:ANCHOR"
+        ]
+      },
+      "passed_run": "run-20261004-231812",
+      "passed_at": "2026-10-04 23:33"
+    },
+    "GRP-004": {
+      "script": "0ecd03b45e89",
+      "locators": {
+        "add_member_entry": [
+          "btn:Add Member"
+        ],
+        "anchor_home_marker": [
+          "btn:New Group",
+          "textc:You don't have any groups"
+        ],
+        "group_details_marker": [
+          "btn:Add Event",
+          "btn:Add Member"
+        ],
+        "home_marker": [
+          "textc:Welcome,",
+          "textc:Welcome to Alumnye",
+          "btnx:My Account",
+          "textc:My Group"
+        ],
+        "home_welcome": [
+          "textc:Welcome,",
+          "textc:Welcome to Alumnye"
+        ],
+        "invite_mobile_field": [
+          "xpath://android.widget.EditText[contains(@hint,'mobile')]"
+        ],
+        "nav_profile": [
+          "btnx:My Account",
+          "btn:My Account"
+        ],
+        "role_anchor": [
+          "btnx:ANCHOR"
+        ],
+        "send_invite_button": [
+          "btn:Send Invitation",
+          "btn:Send Invite"
+        ],
+        "tab_add_contacts": [
+          "btnx:Add Contact",
+          "btnx:Add Contacts",
+          "btnx:Contacts"
+        ],
+        "tab_add_members": [
+          "btnx:Add Members"
+        ],
+        "tab_invite": [
+          "btnx:Invite"
+        ],
+        "tab_upload": [
+          "btnx:Upload"
+        ]
+      },
+      "passed_run": "run-20261004-231812",
+      "passed_at": "2026-10-04 23:33"
+    },
+    "GRP-005": {
+      "script": "87e0e19da025",
+      "locators": {
+        "add_member_entry": [
+          "btn:Add Member"
+        ],
+        "anchor_home_marker": [
+          "btn:New Group",
+          "textc:You don't have any groups"
+        ],
+        "group_details_marker": [
+          "btn:Add Event",
+          "btn:Add Member"
+        ],
+        "home_marker": [
+          "textc:Welcome,",
+          "textc:Welcome to Alumnye",
+          "btnx:My Account",
+          "textc:My Group"
+        ],
+        "home_welcome": [
+          "textc:Welcome,",
+          "textc:Welcome to Alumnye"
+        ],
+        "invite_email_field": [
+          "xpath://android.widget.EditText[contains(@hint,'mail')]",
+          "xpath:(//android.widget.EditText)[1]"
+        ],
+        "nav_profile": [
+          "btnx:My Account",
+          "btn:My Account"
+        ],
+        "role_anchor": [
+          "btnx:ANCHOR"
+        ],
+        "send_invite_button": [
+          "btn:Send Invitation",
+          "btn:Send Invite"
+        ],
+        "tab_invite": [
+          "btnx:Invite"
+        ]
+      },
+      "passed_run": "run-20261004-231812",
+      "passed_at": "2026-10-04 23:33"
+    },
+    "GRP-006": {
+      "script": "9c5d58da5185",
+      "locators": {
+        "add_member_entry": [
+          "btn:Add Member"
+        ],
+        "anchor_home_marker": [
+          "btn:New Group",
+          "textc:You don't have any groups"
+        ],
+        "group_details_marker": [
+          "btn:Add Event",
+          "btn:Add Member"
+        ],
+        "home_marker": [
+          "textc:Welcome,",
+          "textc:Welcome to Alumnye",
+          "btnx:My Account",
+          "textc:My Group"
+        ],
+        "home_welcome": [
+          "textc:Welcome,",
+          "textc:Welcome to Alumnye"
+        ],
+        "invite_email_field": [
+          "xpath://android.widget.EditText[contains(@hint,'mail')]",
+          "xpath:(//android.widget.EditText)[1]"
+        ],
+        "nav_profile": [
+          "btnx:My Account",
+          "btn:My Account"
+        ],
+        "role_anchor": [
+          "btnx:ANCHOR"
+        ],
+        "send_invite_button": [
+          "btn:Send Invitation",
+          "btn:Send Invite"
+        ],
+        "tab_invite": [
+          "btnx:Invite"
+        ]
+      },
+      "passed_run": "run-20261004-231812",
+      "passed_at": "2026-10-04 23:33"
+    },
+    "GRP-007": {
+      "script": "934bbbd725aa",
+      "locators": {
+        "add_member_entry": [
+          "btn:Add Member"
+        ],
+        "anchor_home_marker": [
+          "btn:New Group",
+          "textc:You don't have any groups"
+        ],
+        "group_details_marker": [
+          "btn:Add Event",
+          "btn:Add Member"
+        ],
+        "home_marker": [
+          "textc:Welcome,",
+          "textc:Welcome to Alumnye",
+          "btnx:My Account",
+          "textc:My Group"
+        ],
+        "home_welcome": [
+          "textc:Welcome,",
+          "textc:Welcome to Alumnye"
+        ],
+        "invite_email_field": [
+          "xpath://android.widget.EditText[contains(@hint,'mail')]",
+          "xpath:(//android.widget.EditText)[1]"
+        ],
+        "nav_profile": [
+          "btnx:My Account",
+          "btn:My Account"
+        ],
+        "role_anchor": [
+          "btnx:ANCHOR"
+        ],
+        "send_invite_button": [
+          "btn:Send Invitation",
+          "btn:Send Invite"
+        ],
+        "tab_invite": [
+          "btnx:Invite"
+        ]
+      },
+      "passed_run": "run-20261004-231812",
+      "passed_at": "2026-10-04 23:33"
+    },
+    "GRP-008": {
+      "script": "e041e35552c6",
+      "locators": {
+        "add_member_entry": [
+          "btn:Add Member"
+        ],
+        "anchor_home_marker": [
+          "btn:New Group",
+          "textc:You don't have any groups"
+        ],
+        "group_details_marker": [
+          "btn:Add Event",
+          "btn:Add Member"
+        ],
+        "home_marker": [
+          "textc:Welcome,",
+          "textc:Welcome to Alumnye",
+          "btnx:My Account",
+          "textc:My Group"
+        ],
+        "home_welcome": [
+          "textc:Welcome,",
+          "textc:Welcome to Alumnye"
+        ],
+        "invite_email_field": [
+          "xpath://android.widget.EditText[contains(@hint,'mail')]",
+          "xpath:(//android.widget.EditText)[1]"
+        ],
+        "nav_profile": [
+          "btnx:My Account",
+          "btn:My Account"
+        ],
+        "role_anchor": [
+          "btnx:ANCHOR"
+        ],
+        "send_invite_button": [
+          "btn:Send Invitation",
+          "btn:Send Invite"
+        ],
+        "tab_invite": [
+          "btnx:Invite"
+        ]
+      },
+      "passed_run": "run-20261004-231812",
+      "passed_at": "2026-10-04 23:33"
+    },
+    "GRP-009": {
+      "script": "50e42a82fde2",
+      "locators": {
+        "anchor_home_marker": [
+          "btn:New Group",
+          "textc:You don't have any groups"
+        ],
+        "group_details_marker": [
+          "btn:Add Event",
+          "btn:Add Member"
+        ],
+        "group_name_field": [
+          "xpath://android.widget.EditText[contains(@hint,'roup name')]",
+          "xpath:(//android.widget.EditText)[1]"
+        ],
+        "home_marker": [
+          "textc:Welcome,",
+          "textc:Welcome to Alumnye",
+          "btnx:My Account",
+          "textc:My Group"
+        ],
+        "home_welcome": [
+          "textc:Welcome,",
+          "textc:Welcome to Alumnye"
+        ],
+        "nav_profile": [
+          "btnx:My Account",
+          "btn:My Account"
+        ],
+        "new_group_button": [
+          "btn:New Group"
+        ],
+        "role_anchor": [
+          "btnx:ANCHOR"
+        ]
+      },
+      "passed_run": "run-20261004-231812",
+      "passed_at": "2026-10-04 23:33"
+    },
+    "GRP-010": {
+      "script": "a1791e32635a",
+      "locators": {
+        "anchor_home_marker": [
+          "btn:New Group",
+          "textc:You don't have any groups"
+        ],
+        "group_description_field": [
+          "xpath://android.widget.EditText[contains(@hint,'escription')]",
+          "xpath:(//android.widget.EditText)[2]"
+        ],
+        "group_details_marker": [
+          "btn:Add Event",
+          "btn:Add Member"
+        ],
+        "group_name_field": [
+          "xpath://android.widget.EditText[contains(@hint,'roup name')]",
+          "xpath:(//android.widget.EditText)[1]"
+        ],
+        "home_marker": [
+          "textc:Welcome,",
+          "textc:Welcome to Alumnye",
+          "btnx:My Account",
+          "textc:My Group"
+        ],
+        "home_welcome": [
+          "textc:Welcome,",
+          "textc:Welcome to Alumnye"
+        ],
+        "nav_profile": [
+          "btnx:My Account",
+          "btn:My Account"
+        ],
+        "new_group_button": [
+          "btn:New Group"
+        ],
+        "role_anchor": [
+          "btnx:ANCHOR"
+        ],
+        "save_group_button": [
+          "btnx:Save",
+          "btnx:Create Group",
+          "btnx:Create",
+          "btn:Save"
+        ]
+      },
+      "passed_run": "run-20261004-231812",
+      "passed_at": "2026-10-04 23:33"
+    },
+    "GRP-014": {
+      "script": "fb67c2300c38",
+      "locators": {
+        "anchor_home_marker": [
+          "btn:New Group",
+          "textc:You don't have any groups"
+        ],
+        "group_details_marker": [
+          "btn:Add Event",
+          "btn:Add Member"
+        ],
+        "home_marker": [
+          "textc:Welcome,",
+          "textc:Welcome to Alumnye",
+          "btnx:My Account",
+          "textc:My Group"
+        ],
+        "home_welcome": [
+          "textc:Welcome,",
+          "textc:Welcome to Alumnye"
+        ],
+        "members_tab": [
+          "btn:Members"
+        ],
+        "nav_profile": [
+          "btnx:My Account",
+          "btn:My Account"
+        ],
+        "role_anchor": [
+          "btnx:ANCHOR"
+        ]
+      },
+      "passed_run": "run-20261004-231812",
+      "passed_at": "2026-10-04 23:33"
+    },
+    "GRP-015": {
+      "script": "8becfa057b8b",
+      "locators": {
+        "anchor_home_marker": [
+          "btn:New Group",
+          "textc:You don't have any groups"
+        ],
+        "group_details_marker": [
+          "btn:Add Event",
+          "btn:Add Member"
+        ],
+        "home_welcome": [
+          "textc:Welcome,",
+          "textc:Welcome to Alumnye"
+        ],
+        "members_tab": [
+          "btn:Members"
+        ],
+        "nav_profile": [
+          "btnx:My Account",
+          "btn:My Account"
+        ],
+        "role_anchor": [
+          "btnx:ANCHOR"
+        ]
+      },
+      "passed_run": "run-20261004-220152",
+      "passed_at": "2026-10-04 22:08"
+    },
+    "AUTH-001": {
+      "script": "ead18a9d7085",
+      "locators": {
+        "google_button": [
+          "btnx:Sign in with Google",
+          "btn:Google"
+        ],
+        "home_marker": [
+          "textc:Welcome,",
+          "textc:Welcome to Alumnye",
+          "btnx:My Account",
+          "textc:My Group"
+        ],
+        "landing_create_account": [
+          "btnx:Create account"
+        ],
+        "landing_sign_in": [
+          "btnx:Sign in"
+        ]
+      },
+      "passed_run": "run-20261004-223035",
+      "passed_at": "2026-10-04 22:45"
+    },
+    "AUTH-002": {
+      "script": "33b6c4534361",
+      "locators": {
+        "apple_button": [
+          "btn:Apple"
+        ],
+        "google_button": [
+          "btnx:Sign in with Google",
+          "btn:Google"
+        ],
+        "landing_sign_in": [
+          "btnx:Sign in"
+        ],
+        "old_divider_text": [
+          "textc:or use email"
+        ],
+        "or_divider": [
+          "text:or"
+        ]
+      },
+      "passed_run": "run-20261004-223035",
+      "passed_at": "2026-10-04 22:45"
+    },
+    "AUTH-004": {
+      "script": "316147798983",
+      "locators": {
+        "email_tab": [
+          "btn:Email"
+        ],
+        "home_marker": [
+          "textc:Welcome,",
+          "textc:Welcome to Alumnye",
+          "btnx:My Account",
+          "textc:My Group"
+        ],
+        "identifier_field": [
+          "xpath:(//android.widget.EditText)[1]"
+        ],
+        "landing_create_account": [
+          "btnx:Create account"
+        ],
+        "otp_input": [
+          "xpath:(//android.widget.EditText)[1]"
+        ],
+        "otp_screen_marker": [
+          "textc:Enter verification code",
+          "textc:Verify identity"
+        ],
+        "primary_button": [
+          "btnx:Continue",
+          "btn:Continue",
+          "btn:Sign in",
+          "btn:Next"
+        ],
+        "verify_button": [
+          "btn:Verify"
+        ]
+      },
+      "passed_run": "run-20261004-223035",
+      "passed_at": "2026-10-04 22:45"
+    },
+    "AUTH-006": {
+      "script": "2a3606a36492",
+      "locators": {
+        "complete_profile_marker": [
+          "text:Complete Your Profile",
+          "text:3 of 3"
+        ],
+        "email_tab": [
+          "btn:Email"
+        ],
+        "home_marker": [
+          "textc:Welcome,",
+          "textc:Welcome to Alumnye",
+          "btnx:My Account",
+          "textc:My Group"
+        ],
+        "identifier_field": [
+          "xpath:(//android.widget.EditText)[1]"
+        ],
+        "landing_sign_in": [
+          "btnx:Sign in"
+        ],
+        "otp_input": [
+          "xpath:(//android.widget.EditText)[1]"
+        ],
+        "otp_screen_marker": [
+          "textc:Enter verification code",
+          "textc:Verify identity"
+        ],
+        "primary_button": [
+          "btnx:Continue",
+          "btn:Continue",
+          "btn:Sign in",
+          "btn:Next"
+        ],
+        "verify_button": [
+          "btn:Verify"
+        ]
+      },
+      "passed_run": "run-20261004-223035",
+      "passed_at": "2026-10-04 22:45"
+    },
+    "AUTH-007": {
+      "script": "d61edb5ee08b",
+      "locators": {
+        "home_marker": [
+          "textc:Welcome,",
+          "textc:Welcome to Alumnye",
+          "btnx:My Account",
+          "textc:My Group"
+        ],
+        "landing_sign_in": [
+          "btnx:Sign in"
+        ],
+        "nav_profile": [
+          "btnx:My Account",
+          "btn:My Account"
+        ]
+      },
+      "passed_run": "run-20261004-223035",
+      "passed_at": "2026-10-04 22:45"
+    },
+    "AUTH-008": {
+      "script": "249e26a9a998",
+      "locators": {
+        "confirm_sign_out": [
+          "btnx:Yes",
+          "btnx:Confirm",
+          "btnx:Sign Out",
+          "btnx:Log out"
+        ],
+        "home_marker": [
+          "textc:Welcome,",
+          "textc:Welcome to Alumnye",
+          "btnx:My Account",
+          "textc:My Group"
+        ],
+        "landing_sign_in": [
+          "btnx:Sign in"
+        ],
+        "nav_profile": [
+          "btnx:My Account",
+          "btn:My Account"
+        ]
+      },
+      "passed_run": "run-20261004-223035",
+      "passed_at": "2026-10-04 22:45"
+    },
+    "AUTH-009": {
+      "script": "8a0bba5190c9",
+      "locators": {
+        "complete_profile_marker": [
+          "text:Complete Your Profile",
+          "text:3 of 3"
+        ],
+        "email_tab": [
+          "btn:Email"
+        ],
+        "first_name_field": [
+          "xpath://android.widget.EditText[contains(@hint,'irst name')]",
+          "xpath:(//android.widget.EditText)[1]"
+        ],
+        "identifier_field": [
+          "xpath:(//android.widget.EditText)[1]"
+        ],
+        "landing_create_account": [
+          "btnx:Create account"
+        ],
+        "last_name_field": [
+          "xpath://android.widget.EditText[contains(@hint,'ast name')]",
+          "xpath:(//android.widget.EditText)[2]"
+        ],
+        "otp_input": [
+          "xpath:(//android.widget.EditText)[1]"
+        ],
+        "otp_screen_marker": [
+          "textc:Enter verification code",
+          "textc:Verify identity"
+        ],
+        "primary_button": [
+          "btnx:Continue",
+          "btn:Continue",
+          "btn:Sign in",
+          "btn:Next"
+        ],
+        "verify_button": [
+          "btn:Verify"
+        ]
+      },
+      "passed_run": "run-20261004-223035",
+      "passed_at": "2026-10-04 22:45"
+    },
+    "AUTH-010": {
+      "script": "f1dc029a69e5",
+      "locators": {
+        "email_tab": [
+          "btn:Email"
+        ],
+        "identifier_field": [
+          "xpath:(//android.widget.EditText)[1]"
+        ],
+        "landing_sign_in": [
+          "btnx:Sign in"
+        ],
+        "otp_screen_marker": [
+          "textc:Enter verification code",
+          "textc:Verify identity"
+        ]
+      },
+      "passed_run": "run-20261004-223035",
+      "passed_at": "2026-10-04 22:45"
+    },
+    "AUTH-011": {
+      "script": "28e01cc737da",
+      "locators": {
+        "complete_profile_marker": [
+          "text:Complete Your Profile",
+          "text:3 of 3"
+        ],
+        "email_tab": [
+          "btn:Email"
+        ],
+        "home_marker": [
+          "textc:Welcome,",
+          "textc:Welcome to Alumnye",
+          "btnx:My Account",
+          "textc:My Group"
+        ],
+        "identifier_field": [
+          "xpath:(//android.widget.EditText)[1]"
+        ],
+        "landing_create_account": [
+          "btnx:Create account"
+        ],
+        "otp_input": [
+          "xpath:(//android.widget.EditText)[1]"
+        ],
+        "otp_screen_marker": [
+          "textc:Enter verification code",
+          "textc:Verify identity"
+        ],
+        "primary_button": [
+          "btnx:Continue",
+          "btn:Continue",
+          "btn:Sign in",
+          "btn:Next"
+        ],
+        "verify_button": [
+          "btn:Verify"
+        ]
+      },
+      "passed_run": "run-20261004-223035",
+      "passed_at": "2026-10-04 22:45"
+    },
+    "AUTH-012": {
+      "script": "0d46c85b1dbf",
+      "locators": {
+        "email_tab": [
+          "btn:Email"
+        ],
+        "identifier_field": [
+          "xpath:(//android.widget.EditText)[1]"
+        ],
+        "landing_create_account": [
+          "btnx:Create account"
+        ],
+        "otp_input": [
+          "xpath:(//android.widget.EditText)[1]"
+        ],
+        "otp_screen_marker": [
+          "textc:Enter verification code",
+          "textc:Verify identity"
+        ],
+        "primary_button": [
+          "btnx:Continue",
+          "btn:Continue",
+          "btn:Sign in",
+          "btn:Next"
+        ]
+      },
+      "passed_run": "run-20261004-223035",
+      "passed_at": "2026-10-04 22:45"
+    },
+    "AUTH-013": {
+      "script": "2da8da5ae9e5",
+      "locators": {
+        "complete_profile_marker": [
+          "text:Complete Your Profile",
+          "text:3 of 3"
+        ],
+        "email_tab": [
+          "btn:Email"
+        ],
+        "first_name_field": [
+          "xpath://android.widget.EditText[contains(@hint,'irst name')]",
+          "xpath:(//android.widget.EditText)[1]"
+        ],
+        "home_marker": [
+          "textc:Welcome,",
+          "textc:Welcome to Alumnye",
+          "btnx:My Account",
+          "textc:My Group"
+        ],
+        "identifier_field": [
+          "xpath:(//android.widget.EditText)[1]"
+        ],
+        "landing_create_account": [
+          "btnx:Create account"
+        ],
+        "last_name_field": [
+          "xpath://android.widget.EditText[contains(@hint,'ast name')]",
+          "xpath:(//android.widget.EditText)[2]"
+        ],
+        "otp_input": [
+          "xpath:(//android.widget.EditText)[1]"
+        ],
+        "otp_screen_marker": [
+          "textc:Enter verification code",
+          "textc:Verify identity"
+        ],
+        "primary_button": [
+          "btnx:Continue",
+          "btn:Continue",
+          "btn:Sign in",
+          "btn:Next"
+        ],
+        "verify_button": [
+          "btn:Verify"
+        ]
+      },
+      "passed_run": "run-20261004-223035",
+      "passed_at": "2026-10-04 22:45"
+    },
+    "AUTH-014": {
+      "script": "67c999d1d612",
+      "locators": {
+        "email_tab": [
+          "btn:Email"
+        ],
+        "home_marker": [
+          "textc:Welcome,",
+          "textc:Welcome to Alumnye",
+          "btnx:My Account",
+          "textc:My Group"
+        ],
+        "identifier_field": [
+          "xpath:(//android.widget.EditText)[1]"
+        ],
+        "landing_create_account": [
+          "btnx:Create account"
+        ],
+        "otp_screen_marker": [
+          "textc:Enter verification code",
+          "textc:Verify identity"
+        ],
+        "primary_button": [
+          "btnx:Continue",
+          "btn:Continue",
+          "btn:Sign in",
+          "btn:Next"
+        ],
+        "wrong_number_link": [
+          "btn:Wrong"
+        ]
+      },
+      "passed_run": "run-20261004-223035",
+      "passed_at": "2026-10-04 22:45"
+    },
+    "AUTH-015": {
+      "script": "7b09d4ab6ccb",
+      "locators": {
+        "email_tab": [
+          "btn:Email"
+        ],
+        "identifier_field": [
+          "xpath:(//android.widget.EditText)[1]"
+        ],
+        "landing_create_account": [
+          "btnx:Create account"
+        ],
+        "otp_screen_marker": [
+          "textc:Enter verification code",
+          "textc:Verify identity"
+        ],
+        "primary_button": [
+          "btnx:Continue",
+          "btn:Continue",
+          "btn:Sign in",
+          "btn:Next"
+        ],
+        "resend_link": [
+          "btn:Resend"
+        ]
+      },
+      "passed_run": "run-20261004-223035",
+      "passed_at": "2026-10-04 22:45"
+    },
+    "AUTH-017": {
+      "script": "7a7f692e7d28",
+      "locators": {
+        "apple_button": [
+          "btn:Apple"
+        ],
+        "google_button": [
+          "btnx:Sign in with Google",
+          "btn:Google"
+        ],
+        "identifier_field": [
+          "xpath:(//android.widget.EditText)[1]"
+        ],
+        "landing_create_account": [
+          "btnx:Create account"
+        ],
+        "landing_sign_in": [
+          "btnx:Sign in"
+        ]
+      },
+      "passed_run": "run-20261004-223035",
+      "passed_at": "2026-10-04 22:45"
+    },
+    "AUTH-018": {
+      "script": "3ae53f1c0f38",
+      "locators": {
+        "landing_create_account": [
+          "btnx:Create account"
+        ],
+        "landing_sign_in": [
+          "btnx:Sign in"
+        ],
+        "splash_skip": [
+          "btnx:Skip"
+        ]
+      },
+      "passed_run": "run-20261004-225248",
+      "passed_at": "2026-10-04 22:54"
+    },
+    "AUTH-020": {
+      "script": "c9d91c14f8d7",
+      "locators": {
+        "apple_button": [
+          "btn:Apple"
+        ],
+        "google_button": [
+          "btnx:Sign in with Google",
+          "btn:Google"
+        ],
+        "landing_create_account": [
+          "btnx:Create account"
+        ],
+        "landing_sign_in": [
+          "btnx:Sign in"
+        ],
+        "old_divider_text": [
+          "textc:or use email"
+        ],
+        "or_divider": [
+          "text:or"
+        ]
+      },
+      "passed_run": "run-20261004-225248",
+      "passed_at": "2026-10-04 22:54"
+    },
+    "AUTH-019": {
+      "script": "b71ffe12dd60",
+      "locators": {
+        "landing_create_account": [
+          "btnx:Create account"
+        ],
+        "landing_sign_in": [
+          "btnx:Sign in"
+        ],
+        "splash_get_started": [
+          "btnx:Get Started"
+        ],
+        "splash_next": [
+          "btnx:Next"
+        ]
+      },
+      "passed_run": "run-20261004-225628",
+      "passed_at": "2026-10-04 22:57"
+    },
+    "GRP-011": {
+      "script": "8354add0be47",
+      "locators": {
+        "anchor_home_marker": [
+          "btn:New Group",
+          "textc:You don't have any groups"
+        ],
+        "group_description_field": [
+          "xpath://android.widget.EditText[contains(@hint,'escription')]",
+          "xpath:(//android.widget.EditText)[2]"
+        ],
+        "group_name_field": [
+          "xpath://android.widget.EditText[contains(@hint,'roup name')]",
+          "xpath:(//android.widget.EditText)[1]"
+        ],
+        "home_marker": [
+          "textc:Welcome,",
+          "textc:Welcome to Alumnye",
+          "btnx:My Account",
+          "textc:My Group"
+        ],
+        "home_welcome": [
+          "textc:Welcome,",
+          "textc:Welcome to Alumnye"
+        ],
+        "nav_profile": [
+          "btnx:My Account",
+          "btn:My Account"
+        ],
+        "new_group_button": [
+          "btn:New Group"
+        ],
+        "role_anchor": [
+          "btnx:ANCHOR"
+        ]
+      },
+      "passed_run": "run-20261004-231812",
+      "passed_at": "2026-10-04 23:33"
+    }
+  },
+  "framework": {
+    "app.py": "d553d96770dd",
+    "flows.py": "31ef55c4a81c",
+    "locators.py": "3c12f284eeb9",
+    "healer.py": "559a8b15ce21",
+    "terms.py": "aaba8375448d",
+    "formfill.py": "7749484688a3",
+    "testdata.py": "ea5a95ac4498"
+  },
+  "changes": []
+}

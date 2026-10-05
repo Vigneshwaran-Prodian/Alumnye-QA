@@ -1,0 +1,149 @@
+{
+  "summary": {
+    "run_id": "run-20261005-000620",
+    "product": "alumnye",
+    "platform": "android",
+    "module": "journeys",
+    "total": 1,
+    "passed": 0,
+    "passed_zero_ai": 0,
+    "passed_after_self_heal": 0,
+    "passed_after_qwen": 0,
+    "failed": 1,
+    "error": 0,
+    "blocked": 0,
+    "skipped": 0,
+    "ai_calls": 2,
+    "stopped_reason": "Stopped by user (Ctrl+C)."
+  },
+  "results": [
+    {
+      "id": "JNY-001",
+      "title": "Anchor invites, member accepts: the Anchor's Members count goes up and the member's name is listed",
+      "type": "Positive",
+      "script": "source/mobile/alumnye/specs/journeys/JNY_001_invite_accept.py",
+      "status": "FAILED",
+      "category": "likely-bug",
+      "message": "anchor: 'group_details_marker' (Group Details is open) is missing from the screen \u2014 likely functionality break. AI: The Group Details marker and expected action labels (Add Event, Add Member) are completely absent; instead an error state (Alumnye isn't responding) with recovery buttons is shown, indicating the Group Details screen failed to open. | member: the other device stopped before 'invite_sent': anchor: 'group_details_marker' (Group Details is open) is missing from the screen \u2014 likely functionality break. AI: The Group De",
+      "seconds": 172.8,
+      "ai_mode": "qwen",
+      "ai_calls": 2,
+      "adaptations": [
+        {
+          "tier": "qwen",
+          "key": "finish this profile screen (fill every required field marked * with a valid value) and move forward until the Home screen",
+          "strategy": "type 35",
+          "reason": "Mobile number field is empty; filling with valid 10-digit Indian number"
+        },
+        {
+          "tier": "validation",
+          "key": "Enter your mobile number",
+          "strategy": "retyped Enter your mobile number",
+          "reason": "Phone number is already registered to another user -> the phone number is already used by someone else, so a different number is needed"
+        }
+      ],
+      "entry_path": [
+        "anchor: dialog 'Success / Group created successfully!' -> OK",
+        "anchor: dialog 'Success / Group created successfully!' -> OK",
+        "member: Skip",
+        "member: Create account",
+        "member: Email tab",
+        "member: Terms checkbox: ticked"
+      ],
+      "notes": [
+        "anchor: precondition: signed in as arjun.sharma.1004223213@yopmail.com (session already open)",
+        "anchor: precondition: signed in as arjun.sharma.1004223213@yopmail.com (session already open)",
+        "member: form filler: field 'Enter your last name' was not on the screen on attempt 1",
+        "member: form filler: field 'Enter your mobile number' was not on the screen on attempt 1",
+        "member: form filler: field 'Enter your mobile number' was not on the screen on attempt 2",
+        "member: validation 'Phone number is already registered to another user' on 'Enter your mobile number': the phone number is already used by someone else, so a different number is needed; entered a new value 9597024921 (known rule)",
+        "member: Profile form filled automatically: screen 1: Enter your first name = Rohan; screen 1: Enter your last name = Pillai; screen 1: Qwen-assisted (progressed); screen 2: tapped 'Continue'; validation 'Phone number is already registered to another user' -> new Enter your mobile number 9597024921 (known rule); screen 3: tapped 'Continue' after correcting a rejected value",
+        "member account registered: rohan.pillai.1005000700@yopmail.com"
+      ],
+      "last_taps": [
+        "anchor: role_anchor -> ViewGroup at x857,y186 173x58",
+        "anchor: new_group_button -> ViewGroup at x696,y447 321x99",
+        "anchor: save_group_button -> ViewGroup at x63,y1446 954x116",
+        "member: verify_button -> ViewGroup at x53,y1270 975x139",
+        "member: 'Continue' -> ViewGroup at x53,y1664",
+        "member: 'Continue' -> ViewGroup at x53,y1664"
+      ],
+      "messages": [
+        {
+          "trigger": "a pop-up appeared",
+          "text": "Success / Group created successfully!",
+          "where": "dialog"
+        },
+        {
+          "trigger": "a pop-up appeared",
+          "text": "Success / Group created successfully!",
+          "where": "dialog"
+        },
+        {
+          "trigger": "profile screen 2: tapped 'Continue'",
+          "text": "Phone number is already registered to another user",
+          "where": "on-screen"
+        }
+      ],
+      "discovered": [
+        {
+          "where": "Anchor Home is shown",
+          "label": "\uf382, Home",
+          "device": "anchor",
+          "scenario": "JNY-001",
+          "safe": false,
+          "result": ""
+        },
+        {
+          "where": "group form is shown",
+          "label": "\uf383, Home",
+          "device": "anchor",
+          "scenario": "JNY-001",
+          "safe": false,
+          "result": ""
+        },
+        {
+          "where": "Create account screen asks for the email / mobile",
+          "label": "\ud83c\uddee\ud83c\uddf3",
+          "device": "member",
+          "scenario": "JNY-001",
+          "safe": false,
+          "result": ""
+        },
+        {
+          "where": "OTP verification screen is shown",
+          "label": "Terms & Conditions",
+          "device": "member",
+          "scenario": "JNY-001",
+          "safe": false,
+          "result": ""
+        },
+        {
+          "where": "OTP verification screen is shown",
+          "label": "Privacy Policy",
+          "device": "member",
+          "scenario": "JNY-001",
+          "safe": false,
+          "result": ""
+        },
+        {
+          "where": "Home screen after registration",
+          "label": "Set Preferences \u2192",
+          "device": "member",
+          "scenario": "JNY-001",
+          "safe": false,
+          "result": ""
+        },
+        {
+          "where": "Home screen after registration",
+          "label": "\uf382, Home",
+          "device": "member",
+          "scenario": "JNY-001",
+          "safe": false,
+          "result": ""
+        }
+      ],
+      "evidence": "reports/results/alumnye/run-20261005-000620/JNY-001_anchor_FAILED.png (+ _member_)"
+    }
+  ]
+}

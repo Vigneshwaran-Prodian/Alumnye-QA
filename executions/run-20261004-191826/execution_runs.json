@@ -1,0 +1,466 @@
+{
+  "summary": {
+    "run_id": "run-20261004-191826",
+    "product": "alumnye",
+    "platform": "android",
+    "module": "groups",
+    "total": 12,
+    "passed": 6,
+    "passed_zero_ai": 5,
+    "passed_after_self_heal": 1,
+    "passed_after_qwen": 0,
+    "failed": 6,
+    "error": 0,
+    "blocked": 0,
+    "skipped": 0,
+    "ai_calls": 2,
+    "stopped_reason": "Stopped by user (Ctrl+C)."
+  },
+  "results": [
+    {
+      "id": "GRP-001",
+      "title": "Anchor creates a group and lands on its Group Details",
+      "type": "Positive",
+      "script": "source/mobile/alumnye/specs/groups/GRP_001_create_group.py",
+      "status": "PASSED",
+      "category": "",
+      "message": "",
+      "seconds": 57.7,
+      "ai_mode": "self-heal",
+      "ai_calls": 0,
+      "adaptations": [
+        {
+          "tier": "heal",
+          "key": "group_details_marker",
+          "strategy": "text:MEMBER",
+          "reason": "label 'MEMBER' ~ ['Add Event', 'Add Member'] (score 0.81)"
+        }
+      ],
+      "entry_path": [
+        "dialog 'Success / Group created successfully!' -> OK"
+      ],
+      "notes": [],
+      "last_taps": [
+        "role_anchor -> ViewGroup at x857,y186 173x58",
+        "new_group_button -> ViewGroup at x696,y447 321x99",
+        "save_group_button -> ViewGroup at x63,y1446 954x116"
+      ],
+      "messages": [
+        {
+          "trigger": "a pop-up appeared",
+          "text": "Success / Group created successfully!",
+          "where": "dialog"
+        }
+      ],
+      "discovered": [
+        {
+          "where": "Anchor Home is shown",
+          "label": "\uf382, Home",
+          "device": "",
+          "scenario": "GRP-001",
+          "safe": false,
+          "result": ""
+        },
+        {
+          "where": "group form is shown",
+          "label": "Cancel",
+          "device": "",
+          "scenario": "GRP-001",
+          "safe": false,
+          "result": ""
+        },
+        {
+          "where": "group form is shown",
+          "label": "\uf383, Home",
+          "device": "",
+          "scenario": "GRP-001",
+          "safe": false,
+          "result": ""
+        },
+        {
+          "where": "Group Details opens after saving",
+          "label": "\uf382, Home",
+          "device": "",
+          "scenario": "GRP-001",
+          "safe": false,
+          "result": ""
+        }
+      ],
+      "evidence": "reports/results/alumnye/run-20261004-191826/GRP-001_PASSED.png"
+    },
+    {
+      "id": "GRP-002",
+      "title": "Anchor Home offers + New Group and shows the right state (welcome message or the group list)",
+      "type": "Positive",
+      "script": "source/mobile/alumnye/specs/groups/GRP_002_anchor_home_state.py",
+      "status": "PASSED",
+      "category": "",
+      "message": "",
+      "seconds": 5.8,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [],
+      "notes": [
+        "user already has groups: group list shown (the empty state applies only to a user with no groups)"
+      ],
+      "last_taps": [
+        "role_anchor -> ViewGroup at x857,y186 173x58"
+      ],
+      "messages": [],
+      "discovered": [],
+      "evidence": "reports/results/alumnye/run-20261004-191826/GRP-002_PASSED.png"
+    },
+    {
+      "id": "GRP-003",
+      "title": "Group Details shows About, member count and the Add Event button",
+      "type": "Positive",
+      "script": "source/mobile/alumnye/specs/groups/GRP_003_group_details_content.py",
+      "status": "FAILED",
+      "category": "assertion",
+      "message": "Group Details must show an About section",
+      "seconds": 11.6,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [],
+      "notes": [],
+      "last_taps": [
+        "role_anchor -> ViewGroup at x857,y186 173x58"
+      ],
+      "messages": [],
+      "discovered": [
+        {
+          "where": "Group Details is shown",
+          "label": "Edit",
+          "device": "",
+          "scenario": "GRP-003",
+          "safe": false,
+          "result": ""
+        },
+        {
+          "where": "Group Details is shown",
+          "label": "Events",
+          "device": "",
+          "scenario": "GRP-003",
+          "safe": false,
+          "result": ""
+        },
+        {
+          "where": "Group Details is shown",
+          "label": "\uf2b4, Notice Board, 0 notices, \uf23b",
+          "device": "",
+          "scenario": "GRP-003",
+          "safe": false,
+          "result": ""
+        },
+        {
+          "where": "Group Details is shown",
+          "label": "\uf382, Home",
+          "device": "",
+          "scenario": "GRP-003",
+          "safe": false,
+          "result": ""
+        }
+      ],
+      "evidence": "reports/results/alumnye/run-20261004-191826/GRP-003_FAILED.png"
+    },
+    {
+      "id": "GRP-004",
+      "title": "Add Members offers the invitation methods (Invite, Upload, Add Members, Add Contacts)",
+      "type": "Positive",
+      "script": "source/mobile/alumnye/specs/groups/GRP_004_add_members_options.py",
+      "status": "FAILED",
+      "category": "assertion",
+      "message": "the 'Add Contacts' option must be available in the add-member screen (v1.3 invitation methods)",
+      "seconds": 13.0,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [],
+      "notes": [],
+      "last_taps": [
+        "role_anchor -> ViewGroup at x857,y186 173x58",
+        "add_member_entry -> ViewGroup at x53,y648 479x97"
+      ],
+      "messages": [],
+      "discovered": [],
+      "evidence": "reports/results/alumnye/run-20261004-191826/GRP-004_FAILED.png"
+    },
+    {
+      "id": "GRP-005",
+      "title": "Anchor invites a member by email and gets a success confirmation",
+      "type": "Positive",
+      "script": "source/mobile/alumnye/specs/groups/GRP_005_invite_member_by_email.py",
+      "status": "PASSED",
+      "category": "",
+      "message": "",
+      "seconds": 20.1,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [],
+      "notes": [
+        "invited karthik.nair.1004192002@yopmail.com; pending invites before: "
+      ],
+      "last_taps": [
+        "role_anchor -> ViewGroup at x857,y186 173x58",
+        "add_member_entry -> ViewGroup at x53,y648 479x97",
+        "tab_invite -> ViewGroup at x0,y474 270x111",
+        "send_invite_button -> ViewGroup at x97,y1483 886x115"
+      ],
+      "messages": [
+        {
+          "trigger": "sent invitation to 'karthik.nair.1004192002@yopmail.com'",
+          "text": "Enter email address...",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "sent invitation to 'karthik.nair.1004192002@yopmail.com'",
+          "text": "Invite sent successfully!",
+          "where": "on-screen"
+        }
+      ],
+      "discovered": [],
+      "evidence": "reports/results/alumnye/run-20261004-191826/GRP-005_PASSED.png"
+    },
+    {
+      "id": "GRP-006",
+      "title": "Invite rejects an invalid email format",
+      "type": "Negative",
+      "script": "source/mobile/alumnye/specs/groups/GRP_006_invite_invalid_email.py",
+      "status": "FAILED",
+      "category": "assertion",
+      "message": "'abc@' must not be accepted as an invitation email (result: unknown) | 'plainaddress' must not be accepted as an invitation email (result: unknown) | 'no spaces@yopmail.com' must not be accepted as an invitation email (result: unknown)",
+      "seconds": 40.6,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [],
+      "notes": [],
+      "last_taps": [
+        "tab_invite -> ViewGroup at x0,y474 270x111",
+        "send_invite_button -> ViewGroup at x97,y1483 886x115",
+        "tab_invite -> ViewGroup at x0,y474 270x111",
+        "send_invite_button -> ViewGroup at x97,y1483 886x115"
+      ],
+      "messages": [
+        {
+          "trigger": "sent invitation to 'abc@'",
+          "text": "Please enter a valid email format",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "sent invitation to 'plainaddress'",
+          "text": "Please enter a valid email format",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "sent invitation to 'no spaces@yopmail.com'",
+          "text": "Please enter a valid email format",
+          "where": "on-screen"
+        }
+      ],
+      "discovered": [],
+      "evidence": "reports/results/alumnye/run-20261004-191826/GRP-006_FAILED.png"
+    },
+    {
+      "id": "GRP-007",
+      "title": "Anchor cannot invite their own email address",
+      "type": "Negative",
+      "script": "source/mobile/alumnye/specs/groups/GRP_007_invite_self_blocked.py",
+      "status": "FAILED",
+      "category": "assertion",
+      "message": "the Anchor must not be able to invite their own email (result: sent)",
+      "seconds": 18.6,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [],
+      "notes": [],
+      "last_taps": [
+        "role_anchor -> ViewGroup at x857,y186 173x58",
+        "add_member_entry -> ViewGroup at x53,y648 479x97",
+        "tab_invite -> ViewGroup at x0,y474 270x111",
+        "send_invite_button -> ViewGroup at x97,y1483 886x115"
+      ],
+      "messages": [
+        {
+          "trigger": "sent invitation to 'vivek.reddy.1003232340@yopmail.com'",
+          "text": "Enter email address...",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "sent invitation to 'vivek.reddy.1003232340@yopmail.com'",
+          "text": "Invite sent successfully!",
+          "where": "on-screen"
+        }
+      ],
+      "discovered": [],
+      "evidence": "reports/results/alumnye/run-20261004-191826/GRP-007_FAILED.png"
+    },
+    {
+      "id": "GRP-008",
+      "title": "Inviting the same email twice is blocked",
+      "type": "Negative",
+      "script": "source/mobile/alumnye/specs/groups/GRP_008_invite_duplicate_blocked.py",
+      "status": "PASSED",
+      "category": "",
+      "message": "",
+      "seconds": 29.8,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [],
+      "notes": [],
+      "last_taps": [
+        "tab_invite -> ViewGroup at x0,y474 270x111",
+        "send_invite_button -> ViewGroup at x97,y1483 886x115",
+        "tab_invite -> ViewGroup at x0,y474 270x111",
+        "send_invite_button -> ViewGroup at x97,y1483 886x115"
+      ],
+      "messages": [
+        {
+          "trigger": "sent invitation to 'arjun.sharma.1004192121@yopmail.com'",
+          "text": "Enter email address...",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "sent invitation to 'arjun.sharma.1004192121@yopmail.com'",
+          "text": "Invite sent successfully!",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "sent invitation to 'arjun.sharma.1004192121@yopmail.com'",
+          "text": "User already invited to this group",
+          "where": "on-screen"
+        }
+      ],
+      "discovered": [],
+      "evidence": "reports/results/alumnye/run-20261004-191826/GRP-008_PASSED.png"
+    },
+    {
+      "id": "GRP-009",
+      "title": "Create Group is blocked when the name is empty",
+      "type": "Negative",
+      "script": "source/mobile/alumnye/specs/groups/GRP_009_create_group_empty_name.py",
+      "status": "PASSED",
+      "category": "",
+      "message": "",
+      "seconds": 18.0,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [],
+      "notes": [],
+      "last_taps": [
+        "role_anchor -> ViewGroup at x857,y186 173x58",
+        "new_group_button -> ViewGroup at x696,y447 321x99"
+      ],
+      "messages": [
+        {
+          "trigger": "tried to save a group with an empty name",
+          "text": "(button stays disabled)",
+          "where": "state"
+        },
+        {
+          "trigger": "tried to save a group with a spaces-only name",
+          "text": "(button stays disabled)",
+          "where": "state"
+        }
+      ],
+      "discovered": [],
+      "evidence": "reports/results/alumnye/run-20261004-191826/GRP-009_PASSED.png"
+    },
+    {
+      "id": "GRP-010",
+      "title": "A duplicate group name is rejected",
+      "type": "Negative",
+      "script": "source/mobile/alumnye/specs/groups/GRP_010_create_group_duplicate_name.py",
+      "status": "FAILED",
+      "category": "assertion",
+      "message": "a message about the duplicate name must be shown",
+      "seconds": 57.1,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [
+        "dialog 'Success / Group created successfully!' -> OK"
+      ],
+      "notes": [],
+      "last_taps": [
+        "save_group_button -> ViewGroup at x63,y1446 954x116",
+        "role_anchor -> ViewGroup at x857,y186 173x58",
+        "new_group_button -> ViewGroup at x696,y447 321x99",
+        "save_group_button -> ViewGroup at x63,y1446 954x116"
+      ],
+      "messages": [
+        {
+          "trigger": "a pop-up appeared",
+          "text": "Success / Group created successfully!",
+          "where": "dialog"
+        },
+        {
+          "trigger": "tried to create a second group with an existing name",
+          "text": "A group with this name already exists. Please choose a different name.",
+          "where": "on-screen"
+        }
+      ],
+      "discovered": [],
+      "evidence": "reports/results/alumnye/run-20261004-191826/GRP-010_FAILED.png"
+    },
+    {
+      "id": "GRP-011",
+      "title": "Group description is limited to 200 characters with a live counter",
+      "type": "Edge",
+      "script": "source/mobile/alumnye/specs/groups/GRP_011_group_description_limit.py",
+      "status": "PASSED",
+      "category": "",
+      "message": "",
+      "seconds": 11.9,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [],
+      "notes": [],
+      "last_taps": [
+        "role_anchor -> ViewGroup at x857,y186 173x58",
+        "new_group_button -> ViewGroup at x696,y447 321x99"
+      ],
+      "messages": [],
+      "discovered": [],
+      "evidence": "reports/results/alumnye/run-20261004-191826/GRP-011_PASSED.png"
+    },
+    {
+      "id": "GRP-012",
+      "title": "Bulk upload of a valid file goes through Bulk Preview and imports the members",
+      "type": "Positive",
+      "script": "source/mobile/alumnye/specs/groups/GRP_012_bulk_upload_valid_file.py",
+      "status": "FAILED",
+      "category": "assertion",
+      "message": "could not select 'members_valid.csv' in the device file picker | Bulk Preview must show the parsed rows | a success confirmation must be shown after the import",
+      "seconds": 107.4,
+      "ai_mode": "qwen",
+      "ai_calls": 2,
+      "adaptations": [
+        {
+          "tier": "qwen",
+          "key": "something (a dialog, pop-up or overlay) may be covering the screen; clear it so that 'Bulk Preview: confirm import' becomes reachable",
+          "strategy": "tap 50",
+          "reason": "Upload file to trigger 'Bulk Preview: confirm import' dialog"
+        }
+      ],
+      "entry_path": [],
+      "notes": [],
+      "last_taps": [
+        "add_member_entry -> ViewGroup at x53,y648 479x97",
+        "tab_upload -> ViewGroup at x270,y474 270x111",
+        "choose_file_button -> ViewGroup at x270,y474 270x111",
+        "confirm_import -> ViewGroup at x540,y474 270x111"
+      ],
+      "messages": [],
+      "discovered": [],
+      "evidence": "reports/results/alumnye/run-20261004-191826/GRP-012_FAILED.png"
+    }
+  ]
+}

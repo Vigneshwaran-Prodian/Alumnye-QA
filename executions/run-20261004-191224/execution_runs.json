@@ -1,0 +1,110 @@
+{
+  "summary": {
+    "run_id": "run-20261004-191224",
+    "product": "alumnye",
+    "platform": "android",
+    "module": "groups",
+    "total": 3,
+    "passed": 1,
+    "passed_zero_ai": 1,
+    "passed_after_self_heal": 0,
+    "passed_after_qwen": 0,
+    "failed": 2,
+    "error": 0,
+    "blocked": 0,
+    "skipped": 0,
+    "ai_calls": 2,
+    "stopped_reason": "Stopped by user (Ctrl+C)."
+  },
+  "results": [
+    {
+      "id": "GRP-001",
+      "title": "Anchor Home shows the welcome empty state when the user has no groups",
+      "type": "Positive",
+      "script": "source/mobile/alumnye/specs/groups/GRP_001_anchor_home_empty_state.py",
+      "status": "PASSED",
+      "category": "",
+      "message": "",
+      "seconds": 5.1,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [],
+      "notes": [],
+      "last_taps": [
+        "role_anchor -> ViewGroup at x857,y186 173x58"
+      ],
+      "messages": [],
+      "discovered": [
+        {
+          "where": "Anchor Home is shown",
+          "label": "\uf382, Home",
+          "device": "",
+          "scenario": "GRP-001",
+          "safe": false,
+          "result": ""
+        }
+      ],
+      "evidence": "reports/results/alumnye/run-20261004-191224/GRP-001_PASSED.png"
+    },
+    {
+      "id": "GRP-002",
+      "title": "Anchor creates a group and lands on its Group Details",
+      "type": "Positive",
+      "script": "source/mobile/alumnye/specs/groups/GRP_002_create_group.py",
+      "status": "FAILED",
+      "category": "likely-bug",
+      "message": "'group_details_marker' (Group Details is open) is missing from the screen \u2014 likely functionality break. AI: Group Details screen with expected labels 'Add Event' and 'Add Member' is not present; a success confirmation dialog is shown instead, indicating the app did not navigate to the expected screen after saving.",
+      "seconds": 46.3,
+      "ai_mode": "none",
+      "ai_calls": 1,
+      "adaptations": [],
+      "entry_path": [],
+      "notes": [],
+      "last_taps": [
+        "role_anchor -> ViewGroup at x857,y186 173x58",
+        "new_group_button -> ViewGroup at x696,y447 321x99",
+        "save_group_button -> ViewGroup at x63,y1446 954x116"
+      ],
+      "messages": [],
+      "discovered": [
+        {
+          "where": "group form is shown",
+          "label": "Cancel",
+          "device": "",
+          "scenario": "GRP-002",
+          "safe": false,
+          "result": ""
+        },
+        {
+          "where": "group form is shown",
+          "label": "\uf383, Home",
+          "device": "",
+          "scenario": "GRP-002",
+          "safe": false,
+          "result": ""
+        }
+      ],
+      "evidence": "reports/results/alumnye/run-20261004-191224/GRP-002_FAILED.png"
+    },
+    {
+      "id": "GRP-003",
+      "title": "Group Details shows About, member count and the Add Event button",
+      "type": "Positive",
+      "script": "source/mobile/alumnye/specs/groups/GRP_003_group_details_content.py",
+      "status": "FAILED",
+      "category": "likely-bug",
+      "message": "'landing_sign_in' (Landing screen: 'Sign in' (existing user)) is missing from the screen \u2014 likely functionality break. AI: The landing screen with Sign in/Google/Create account is absent; instead, a success confirmation dialog for group creation is displayed, indicating the app is in an unexpected state.",
+      "seconds": 59.0,
+      "ai_mode": "none",
+      "ai_calls": 1,
+      "adaptations": [],
+      "entry_path": [],
+      "notes": [],
+      "last_taps": [],
+      "messages": [],
+      "discovered": [],
+      "evidence": "reports/results/alumnye/run-20261004-191224/GRP-003_FAILED.png"
+    }
+  ]
+}

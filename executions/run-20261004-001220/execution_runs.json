@@ -1,0 +1,199 @@
+{
+  "summary": {
+    "run_id": "run-20261004-001220",
+    "product": "alumnye",
+    "platform": "android",
+    "module": "auth",
+    "total": 5,
+    "passed": 4,
+    "passed_zero_ai": 4,
+    "passed_after_self_heal": 0,
+    "passed_after_qwen": 0,
+    "failed": 1,
+    "error": 0,
+    "blocked": 0,
+    "skipped": 0,
+    "ai_calls": 0,
+    "stopped_reason": null
+  },
+  "results": [
+    {
+      "id": "AUTH-005",
+      "title": "Sign in with Google using the account already on the device",
+      "type": "Positive",
+      "script": "source/mobile/alumnye/specs/auth/AUTH_005_google_sign_in.py",
+      "status": "FAILED",
+      "category": "product-defect",
+      "message": "Google sign-in is blocked by Google: 'Access blocked: Authorization Error'. Page text: Access blocked: Authorization Error; Custom scheme URIs are not allowed for 'WEB' client type.; error details; Error 400: invalid_request. The OAuth client is misconfigured (wrong client type / redirect URI) - product/config defect, not a script issue.",
+      "seconds": 32.3,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [
+        "Skip",
+        "Sign in with Google"
+      ],
+      "notes": [],
+      "last_taps": [
+        "google_button -> ViewGroup at x53,y1867 975x119"
+      ],
+      "messages": [
+        {
+          "trigger": "tapped Sign in with Google and chose the device account",
+          "text": "Access blocked: Authorization Error",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "tapped Sign in with Google and chose the device account",
+          "text": "Custom scheme URIs are not allowed for 'WEB' client type.",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "tapped Sign in with Google and chose the device account",
+          "text": "error details",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "tapped Sign in with Google and chose the device account",
+          "text": "Error 400: invalid_request",
+          "where": "on-screen"
+        }
+      ],
+      "evidence": "reports/results/alumnye/run-20261004-001220/AUTH-005_FAILED.png"
+    },
+    {
+      "id": "AUTH-006",
+      "title": "Returning user signs in with OTP and skips Complete Profile",
+      "type": "Positive",
+      "script": "source/mobile/alumnye/specs/auth/AUTH_006_returning_user_sign_in.py",
+      "status": "PASSED",
+      "category": "",
+      "message": "",
+      "seconds": 69.9,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [
+        "Skip",
+        "Sign in",
+        "Email tab",
+        "Terms checkbox: ticked"
+      ],
+      "notes": [],
+      "last_taps": [
+        "email_tab -> ViewGroup at x64,y318 477x100",
+        "primary_button -> ViewGroup at x53,y771 975x127",
+        "terms_checkbox -> ViewGroup at x105,y896 53x54",
+        "verify_button -> ViewGroup at x53,y1255 975x139"
+      ],
+      "messages": [],
+      "evidence": "reports/results/alumnye/run-20261004-001220/AUTH-006_PASSED.png"
+    },
+    {
+      "id": "AUTH-008",
+      "title": "Sign out returns to Sign In and ends the session",
+      "type": "Positive",
+      "script": "source/mobile/alumnye/specs/auth/AUTH_008_sign_out_returns_to_sign_in.py",
+      "status": "PASSED",
+      "category": "",
+      "message": "",
+      "seconds": 23.9,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [],
+      "notes": [
+        "'sign_out' found by exploring: nav_profile (scrolled as needed)"
+      ],
+      "last_taps": [
+        "nav_profile -> Button at x720,y2189 360x149",
+        "confirm_sign_out -> ViewGroup at x553,y1244 383x120"
+      ],
+      "messages": [],
+      "evidence": "reports/results/alumnye/run-20261004-001220/AUTH-008_PASSED.png"
+    },
+    {
+      "id": "AUTH-009",
+      "title": "Member ID (code) on Complete Your Profile follows the typed name: <FirstInitial><LastInitial><n>",
+      "type": "Positive",
+      "script": "source/mobile/alumnye/specs/auth/AUTH_009_member_code_live_preview.py",
+      "status": "PASSED",
+      "category": "",
+      "message": "",
+      "seconds": 61.6,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [
+        "Skip",
+        "Create account",
+        "Email tab",
+        "Terms checkbox: ticked"
+      ],
+      "notes": [],
+      "last_taps": [
+        "email_tab -> ViewGroup at x64,y318 477x100",
+        "primary_button -> ViewGroup at x53,y771 975x127",
+        "terms_checkbox -> ViewGroup at x105,y907 53x54",
+        "verify_button -> ViewGroup at x53,y1266 975x139"
+      ],
+      "messages": [
+        {
+          "trigger": "Member ID before typing",
+          "text": "(empty)",
+          "where": "state"
+        },
+        {
+          "trigger": "after first name 'Meera'",
+          "text": "(empty)",
+          "where": "state"
+        },
+        {
+          "trigger": "after last name 'Sharma'",
+          "text": "MS1",
+          "where": "state"
+        }
+      ],
+      "evidence": "reports/results/alumnye/run-20261004-001220/AUTH-009_PASSED.png"
+    },
+    {
+      "id": "AUTH-013",
+      "title": "Complete Profile blocks empty / spaces-only names",
+      "type": "Negative",
+      "script": "source/mobile/alumnye/specs/auth/AUTH_013_blank_name_blocked.py",
+      "status": "PASSED",
+      "category": "",
+      "message": "",
+      "seconds": 64.3,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [
+        "Skip",
+        "Create account",
+        "Email tab",
+        "Terms checkbox: ticked"
+      ],
+      "notes": [],
+      "last_taps": [
+        "email_tab -> ViewGroup at x64,y318 477x100",
+        "primary_button -> ViewGroup at x53,y771 975x127",
+        "terms_checkbox -> ViewGroup at x105,y907 53x54",
+        "verify_button -> ViewGroup at x53,y1266 975x139"
+      ],
+      "messages": [
+        {
+          "trigger": "empty first/last name",
+          "text": "(Continue button stays disabled)",
+          "where": "state"
+        },
+        {
+          "trigger": "spaces-only first/last name",
+          "text": "(Continue button stays disabled)",
+          "where": "state"
+        }
+      ],
+      "evidence": "reports/results/alumnye/run-20261004-001220/AUTH-013_PASSED.png"
+    }
+  ]
+}

@@ -1,0 +1,137 @@
+{
+  "summary": {
+    "run_id": "run-20261003-190235",
+    "product": "alumnye",
+    "platform": "android",
+    "module": "auth",
+    "total": 1,
+    "passed": 1,
+    "passed_zero_ai": 1,
+    "passed_after_self_heal": 0,
+    "passed_after_qwen": 0,
+    "failed": 0,
+    "error": 0,
+    "blocked": 0,
+    "skipped": 0,
+    "ai_calls": 0,
+    "stopped_reason": null
+  },
+  "results": [
+    {
+      "id": "AUTH-004",
+      "title": "New user registers with yopmail email + OTP",
+      "type": "Positive",
+      "script": "source/mobile/alumnye/specs/auth/AUTH_004_register_with_email_otp.py",
+      "status": "PASSED",
+      "category": "",
+      "message": "",
+      "seconds": 69.9,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [
+        "Skip",
+        "Create account",
+        "Email tab",
+        "Terms checkbox: ticked"
+      ],
+      "notes": [
+        "Profile form filled automatically: screen 1: Enter your first name = Anita; screen 1: Enter your last name = Verma; screen 1: Enter your mobile number = 9155963672; screen 1: tapped 'Continue'"
+      ],
+      "last_taps": [
+        "primary_button -> ViewGroup at x53,y771 975x127",
+        "terms_checkbox -> ViewGroup at x105,y907 53x54",
+        "verify_button -> ViewGroup at x53,y1266 975x139",
+        "'Continue' -> ViewGroup at x53,y1660"
+      ],
+      "messages": [
+        {
+          "trigger": "profile screen 1: tapped 'Continue'",
+          "text": "MEMBER",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "profile screen 1: tapped 'Continue'",
+          "text": "ANCHOR",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "profile screen 1: tapped 'Continue'",
+          "text": "Welcome, Anita",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "profile screen 1: tapped 'Continue'",
+          "text": "SET DEFAULT PREFERENCES, Just now, Complete Your Profile Defaults, Fill your default food, room and travel choices to auto-fill event RSVPs.",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "profile screen 1: tapped 'Continue'",
+          "text": "SET DEFAULT PREFERENCES",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "profile screen 1: tapped 'Continue'",
+          "text": "Just now",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "profile screen 1: tapped 'Continue'",
+          "text": "Complete Your Profile Defaults",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "profile screen 1: tapped 'Continue'",
+          "text": "Fill your default food, room and travel choices to auto-fill event RSVPs.",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "profile screen 1: tapped 'Continue'",
+          "text": "Set Preferences \u2192",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "profile screen 1: tapped 'Continue'",
+          "text": "Welcome to Alumnye!",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "profile screen 1: tapped 'Continue'",
+          "text": "You don't have any events yet. When you're invited to a group, events will appear here so you can stay connected with your community.",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "profile screen 1: tapped 'Continue'",
+          "text": "\uf382, Home",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "profile screen 1: tapped 'Continue'",
+          "text": "Home",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "profile screen 1: tapped 'Continue'",
+          "text": "\uf356, My Group",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "profile screen 1: tapped 'Continue'",
+          "text": "My Group",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "profile screen 1: tapped 'Continue'",
+          "text": "\uf4ac, My Account",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "profile screen 1: tapped 'Continue'",
+          "text": "My Account",
+          "where": "on-screen"
+        }
+      ],
+      "evidence": "reports/results/alumnye/run-20261003-190235/AUTH-004_PASSED.png"
+    }
+  ]
+}

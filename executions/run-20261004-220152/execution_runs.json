@@ -1,0 +1,435 @@
+{
+  "summary": {
+    "run_id": "run-20261004-220152",
+    "product": "alumnye",
+    "platform": "android",
+    "module": "groups",
+    "total": 4,
+    "passed": 2,
+    "passed_zero_ai": 2,
+    "passed_after_self_heal": 0,
+    "passed_after_qwen": 0,
+    "failed": 2,
+    "error": 0,
+    "blocked": 0,
+    "skipped": 0,
+    "ai_calls": 0,
+    "stopped_reason": null
+  },
+  "results": [
+    {
+      "id": "GRP-012",
+      "title": "Bulk upload: valid .xlsx and .csv files (picked from local storage) reach the preview without errors and import",
+      "type": "Positive",
+      "script": "source/mobile/alumnye/specs/groups/GRP_012_bulk_upload_valid_file.py",
+      "status": "FAILED",
+      "category": "assertion",
+      "message": "'Member Template Download' must save a template file to the device Downloads folder | valid_200_members.xlsx: the 'List of Members' preview with 'Confirm Import' must be shown | valid_200_members.xlsx: the preview must list the rows of THIS file (expected to see qa.member001@yopmail.com)",
+      "seconds": 183.3,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [],
+      "notes": [
+        "the app was left for 'com.android.chrome' (after 'Member Template Download'); the runner brought Alumnye back to the front",
+        "template download: no fresh file (the app was left for the browser and recovered)",
+        "the picker stayed open after choosing 'valid_200_members.xlsx'",
+        "valid_200_members.xlsx (template format (.xlsx), 200 valid members): preview=False errors=none",
+        "the app was left for 'com.google.android.documentsui' (after an upload); the runner brought Alumnye back to the front",
+        "valid_5_members.csv (.csv format, 5 valid members): preview=True errors=none",
+        "valid_email_or_phone_only.csv (one row with only an e-mail and one with only a phone (either is enough)): preview=True errors=none"
+      ],
+      "last_taps": [
+        "choose_file_button -> ViewGroup at x97,y1117 886x420",
+        "confirm_import -> ViewGroup at x475,y1733 491x126",
+        "choose_file_button -> ViewGroup at x97,y1117 886x420",
+        "confirm_import -> ViewGroup at x475,y1475 491x126"
+      ],
+      "messages": [
+        {
+          "trigger": "confirmed the import of valid_5_members.csv",
+          "text": "0 members uploaded successfully!, 5 members already in the group.",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "confirmed the import of valid_5_members.csv",
+          "text": "0 members uploaded successfully!",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "confirmed the import of valid_email_or_phone_only.csv",
+          "text": "2 members uploaded successfully!",
+          "where": "on-screen"
+        }
+      ],
+      "discovered": [
+        {
+          "where": "Anchor Home is shown",
+          "label": "\uf382, Home",
+          "device": "",
+          "scenario": "GRP-012",
+          "safe": false,
+          "result": ""
+        },
+        {
+          "where": "Group Details is shown",
+          "label": "\uf382, Home",
+          "device": "",
+          "scenario": "GRP-012",
+          "safe": false,
+          "result": ""
+        }
+      ],
+      "timing": {
+        "find_elements": [
+          231,
+          65.9
+        ],
+        "adb": [
+          79,
+          11.4
+        ],
+        "page_source": [
+          20,
+          5.8
+        ]
+      },
+      "keys": {
+        "add_member_entry": [
+          "btn:Add Member"
+        ],
+        "anchor_home_marker": [
+          "btn:New Group",
+          "textc:You don't have any groups"
+        ],
+        "choose_file_button": [
+          "btn:.xlsx, .csv",
+          "btn:.csv",
+          "btn:Choose File",
+          "btn:Select File"
+        ],
+        "confirm_import": [
+          "btn:Confirm Import",
+          "btn:Import"
+        ],
+        "download_template": [
+          "btn:Member Template Download",
+          "btn:Template Download",
+          "btn:Download Template"
+        ],
+        "group_details_marker": [
+          "btn:Add Event",
+          "btn:Add Member"
+        ],
+        "home_welcome": [
+          "textc:Welcome,",
+          "textc:Welcome to Alumnye"
+        ],
+        "nav_profile": [
+          "btnx:My Account",
+          "btn:My Account"
+        ],
+        "role_anchor": [
+          "btnx:ANCHOR"
+        ],
+        "tab_upload": [
+          "btnx:Upload"
+        ],
+        "upload_cancel": [
+          "btnx:Cancel"
+        ]
+      },
+      "evidence": "reports/results/alumnye/run-20261004-220152/GRP-012_FAILED.png"
+    },
+    {
+      "id": "GRP-013",
+      "title": "Bulk upload flags invalid files and rows (picked from local storage): bad e-mail, missing data, duplicates, wrong columns, empty, wrong format",
+      "type": "Negative",
+      "script": "source/mobile/alumnye/specs/groups/GRP_013_bulk_upload_invalid_rows.py",
+      "status": "FAILED",
+      "category": "assertion",
+      "message": "missing_first_name.csv (a row without a first name) must be flagged with a validation message (shown: (nothing flagged)) | duplicate_emails.csv (the same e-mail twice in one file) must be flagged with a validation message (shown: (nothing flagged))",
+      "seconds": 106.5,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [],
+      "notes": [
+        "invalid_email_format.xlsx (rows with malformed e-mail addresses): preview=True flagged: Validation Errors (2): / Invalid email format \"not-an-email\" / Invalid email format \"abc@\"",
+        "missing_first_name.csv (a row without a first name): preview=True flagged: (nothing flagged)",
+        "missing_email_and_phone.csv (a row with neither e-mail nor phone (the app requires at least one)): preview=True flagged: Validation Errors (1): / At least one of Email or Phone is required",
+        "bad_phone_number.csv (a row with a malformed phone number): preview=True flagged: Validation Errors (1): / Invalid phone number \"12ab\"",
+        "duplicate_emails.csv (the same e-mail twice in one file): preview=True flagged: (nothing flagged)",
+        "wrong_columns.csv (columns that do not match the template): preview=True flagged: Validation Errors (1): / At least one of Email or Phone is required",
+        "headers_only_empty.csv (a file with headers and no members): preview=False flagged: No records found in spreadsheet.",
+        "the app was left for 'com.google.android.documentsui' (closing the file picker); the runner brought Alumnye back to the front",
+        "'unsupported_format.txt' could not be chosen in the file picker (the picker does not offer it)",
+        "unsupported_format.txt (a .txt file (only .xlsx / .csv are allowed)): the picker does not accept it - rejected at the picker (correct)"
+      ],
+      "last_taps": [
+        "choose_file_button -> ViewGroup at x97,y1117 886x420",
+        "upload_cancel -> ViewGroup at x116,y1356 327x126",
+        "choose_file_button -> ViewGroup at x97,y1117 886x420",
+        "choose_file_button -> ViewGroup at x97,y1117 886x420"
+      ],
+      "messages": [
+        {
+          "trigger": "uploaded invalid_email_format.xlsx",
+          "text": "Validation Errors (2):",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "uploaded invalid_email_format.xlsx",
+          "text": "Invalid email format \"not-an-email\"",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "uploaded invalid_email_format.xlsx",
+          "text": "Invalid email format \"abc@\"",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "uploaded missing_email_and_phone.csv",
+          "text": "Validation Errors (1):",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "uploaded missing_email_and_phone.csv",
+          "text": "At least one of Email or Phone is required",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "uploaded bad_phone_number.csv",
+          "text": "Validation Errors (1):",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "uploaded bad_phone_number.csv",
+          "text": "Invalid phone number \"12ab\"",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "uploaded wrong_columns.csv",
+          "text": "Validation Errors (1):",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "uploaded wrong_columns.csv",
+          "text": "At least one of Email or Phone is required",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "uploaded headers_only_empty.csv",
+          "text": "No records found in spreadsheet.",
+          "where": "on-screen"
+        }
+      ],
+      "discovered": [],
+      "timing": {
+        "find_elements": [
+          154,
+          36.5
+        ],
+        "adb": [
+          66,
+          9.5
+        ],
+        "page_source": [
+          13,
+          12.0
+        ]
+      },
+      "keys": {
+        "add_member_entry": [
+          "btn:Add Member"
+        ],
+        "anchor_home_marker": [
+          "btn:New Group",
+          "textc:You don't have any groups"
+        ],
+        "choose_file_button": [
+          "btn:.xlsx, .csv",
+          "btn:.csv",
+          "btn:Choose File",
+          "btn:Select File"
+        ],
+        "group_details_marker": [
+          "btn:Add Event",
+          "btn:Add Member"
+        ],
+        "home_welcome": [
+          "textc:Welcome,",
+          "textc:Welcome to Alumnye"
+        ],
+        "nav_profile": [
+          "btnx:My Account",
+          "btn:My Account"
+        ],
+        "role_anchor": [
+          "btnx:ANCHOR"
+        ],
+        "tab_upload": [
+          "btnx:Upload"
+        ],
+        "upload_cancel": [
+          "btnx:Cancel"
+        ]
+      },
+      "evidence": "reports/results/alumnye/run-20261004-220152/GRP-013_FAILED.png"
+    },
+    {
+      "id": "GRP-014",
+      "title": "Members tab: the count equals the accepted-members name list; invitees sit under Pending Acceptance, not in the count",
+      "type": "Positive",
+      "script": "source/mobile/alumnye/specs/groups/GRP_014_cohort_members_list.py",
+      "status": "PASSED",
+      "category": "",
+      "message": "",
+      "seconds": 35.3,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [],
+      "notes": [
+        "Members tab count 1; accepted list (1): Vivek Reddy (Anchor); pending rows read: 41"
+      ],
+      "last_taps": [
+        "role_anchor -> ViewGroup at x857,y186 173x58",
+        "members_tab -> ViewGroup at x540,y800 540x130"
+      ],
+      "messages": [],
+      "discovered": [
+        {
+          "where": "Members list",
+          "label": "\uf382, Home",
+          "device": "",
+          "scenario": "GRP-014",
+          "safe": false,
+          "result": ""
+        }
+      ],
+      "timing": {
+        "find_elements": [
+          29,
+          6.6
+        ],
+        "adb": [
+          2,
+          0.1
+        ],
+        "page_source": [
+          10,
+          12.5
+        ]
+      },
+      "keys": {
+        "anchor_home_marker": [
+          "btn:New Group",
+          "textc:You don't have any groups"
+        ],
+        "group_details_marker": [
+          "btn:Add Event",
+          "btn:Add Member"
+        ],
+        "home_welcome": [
+          "textc:Welcome,",
+          "textc:Welcome to Alumnye"
+        ],
+        "members_tab": [
+          "btn:Members"
+        ],
+        "nav_profile": [
+          "btnx:My Account",
+          "btn:My Account"
+        ],
+        "role_anchor": [
+          "btnx:ANCHOR"
+        ]
+      },
+      "evidence": "reports/results/alumnye/run-20261004-220152/GRP-014_PASSED.png"
+    },
+    {
+      "id": "GRP-015",
+      "title": "Pending Acceptance members each have a Remind button; accepted members do not",
+      "type": "Positive",
+      "script": "source/mobile/alumnye/specs/groups/GRP_015_pending_invite_remind.py",
+      "status": "PASSED",
+      "category": "",
+      "message": "",
+      "seconds": 40.8,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [],
+      "notes": [
+        "pending rows read: 51; accepted members: Vivek Reddy",
+        "Remind feedback: 0.0 / Invitation email resent successfully!"
+      ],
+      "last_taps": [
+        "role_anchor -> ViewGroup at x857,y186 173x58",
+        "members_tab -> ViewGroup at x540,y800 540x130"
+      ],
+      "messages": [
+        {
+          "trigger": "tapped Remind for a member under Pending Acceptance",
+          "text": "0.0",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "tapped Remind for a member under Pending Acceptance",
+          "text": "Invitation email resent successfully!",
+          "where": "on-screen"
+        }
+      ],
+      "discovered": [
+        {
+          "where": "Members list (pending invitees)",
+          "label": "\uf382, Home",
+          "device": "",
+          "scenario": "GRP-015",
+          "safe": false,
+          "result": ""
+        }
+      ],
+      "timing": {
+        "find_elements": [
+          15,
+          8.6
+        ],
+        "adb": [
+          2,
+          0.1
+        ],
+        "page_source": [
+          15,
+          18.5
+        ]
+      },
+      "keys": {
+        "anchor_home_marker": [
+          "btn:New Group",
+          "textc:You don't have any groups"
+        ],
+        "group_details_marker": [
+          "btn:Add Event",
+          "btn:Add Member"
+        ],
+        "home_welcome": [
+          "textc:Welcome,",
+          "textc:Welcome to Alumnye"
+        ],
+        "members_tab": [
+          "btn:Members"
+        ],
+        "nav_profile": [
+          "btnx:My Account",
+          "btn:My Account"
+        ],
+        "role_anchor": [
+          "btnx:ANCHOR"
+        ]
+      },
+      "evidence": "reports/results/alumnye/run-20261004-220152/GRP-015_PASSED.png"
+    }
+  ]
+}

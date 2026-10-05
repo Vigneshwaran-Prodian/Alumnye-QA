@@ -1,0 +1,95 @@
+{
+  "summary": {
+    "run_id": "run-20261003-173158",
+    "product": "alumnye",
+    "platform": "android",
+    "module": "auth",
+    "total": 4,
+    "passed": 2,
+    "passed_zero_ai": 2,
+    "passed_after_self_heal": 0,
+    "passed_after_qwen": 0,
+    "failed": 1,
+    "error": 0,
+    "blocked": 0,
+    "skipped": 1,
+    "ai_calls": 1,
+    "stopped_reason": "Stopped by user (Ctrl+C)."
+  },
+  "results": [
+    {
+      "id": "AUTH-001",
+      "title": "Fresh launch routes from Splash to the landing screen (Sign in / Google / Create account)",
+      "type": "Positive",
+      "script": "source/mobile/alumnye/specs/auth/AUTH_001_splash_routes_to_sign_in.py",
+      "status": "PASSED",
+      "category": "",
+      "message": "",
+      "seconds": 29.2,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [
+        "Next",
+        "Skip"
+      ],
+      "messages": [],
+      "evidence": "reports/results/alumnye/run-20261003-173158/AUTH-001_PASSED.png"
+    },
+    {
+      "id": "AUTH-002",
+      "title": "Landing layout: Sign in above Google, divider reads 'or' (v1.3.2)",
+      "type": "Positive",
+      "script": "source/mobile/alumnye/specs/auth/AUTH_002_sign_in_screen_layout_v132.py",
+      "status": "PASSED",
+      "category": "",
+      "message": "",
+      "seconds": 30.8,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [
+        "Next",
+        "Skip"
+      ],
+      "messages": [],
+      "evidence": "reports/results/alumnye/run-20261003-173158/AUTH-002_PASSED.png"
+    },
+    {
+      "id": "AUTH-003",
+      "title": "New user registers with mobile number + SMS OTP",
+      "type": "Positive",
+      "script": "source/mobile/alumnye/specs/auth/AUTH_003_register_with_mobile_otp.py",
+      "status": "SKIPPED",
+      "category": "out-of-scope",
+      "message": "Mobile-number scenarios are out of scope for now (owner decision 2026-10-03); email scenarios only",
+      "seconds": 0.9,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [],
+      "messages": [],
+      "evidence": "reports/results/alumnye/run-20261003-173158/AUTH-003_SKIPPED.png"
+    },
+    {
+      "id": "AUTH-004",
+      "title": "New user registers with yopmail email + OTP",
+      "type": "Positive",
+      "script": "source/mobile/alumnye/specs/auth/AUTH_004_register_with_email_otp.py",
+      "status": "FAILED",
+      "category": "likely-bug",
+      "message": "'otp_input' (One-time-code input) is missing from the screen \u2014 likely functionality break. Qwen: The OTP input field 'otp_input' is not present in the visible elements list, indicating a missing UI element.",
+      "seconds": 134.8,
+      "ai_mode": "none",
+      "ai_calls": 1,
+      "adaptations": [],
+      "entry_path": [
+        "Skip",
+        "Create account",
+        "Email tab"
+      ],
+      "messages": [],
+      "evidence": "reports/results/alumnye/run-20261003-173158/AUTH-004_FAILED.png"
+    }
+  ]
+}

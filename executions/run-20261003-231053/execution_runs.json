@@ -1,0 +1,307 @@
+{
+  "summary": {
+    "run_id": "run-20261003-231053",
+    "product": "alumnye",
+    "platform": "android",
+    "module": "auth",
+    "total": 7,
+    "passed": 3,
+    "passed_zero_ai": 3,
+    "passed_after_self_heal": 0,
+    "passed_after_qwen": 0,
+    "failed": 3,
+    "error": 0,
+    "blocked": 0,
+    "skipped": 1,
+    "ai_calls": 1,
+    "stopped_reason": "Stopped by user (Ctrl+C)."
+  },
+  "results": [
+    {
+      "id": "AUTH-001",
+      "title": "Fresh launch routes from Splash to the landing screen (Sign in / Google / Create account)",
+      "type": "Positive",
+      "script": "source/mobile/alumnye/specs/auth/AUTH_001_splash_routes_to_sign_in.py",
+      "status": "PASSED",
+      "category": "",
+      "message": "",
+      "seconds": 13.4,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [
+        "Skip"
+      ],
+      "notes": [],
+      "last_taps": [],
+      "messages": [],
+      "evidence": "reports/results/alumnye/run-20261003-231053/AUTH-001_PASSED.png"
+    },
+    {
+      "id": "AUTH-002",
+      "title": "Landing layout: Sign in above Google, divider reads 'or' (v1.3.2)",
+      "type": "Positive",
+      "script": "source/mobile/alumnye/specs/auth/AUTH_002_sign_in_screen_layout_v132.py",
+      "status": "PASSED",
+      "category": "",
+      "message": "",
+      "seconds": 15.2,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [
+        "Skip"
+      ],
+      "notes": [],
+      "last_taps": [],
+      "messages": [],
+      "evidence": "reports/results/alumnye/run-20261003-231053/AUTH-002_PASSED.png"
+    },
+    {
+      "id": "AUTH-003",
+      "title": "New user registers with mobile number + SMS OTP",
+      "type": "Positive",
+      "script": "source/mobile/alumnye/specs/auth/AUTH_003_register_with_mobile_otp.py",
+      "status": "SKIPPED",
+      "category": "out-of-scope",
+      "message": "Mobile-number scenarios are out of scope for now (owner decision 2026-10-03); email scenarios only",
+      "seconds": 0.3,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [],
+      "notes": [],
+      "last_taps": [],
+      "messages": [],
+      "evidence": "reports/results/alumnye/run-20261003-231053/AUTH-003_SKIPPED.png"
+    },
+    {
+      "id": "AUTH-004",
+      "title": "New user registers with yopmail email + OTP",
+      "type": "Positive",
+      "script": "source/mobile/alumnye/specs/auth/AUTH_004_register_with_email_otp.py",
+      "status": "PASSED",
+      "category": "",
+      "message": "",
+      "seconds": 56.0,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [
+        "Skip",
+        "Create account",
+        "Email tab",
+        "Terms checkbox: ticked"
+      ],
+      "notes": [
+        "Profile form filled automatically: screen 1: Enter your first name = Vivek; screen 1: Enter your last name = Verma; screen 1: Enter your mobile number = 9602660531; screen 1: tapped 'Continue'"
+      ],
+      "last_taps": [
+        "primary_button -> ViewGroup at x53,y771 975x127",
+        "terms_checkbox -> ViewGroup at x105,y907 53x54",
+        "verify_button -> ViewGroup at x53,y1266 975x139",
+        "'Continue' -> ViewGroup at x53,y1660"
+      ],
+      "messages": [
+        {
+          "trigger": "profile screen 1: tapped 'Continue'",
+          "text": "SET DEFAULT PREFERENCES, Just now, Complete Your Profile Defaults, Fill your default food, room and travel choices to auto-fill event RSVPs.",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "profile screen 1: tapped 'Continue'",
+          "text": "SET DEFAULT PREFERENCES",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "profile screen 1: tapped 'Continue'",
+          "text": "Just now",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "profile screen 1: tapped 'Continue'",
+          "text": "Complete Your Profile Defaults",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "profile screen 1: tapped 'Continue'",
+          "text": "Fill your default food, room and travel choices to auto-fill event RSVPs.",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "profile screen 1: tapped 'Continue'",
+          "text": "Set Preferences \u2192",
+          "where": "on-screen"
+        }
+      ],
+      "evidence": "reports/results/alumnye/run-20261003-231053/AUTH-004_PASSED.png"
+    },
+    {
+      "id": "AUTH-005",
+      "title": "Sign in with Google using the account already on the device",
+      "type": "Positive",
+      "script": "source/mobile/alumnye/specs/auth/AUTH_005_google_sign_in.py",
+      "status": "FAILED",
+      "category": "product-defect",
+      "message": "Google sign-in is blocked by Google: 'Access blocked: Authorization Error'. Page text: Web View; Close tab; Minimize tab; Your connection to this site is not secure; accounts.google.com; Share. The OAuth client is misconfigured (wrong client type / redirect URI) - product/config defect, not a script issue.",
+      "seconds": 23.7,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [
+        "Skip",
+        "Sign in with Google"
+      ],
+      "notes": [],
+      "last_taps": [
+        "google_button -> ViewGroup at x53,y1867 975x119"
+      ],
+      "messages": [
+        {
+          "trigger": "tapped Sign in with Google and chose the device account",
+          "text": "Web View",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "tapped Sign in with Google and chose the device account",
+          "text": "Close tab",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "tapped Sign in with Google and chose the device account",
+          "text": "Minimize tab",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "tapped Sign in with Google and chose the device account",
+          "text": "Your connection to this site is not secure",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "tapped Sign in with Google and chose the device account",
+          "text": "accounts.google.com",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "tapped Sign in with Google and chose the device account",
+          "text": "Share",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "tapped Sign in with Google and chose the device account",
+          "text": "Customize and control Google Chrome",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "tapped Sign in with Google and chose the device account",
+          "text": "Connection is secure",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "tapped Sign in with Google and chose the device account",
+          "text": "Access blocked: Authorization Error",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "tapped Sign in with Google and chose the device account",
+          "text": "vignesh94.prodian@gmail.com",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "tapped Sign in with Google and chose the device account",
+          "text": "Custom scheme URIs are not allowed for 'WEB' client type.",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "tapped Sign in with Google and chose the device account",
+          "text": "If you are a developer of alumnye, see",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "tapped Sign in with Google and chose the device account",
+          "text": "error details",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "tapped Sign in with Google and chose the device account",
+          "text": "Error 400: invalid_request",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "tapped Sign in with Google and chose the device account",
+          "text": "Open Google Account Help Center (external, opens in a new window)",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "tapped Sign in with Google and chose the device account",
+          "text": "Privacy Policy (external, opens in a new window)",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "tapped Sign in with Google and chose the device account",
+          "text": "Google Terms of Service (external, opens in a new window)",
+          "where": "on-screen"
+        }
+      ],
+      "evidence": "reports/results/alumnye/run-20261003-231053/AUTH-005_FAILED.png"
+    },
+    {
+      "id": "AUTH-006",
+      "title": "Returning user signs in with OTP and skips Complete Profile",
+      "type": "Positive",
+      "script": "source/mobile/alumnye/specs/auth/AUTH_006_returning_user_sign_in.py",
+      "status": "FAILED",
+      "category": "element-disabled",
+      "message": "'verify_button' ('Verify & join Alumnye \u2192') is on screen but DISABLED - an earlier input is probably empty/invalid (step: verify OTP)",
+      "seconds": 45.2,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [
+        "Skip",
+        "Sign in",
+        "Email tab"
+      ],
+      "notes": [],
+      "last_taps": [
+        "landing_sign_in -> ViewGroup at x53,y1732 975x114",
+        "email_tab -> ViewGroup at x64,y318 477x100",
+        "primary_button -> ViewGroup at x53,y771 975x127"
+      ],
+      "messages": [],
+      "evidence": "reports/results/alumnye/run-20261003-231053/AUTH-006_FAILED.png"
+    },
+    {
+      "id": "AUTH-007",
+      "title": "Logged-in session survives an app restart (Splash -> Home)",
+      "type": "Positive",
+      "script": "source/mobile/alumnye/specs/auth/AUTH_007_session_persists_after_restart.py",
+      "status": "FAILED",
+      "category": "element-disabled",
+      "message": "'verify_button' ('Verify & join Alumnye \u2192') is on screen but DISABLED - an earlier input is probably empty/invalid (step: verify OTP)",
+      "seconds": 128.4,
+      "ai_mode": "qwen",
+      "ai_calls": 1,
+      "adaptations": [
+        {
+          "tier": "qwen",
+          "key": "landing_sign_in",
+          "strategy": "btnx:\uf127",
+          "reason": "The 'Sign in' button is likely the 'ViewGroup' with icon U+F127 at index 17, which is commonly used for sign-in buttons in mobile UIs."
+        }
+      ],
+      "entry_path": [
+        "Sign in",
+        "Email tab"
+      ],
+      "notes": [],
+      "last_taps": [
+        "landing_sign_in -> ViewGroup at x42,y144 95x94",
+        "email_tab -> ViewGroup at x64,y318 477x100",
+        "primary_button -> ViewGroup at x53,y771 975x127"
+      ],
+      "messages": [],
+      "evidence": "reports/results/alumnye/run-20261003-231053/AUTH-007_FAILED.png"
+    }
+  ]
+}

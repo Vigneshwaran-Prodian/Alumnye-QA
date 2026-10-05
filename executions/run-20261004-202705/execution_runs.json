@@ -1,0 +1,344 @@
+{
+  "summary": {
+    "run_id": "run-20261004-202705",
+    "product": "alumnye",
+    "platform": "android",
+    "module": "groups",
+    "total": 3,
+    "passed": 0,
+    "passed_zero_ai": 0,
+    "passed_after_self_heal": 0,
+    "passed_after_qwen": 0,
+    "failed": 3,
+    "error": 0,
+    "blocked": 0,
+    "skipped": 0,
+    "ai_calls": 0,
+    "stopped_reason": "Stopped by user (Ctrl+C)."
+  },
+  "results": [
+    {
+      "id": "GRP-012",
+      "title": "Bulk upload: the Upload area takes valid .xlsx and .csv files and the members are imported",
+      "type": "Positive",
+      "script": "source/mobile/alumnye/specs/groups/GRP_012_bulk_upload_valid_file.py",
+      "status": "FAILED",
+      "category": "assertion",
+      "message": "'Download template' must put a template file in the device Downloads folder | valid_200_members.xlsx: a preview or success confirmation must be shown (shown: (no message))",
+      "seconds": 79.0,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [],
+      "notes": [
+        "the app was left for 'com.android.chrome' (after 'Download template'); the runner brought Alumnye back to the front",
+        "template download: no new file seen (the app was left and recovered)",
+        "valid_200_members.xlsx (template format (.xlsx), 200 valid members): (no message)",
+        "valid_5_members.csv (.csv format, 5 valid members): (no message)"
+      ],
+      "last_taps": [
+        "choose_file_button -> ViewGroup at x97,y1117 886x420",
+        "confirm_import -> ViewGroup at x475,y1987 491x126",
+        "choose_file_button -> ViewGroup at x97,y1117 886x420",
+        "confirm_import -> ViewGroup at x475,y1733 491x126"
+      ],
+      "messages": [
+        {
+          "trigger": "confirmed the import of valid_5_members.csv",
+          "text": "5 members uploaded successfully!",
+          "where": "on-screen"
+        }
+      ],
+      "discovered": [
+        {
+          "where": "Anchor Home is shown",
+          "label": "\uf382, Home",
+          "device": "",
+          "scenario": "GRP-012",
+          "safe": false,
+          "result": ""
+        },
+        {
+          "where": "Group Details is shown",
+          "label": "\uf382, Home",
+          "device": "",
+          "scenario": "GRP-012",
+          "safe": false,
+          "result": ""
+        },
+        {
+          "where": "Upload tab",
+          "label": "\uf382, Home",
+          "device": "",
+          "scenario": "GRP-012",
+          "safe": false,
+          "result": ""
+        }
+      ],
+      "timing": {
+        "find_elements": [
+          40,
+          19.6
+        ],
+        "adb": [
+          32,
+          7.1
+        ],
+        "page_source": [
+          36,
+          17.0
+        ]
+      },
+      "keys": {
+        "add_member_entry": [
+          "btn:Add Member"
+        ],
+        "anchor_home_marker": [
+          "btn:New Group",
+          "textc:You don't have any groups"
+        ],
+        "choose_file_button": [
+          "btn:.xlsx, .csv",
+          "btn:.csv",
+          "btn:Choose File",
+          "btn:Select File"
+        ],
+        "confirm_import": [
+          "btn:Confirm",
+          "btn:Import"
+        ],
+        "download_template": [
+          "btn:Member Template Download",
+          "btn:Template Download",
+          "btn:Download Template"
+        ],
+        "group_details_marker": [
+          "btn:Add Event",
+          "btn:Add Member"
+        ],
+        "nav_profile": [
+          "btnx:My Account",
+          "btn:My Account"
+        ],
+        "role_anchor": [
+          "btnx:ANCHOR"
+        ],
+        "tab_upload": [
+          "btnx:Upload"
+        ]
+      },
+      "evidence": "reports/results/alumnye/run-20261004-202705/GRP-012_FAILED.png"
+    },
+    {
+      "id": "GRP-013",
+      "title": "Bulk upload rejects invalid files and rows (bad e-mail, missing data, duplicates, wrong columns, empty, wrong format)",
+      "type": "Negative",
+      "script": "source/mobile/alumnye/specs/groups/GRP_013_bulk_upload_invalid_rows.py",
+      "status": "FAILED",
+      "category": "assertion",
+      "message": "missing_email.csv (a row without an e-mail) must be rejected or flagged with a validation message (shown: (no message)) | duplicate_emails.csv (the same e-mail twice in one file) must be rejected or flagged with a validation message (shown: (no message)) | could not select 'unsupported_format.txt' in the device file picker",
+      "seconds": 161.1,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [],
+      "notes": [
+        "invalid_email_format.xlsx (rows with malformed e-mail addresses): Validation Errors (2): / Invalid email format \"not-an-email\" / Invalid email format \"abc@\"",
+        "the app was left for 'com.google.android.documentsui' (after picking the file); the runner brought Alumnye back to the front",
+        "missing_first_name.csv (a row without a first name): (no message)",
+        "missing_email.csv (a row without an e-mail): (no message)",
+        "bad_phone_number.csv (a row with a malformed phone number): Validation Errors (1): / Invalid phone number \"12ab\"",
+        "duplicate_emails.csv (the same e-mail twice in one file): (no message)",
+        "wrong_columns.csv (columns that do not match the template): List of Members / Validation Errors (1): / Row 2: / At least one of Email or Phone is required / Cancel / Confirm Import",
+        "headers_only_empty.csv (a file with headers and no members): No records found in spreadsheet.",
+        "unsupported_format.txt (a .txt file (only .xlsx / .csv are allowed)): (no message)",
+        "the app was left for 'com.google.android.documentsui' (after an upload); the runner brought Alumnye back to the front"
+      ],
+      "last_taps": [
+        "choose_file_button -> ViewGroup at x97,y1117 886x420",
+        "choose_file_button -> ViewGroup at x97,y1117 886x420",
+        "choose_file_button -> ViewGroup at x97,y1117 886x420",
+        "choose_file_button -> ViewGroup at x97,y1117 886x420"
+      ],
+      "messages": [
+        {
+          "trigger": "uploaded invalid_email_format.xlsx",
+          "text": "Validation Errors (2):",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "uploaded invalid_email_format.xlsx",
+          "text": "Invalid email format \"not-an-email\"",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "uploaded invalid_email_format.xlsx",
+          "text": "Invalid email format \"abc@\"",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "uploaded bad_phone_number.csv",
+          "text": "Validation Errors (1):",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "uploaded bad_phone_number.csv",
+          "text": "Invalid phone number \"12ab\"",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "uploaded wrong_columns.csv",
+          "text": "List of Members",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "uploaded wrong_columns.csv",
+          "text": "Validation Errors (1):",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "uploaded wrong_columns.csv",
+          "text": "Row 2:",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "uploaded wrong_columns.csv",
+          "text": "At least one of Email or Phone is required",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "uploaded wrong_columns.csv",
+          "text": "Cancel",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "uploaded wrong_columns.csv",
+          "text": "Confirm Import",
+          "where": "on-screen"
+        },
+        {
+          "trigger": "uploaded headers_only_empty.csv",
+          "text": "No records found in spreadsheet.",
+          "where": "on-screen"
+        }
+      ],
+      "discovered": [],
+      "timing": {
+        "find_elements": [
+          166,
+          62.0
+        ],
+        "adb": [
+          51,
+          14.3
+        ],
+        "page_source": [
+          74,
+          14.7
+        ]
+      },
+      "keys": {
+        "add_member_entry": [
+          "btn:Add Member"
+        ],
+        "anchor_home_marker": [
+          "btn:New Group",
+          "textc:You don't have any groups"
+        ],
+        "choose_file_button": [
+          "btn:.xlsx, .csv",
+          "btn:.csv",
+          "btn:Choose File",
+          "btn:Select File"
+        ],
+        "download_template": [
+          "btn:Member Template Download",
+          "btn:Template Download",
+          "btn:Download Template"
+        ],
+        "group_details_marker": [
+          "btn:Add Event",
+          "btn:Add Member"
+        ],
+        "nav_profile": [
+          "btnx:My Account",
+          "btn:My Account"
+        ],
+        "role_anchor": [
+          "btnx:ANCHOR"
+        ],
+        "tab_upload": [
+          "btnx:Upload"
+        ]
+      },
+      "evidence": "reports/results/alumnye/run-20261004-202705/GRP-013_FAILED.png"
+    },
+    {
+      "id": "GRP-014",
+      "title": "Members tab of an existing group lists the members, including the Anchor with their member code",
+      "type": "Positive",
+      "script": "source/mobile/alumnye/specs/groups/GRP_014_cohort_members_list.py",
+      "status": "FAILED",
+      "category": "assertion",
+      "message": "the Members list must show member codes (e.g. AN1) | the Members tab says 1 member(s); the list shows 0 member code(s)",
+      "seconds": 18.1,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [],
+      "notes": [
+        "Members tab count: 1; codes seen: none"
+      ],
+      "last_taps": [
+        "role_anchor -> ViewGroup at x857,y186 173x58",
+        "members_tab -> ViewGroup at x540,y800 540x130"
+      ],
+      "messages": [],
+      "discovered": [
+        {
+          "where": "Members list",
+          "label": "\uf382, Home",
+          "device": "",
+          "scenario": "GRP-014",
+          "safe": false,
+          "result": ""
+        }
+      ],
+      "timing": {
+        "find_elements": [
+          15,
+          4.0
+        ],
+        "adb": [
+          2,
+          0.4
+        ],
+        "page_source": [
+          7,
+          5.1
+        ]
+      },
+      "keys": {
+        "anchor_home_marker": [
+          "btn:New Group",
+          "textc:You don't have any groups"
+        ],
+        "group_details_marker": [
+          "btn:Add Event",
+          "btn:Add Member"
+        ],
+        "members_tab": [
+          "btn:Members"
+        ],
+        "nav_profile": [
+          "btnx:My Account",
+          "btn:My Account"
+        ],
+        "role_anchor": [
+          "btnx:ANCHOR"
+        ]
+      },
+      "evidence": "reports/results/alumnye/run-20261004-202705/GRP-014_FAILED.png"
+    }
+  ]
+}

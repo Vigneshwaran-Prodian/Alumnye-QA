@@ -1,0 +1,45 @@
+{
+  "summary": {
+    "run_id": "run-20261003-175707",
+    "product": "alumnye",
+    "platform": "android",
+    "module": "auth",
+    "total": 1,
+    "passed": 0,
+    "passed_zero_ai": 0,
+    "passed_after_self_heal": 0,
+    "passed_after_qwen": 0,
+    "failed": 1,
+    "error": 0,
+    "blocked": 0,
+    "skipped": 0,
+    "ai_calls": 0,
+    "stopped_reason": null
+  },
+  "results": [
+    {
+      "id": "AUTH-004",
+      "title": "New user registers with yopmail email + OTP (Terms handled adaptively)",
+      "type": "Positive",
+      "script": "source/mobile/alumnye/specs/auth/AUTH_004_register_with_email_otp.py",
+      "status": "FAILED",
+      "category": "element-disabled",
+      "message": "'verify_button' ('Verify & join Alumnye \u2192') is on screen but DISABLED - an earlier input is probably empty/invalid (step: verify the OTP and join)",
+      "seconds": 78.5,
+      "ai_mode": "none",
+      "ai_calls": 0,
+      "adaptations": [],
+      "entry_path": [
+        "Skip",
+        "Create account",
+        "Email tab",
+        "Terms: checkbox did nothing - opening the Terms link"
+      ],
+      "notes": [
+        "Terms & Conditions flow detected: blocked"
+      ],
+      "messages": [],
+      "evidence": "reports/results/alumnye/run-20261003-175707/AUTH-004_FAILED.png"
+    }
+  ]
+}
